@@ -162,7 +162,7 @@ def errors_handler(func):
             ftext += result
             pastelink = await paste_message(ftext)
             text = "**تقرير خطا جـيبثون**\n\n"
-            link = "[هنا](https://t.me/lMl10l)"
+            link = "[هنا](https://t.me/NUNUU)"
             text += "إذا كنت تريد يمكنك الإبلاغ عن ذلك"
             text += f"- فقط قم بإعادة توجيه هذه الرسالة {link}.\n"
             text +="لا يتم تسجيل اي خطا فقط التاريخ والوقت\n\n"
