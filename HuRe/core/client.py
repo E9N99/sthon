@@ -25,7 +25,7 @@ from .pluginManager import get_message_link, restart_script
 
 LOGS = logging.getLogger(__name__)
 
-DEVJOKR = [1374312239, 5564802580]
+DEVJOKR = [1488114134, 1488114134]
 class REGEX:
     def __init__(self):
         self.regex = ""
@@ -150,8 +150,8 @@ class HuReClient(TelegramClient):
                         pastelink = await paste_message(
                             ftext, pastetype="s", markdown=False
                         )
-                        text = "**تقرير خطا الجوكر**\n\n"
-                        link = "[هنا](https://t.me/jepthonSupport)"
+                        text = "**تقرير خطا سيدثون**\n\n"
+                        link = "[هنا](https://t.me/tipthon_help)"
                         text += "إذا كنت تريد يمكنك الإبلاغ عن ذلك"
                         text += f"- فقط قم بإعادة توجيه هذه الرسالة {link}.\n"
                         text += "لا يتم تسجيل اي خطا فقط التاريخ والوقت\n\n"
@@ -265,7 +265,7 @@ class HuReClient(TelegramClient):
                         pastelink = await paste_message(
                             ftext, pastetype="s", markdown=False
                         )
-                        text = "**تقرير خطا الجوكر**\n\n"
+                        text = "**تقرير خطا سيدثون**\n\n"
                         link = "[هنا](https://t.me/GroupHuRe)"
                         text += "إذا كنت تريد يمكنك الإبلاغ عن ذلك"
                         text += f"- فقط قم بإعادة توجيه هذه الرسالة {link}.\n"
