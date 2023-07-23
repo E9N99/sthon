@@ -1,0 +1,302 @@
+#by Hussein For HuRe-HuRe
+# Hussein
+# يمنع منعاً باتاً تخمط الملف خلي عندك كرامه ولتسرقة
+# Added some f. by Reda
+
+import asyncio
+import time
+from HuRe import l313l
+from telethon.tl.functions.messages import GetHistoryRequest
+from telethon.tl.functions.channels import JoinChannelRequest
+from telethon.tl.functions.messages import ImportChatInviteRequest
+from ..sql_helper.globals import addgvar, delgvar, gvarstatus
+from telethon.events import NewMessage
+import requests
+from telethon.tl.functions.users import GetFullUserRequest
+import re
+from telethon import events
+c = requests.session()
+bot_username2 = '@A_MAN9300BOT'
+bot_username3 = '@MARKTEBOT'
+bot_username4 = '@qweqwe1919bot'
+HuRe = ['yes']
+its_Reham = False
+its_hussein = False
+its_reda = False
+its_joker = False
+#اياثارات الحسين
+@l313l.on(admin_cmd(pattern="تجميع"))
+async def _(event):
+    if HuRe[0] == "yes":
+        await event.edit("**᯽︙سيتم تجميع نقاط بوت المليار، قبل كل شيء تأكد من أنك قمت بالانضمام إلى القنوات الاشتراك الاجباري للبوت لتجنب حدوث أخطاء.**")
+        bot_username = event.pattern_match.group(1).split(" ")[-1].strip("@")
+        bot_entity = await l313l(GetFullUserRequest(bot_username))
+        channel_entity = bot_entity.user
+        await l313l.send_message(bot_username, '/start')
+        await asyncio.sleep(5)
+        await l313l(JoinChannelRequest(bot_username))
+        msg0 = await l313l.get_messages(bot_username, limit=1)
+        await msg0[0].click(2)
+        await asyncio.sleep(5)
+        msg1 = await l313l.get_messages(bot_username, limit=1)
+        await msg1[0].click(0)
+        chs = 1
+        for i in range(100):
+            if HuRe[0] == 'no':
+                break
+            await asyncio.sleep(5)
+            list = await l313l(GetHistoryRequest(peer=channel_entity, limit=1, offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
+            msgs = list.messages[0]
+            if msgs.message.find('لا يوجد قنوات في الوقت الحالي، قم بتجميع النقاط بطريقة مختلفة') != -1:
+                await l313l.send_message(event.chat_id, "**لا توجد قنوات للبوت.**")
+                break
+            url = msgs.reply_markup.rows[0].buttons[0].url
+            try:
+                try:
+                    await l313l(JoinChannelRequest(url))
+                except:
+                    bott = url.split('/')[-1]
+                    await l313l(ImportChatInviteRequest(bott))
+                msg2 = await l313l.get_messages(bot_username, limit=1)
+                await msg2[0].click(text='تحقق')
+                chs += 1
+                await l313l.send_message("me", f"تم الاشتراك في {chs} قناة")
+            except:
+                await l313l.send_message(event.chat_id, "**خطأ، قد يكون تم حظرك.**")
+                break
+        await l313l.send_message(event.chat_id, "**تم الانتهاء من التجميع!**")
+    else:
+        await event.edit("يجب الدفع لاستخدام هذا الأمر!")
+
+@l313l.on(admin_cmd(pattern="(الغاء التجميع|الغاء تجميع)"))
+async def cancel_collection(event):
+    bot_username = event.pattern_match.group(2)
+    await l313l.send_message(bot_username, '/start')
+    await event.edit("** ᯽︙ تم الغاء التجميع من بوت المليار **")
+    
+@l313l.on(admin_cmd(pattern="(تجميع الجوكر|تجميع جوكر)"))
+async def _(event):
+    if HuRe[0] == "yes":
+        await event.edit("**᯽︙سيتم تجميع النقاط من بوت الجوكر , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
+        channel_entity = await l313l.get_entity(bot_username2)
+        await l313l.send_message('@A_MAN9300BOT', '/start')
+        await asyncio.sleep(2)
+        msg0 = await l313l.get_messages('@A_MAN9300BOT', limit=1)
+        await msg0[0].click(2)
+        await asyncio.sleep(2)
+        msg1 = await l313l.get_messages('@A_MAN9300BOT', limit=1)
+        await msg1[0].click(0)
+
+        chs = 1
+        for i in range(100):
+            if HuRe[0] == 'no':
+                break
+            await asyncio.sleep(2)
+
+            list = await l313l(GetHistoryRequest(peer=channel_entity, limit=1,
+                                                   offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
+            msgs = list.messages[0]
+            if msgs.message.find('لا يوجد قنوات في الوقت الحالي , قم يتجميع النقاط بطريقه مختلفه') != -1:
+                await l313l.send_message(event.chat_id, f"**لاتوجد قنوات للبوت**")
+                break
+            url = msgs.reply_markup.rows[0].buttons[0].url
+            try:
+                try:
+                    await l313l(JoinChannelRequest(url))
+                except:
+                    bott = url.split('/')[-1]
+                    await l313l(ImportChatInviteRequest(bott))
+                msg2 = await l313l.get_messages('@A_MAN9300BOT', limit=1)
+                await msg2[0].click(text='تحقق')
+                chs += 1
+                await l313l.send_message("me", f"تم الاشتراك في {chs} قناة")
+            except Exception as er:
+                await l313l.send_message(event.chat_id, f"**خطأ , ممكن تبندت**\n{er}")
+        await l313l.send_message(event.chat_id, "**تم الانتهاء من التجميع !**")
+
+    else:
+        await event.edit("يجب الدفع لاستعمال هذا الامر !")
+@l313l.on(admin_cmd(pattern="(تجميع العقاب|تجميع عقاب)"))
+async def _(event):
+    if HuRe[0] == "yes":
+        await event.edit("**᯽︙سيتم تجميع النقاط من بوت العقاب , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
+        channel_entity = await l313l.get_entity(bot_username3)
+        await l313l.send_message('@MARKTEBOT', '/start')
+        await asyncio.sleep(3)
+        msg0 = await l313l.get_messages('@MARKTEBOT', limit=1)
+        await msg0[0].click(2)
+        await asyncio.sleep(3)
+        msg1 = await l313l.get_messages('@MARKTEBOT', limit=1)
+        await msg1[0].click(0)
+
+        chs = 1
+        for i in range(100):
+            if HuRe[0] == 'no':
+                break
+            await asyncio.sleep(3)
+
+            list = await l313l(GetHistoryRequest(peer=channel_entity, limit=1,
+                                                   offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
+            msgs = list.messages[0]
+            if msgs.message.find('لا يوجد قنوات في الوقت الحالي , قم يتجميع النقاط بطريقه مختلفه') != -1:
+                await l313l.send_message(event.chat_id, f"**لاتوجد قنوات للبوت**")
+                break
+            url = msgs.reply_markup.rows[0].buttons[0].url
+            try:
+                try:
+                    await l313l(JoinChannelRequest(url))
+                except:
+                    bott = url.split('/')[-1]
+                    await l313l(ImportChatInviteRequest(bott))
+                msg2 = await l313l.get_messages('@MARKTEBOT', limit=1)
+                await msg2[0].click(text='تحقق')
+                chs += 1
+                await l313l.send_message("me", f"تم الاشتراك في {chs} قناة")
+            except:
+                await l313l.send_message(event.chat_id, f"**خطأ , ممكن تبندت**")
+        await l313l.send_message(event.chat_id, "**تم الانتهاء من التجميع !**")
+
+    else:
+        await event.edit("يجب الدفع لاستعمال هذا الامر !")
+@l313l.on(admin_cmd(pattern="(تجميع المليون|تجميع مليون)"))
+async def _(event):
+    if HuRe[0] == "yes":
+        await event.edit("**᯽︙سيتم تجميع النقاط من بوت المليون , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
+        channel_entity = await l313l.get_entity(bot_username4)
+        await l313l.send_message('@qweqwe1919bot', '/start')
+        await asyncio.sleep(2)
+        msg0 = await l313l.get_messages('@qweqwe1919bot', limit=1)
+        await msg0[0].click(2)
+        await asyncio.sleep(2)
+        msg1 = await l313l.get_messages('@qweqwe1919bot', limit=1)
+        await msg1[0].click(0)
+
+        chs = 1
+        for i in range(100):
+            if HuRe[0] == 'no':
+                break
+            await asyncio.sleep(2)
+
+            list = await l313l(GetHistoryRequest(peer=channel_entity, limit=1,
+                                                   offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
+            msgs = list.messages[0]
+            if msgs.message.find('لا يوجد قنوات في الوقت الحالي , قم يتجميع النقاط بطريقه مختلفه') != -1:
+                await l313l.send_message(event.chat_id, f"**لاتوجد قنوات للبوت**")
+                break
+            url = msgs.reply_markup.rows[0].buttons[0].url
+            try:
+                try:
+                    await l313l(JoinChannelRequest(url))
+                except:
+                    bott = url.split('/')[-1]
+                    await l313l(ImportChatInviteRequest(bott))
+                msg2 = await l313l.get_messages('@qweqwe1919bot', limit=1)
+                await msg2[0].click(text='تحقق')
+                chs += 1
+                await l313l.send_message("me", f"تم الاشتراك في {chs} قناة")
+            except:
+                await l313l.send_message(event.chat_id, f"**خطأ , ممكن تبندت**")
+        await l313l.send_message(event.chat_id, "**تم الانتهاء من التجميع !**")
+
+    else:
+        await event.edit("يجب الدفع لاستعمال هذا الامر !")
+
+@l313l.ar_cmd(pattern="راتب وعد(?:\s|$)([\s\S]*)")
+async def hussein(event):
+    global its_hussein
+    await event.delete()
+    if not its_hussein:
+        its_hussein = True
+        if event.is_group:
+            await send_reham(event)
+        else:
+            await event.edit("**هذا الأمر يمكن استخدامه فقط في المجموعات!**")
+
+async def send_reham(event):
+    await event.respond('راتب')
+    await asyncio.sleep(660)
+    global its_hussein
+    if its_hussein:
+        await send_reham(event)  
+@l313l.ar_cmd(pattern="ايقاف راتب وعد(?:\s|$)([\s\S]*)")
+async def hussein(event):
+    global its_hussein
+    its_hussein = False
+    await event.edit("**تم تعطيل راتب وعد بنجاح ✅**")
+@l313l.ar_cmd(pattern="بخشيش وعد(?:\s|$)([\s\S]*)")
+async def hussein(event):
+    global its_joker
+    await event.delete()
+    if not its_joker:
+        its_joker = True
+        if event.is_group:
+            await send_aljoker(event)
+        else:
+            await event.edit("**هذا الأمر يمكن استخدامه فقط في المجموعات!**")
+async def send_aljoker(event):
+    await event.respond('بخشيش')
+    await asyncio.sleep(660)
+    global its_joker
+    if its_joker:
+        await send_aljoker(event)  
+@l313l.ar_cmd(pattern="ايقاف بخشيش وعد(?:\s|$)([\s\S]*)")
+async def hussein(event):
+    global its_joker
+    its_joker = False
+    await event.edit("**᯽︙ تم تعطيل بخشيش وعد بنجاح ✓ **")
+@l313l.ar_cmd(pattern="سرقة وعد(?:\s|$)([\s\S]*)")
+async def hussein(event):
+    global its_reda
+    await event.delete()
+    if not its_reda:
+        its_reda = True
+        if event.is_group:
+            message = event.pattern_match.group(1).strip()
+            if message:
+                await send_message(event, message)
+            else:
+                await event.edit("**يرجى كتابة ايدي الشخص مع الامر!**")
+
+async def send_message(event, message):
+    await event.respond(f"زرف {message}")
+    await asyncio.sleep(660)
+    global its_reda
+    if its_reda:
+        await send_message(event, message)
+
+@l313l.ar_cmd(pattern="ايقاف سرقة وعد(?:\s|$)([\s\S]*)")
+async def Reda(event):
+    global its_reda
+    its_reda = False
+    await event.edit("** ᯽︙ تم ايقاف السرقة بنجاح ✓ **")
+client = l313l
+
+@l313l.ar_cmd(pattern="استثمار وعد")
+async def w3d_joker(event):
+    await event.delete()
+    global its_Reham
+    its_Reham = True
+    while its_Reham:
+        if event.is_group:
+            await event.client.send_message(event.chat_id, "فلوسي")
+            await asyncio.sleep(3)
+            aljoker = await event.client.get_messages(event.chat_id, limit=1)
+            aljoker = aljoker[0].message
+            aljoker = ("".join(aljoker.split(maxsplit=2)[2:])).split(" ", 2)
+            l313l = aljoker[0]
+            if l313l.isdigit() and int(l313l) > 500000000:
+                await event.client.send_message(event.chat_id,f"استثمار {l313l}")
+                await asyncio.sleep(5)
+                joker = await event.client.get_messages(event.chat_id, limit=1)
+                await joker[0].click(text="اي ✅")
+            else:
+                await event.client.send_message(event.chat_id, f"استثمار {l313l}")
+            await asyncio.sleep(1210)
+        
+        else:
+            await event.edit("** ᯽︙ امر الاستثمار يمكنك استعماله في المجموعات فقط 🖤**")
+@l313l.ar_cmd(pattern="ايقاف استثمار وعد")
+async def disable_w3d(event):
+    global its_Reham
+    its_Reham = False
+    await event.edit("**تم تعطيل عملية الاستثمار وعد.**")
