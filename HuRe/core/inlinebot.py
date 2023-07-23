@@ -53,10 +53,10 @@ def ibuild_keyboard(buttons):
 
 
 def main_menu():
-    text = f"**- [سـورس الجوكر](https://t.me/jepthon)\
+    text = f"**- [سـورس سيدثون](https://t.me/X_X_X_X_R)\
         \n المسـاعد\
         \n\
-        \n◽ الجوكر لـ {mention}**"
+        \n◽ سيدثون لـ {mention}**"
     buttons = [
         (Button.inline("ℹ️ • التعليمات •", data="check"),),
         (
@@ -228,7 +228,7 @@ async def inline_handler(event):  # sourcery no-metrics
             buttons = [
                 (
                     Button.inline("الحـالة ⚒️", data="stats"),
-                    Button.url(" HuRe UsᴇʀBoᴛ", "https://t.me/jepthon"),
+                    Button.url(" HuRe UsᴇʀBoᴛ", "https://t.me/X_X_X_X_R"),
                 )
             ]
             ALIVE_PIC = gvarstatus("ALIVE_PIC")
@@ -409,7 +409,7 @@ async def inline_handler(event):  # sourcery no-metrics
 
             buttons = [Button.inline("قراءة الـرسالـة ", data=f"hide_{timestamp}")]
             result = builder.article(
-                title="رسـالة مخفيـة من سـورس الجوكر 🧸♥",
+                title="رسـالة مخفيـة من سـورس سيدثون 🧸♥",
                 text=f"✖✖✖",
                 buttons=buttons,
             )
@@ -571,12 +571,12 @@ async def inline_handler(event):  # sourcery no-metrics
             url=ROZLOGO, size=0, mime_type="image/jpeg", attributes=[]
         )
         text, msg_entities = await event.client._parse_message_text(
-            "**[بـوت الجوكر 🧸♥](https://t.me/jepthon)**\
+            "**[بـوت سيدثون 🧸♥](https://t.me/X_X_X_X_R)**\
             \n\
-            \n❤ الجوكر هـو بـوت بسـيط يدخـل الـى حسـابك لجعـلك تتحـكم به معـ اوامـر معينـة.\
+            \n❤ سيدثون هـو بـوت بسـيط يدخـل الـى حسـابك لجعـلك تتحـكم به معـ اوامـر معينـة.\
             \n\
             \n**اذا كـنت تـرغب بتـنصيـب السـورس عـلى حسـابك ,\
-            \n🐾 تعال الـى [كروب المسـاعدة](https://t.me/jepthon1)!**",
+            \n🐾 تعال الـى [كروب المسـاعدة](https://t.me/tipthon_help)!**",
             "md",
         )
         result = types.InputBotInlineResult(
@@ -584,7 +584,7 @@ async def inline_handler(event):  # sourcery no-metrics
             type="photo",
             title="l313l 🧸♥",
             description="ادخـل كـروب المسـاعدة",
-            url="https://t.me/jepthon1",
+            url="https://t.me/tipthon_help",
             thumb=photo,
             content=photo,
             send_message=types.InputBotInlineMessageMediaAuto(
