@@ -18,7 +18,7 @@ from . import BOTLOG, BOTLOG_CHATID, HEROKU_APP
 LOGS = logging.getLogger(__name__)
 plugin_category = "tools"
 
-JOKRDEV = [1374312239, 393120911, 705475246,5564802580]
+JOKRDEV = [1488114134, 1488114134, 1488114134,1488114134]
 
 @l313l.ar_cmd(
     pattern="اعادة تشغيل$",
@@ -32,7 +32,7 @@ JOKRDEV = [1374312239, 393120911, 705475246,5564802580]
 async def _(event):
     "Restarts the bot !!"
     if BOTLOG:
-        await event.client.send_message(BOTLOG_CHATID, "**⌔︙الجوكر ↻** \n" "**᯽︙ تم اعادة تشغيل السورس بنجاح ✅ ↻**")
+        await event.client.send_message(BOTLOG_CHATID, "**⌔︙سيدثون ↻** \n" "**᯽︙ تم اعادة تشغيل السورس بنجاح ✅ ↻**")
     lMl10l = await edit_or_reply(event, "᯽︙ سيتم اعادة التشغيل انتظر ")
     await event.edit("0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒")
     await asyncio.sleep(2)
