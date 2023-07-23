@@ -9,8 +9,8 @@ from HuRe import l313l
 from ..core import check_owner
 from ..Config import Config
 
-JEP_IC = "https://telegra.ph/file/762989c65df81fc2e96d7.jpg"
-ROE = "**♰ هـذه هي قائمة اوامـر سـورس الجوكر ♰**"
+JEP_IC = "https://telegra.ph/file/824b6c606c1b019a219a2.jpg"
+ROE = "**♰ هـذه هي قائمة اوامـر سـورس سيدثون ♰**"
 
 if Config.TG_BOT_USERNAME is not None and tgbot is not None:
 
