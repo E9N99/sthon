@@ -326,7 +326,7 @@ async def Hussein(event):
             f"I guess you are on selfhost. For self host you need to use `{cmdhd}update now`",
         )
     event = await edit_or_reply(event, "**᯽︙ جارِ تحديث ريبو التنصيب لسورس الجوكر **")
-    off_repo = "https://github.com/jepthoniq/lMl10l"
+    off_repo = "https://github.com/E9N99/Repo"
     os.chdir("/app")
     try:
         txt = (
