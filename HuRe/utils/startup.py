@@ -98,8 +98,8 @@ async def startupmessage():
             Config.CATUBLOGO = await l313l.tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://t.me/MemeSoundJep/24",
-                caption="**‏᯽︙ بــوت الجوكر يـعـمـل بـنـجـاح ✓ \n᯽︙ أرسل `.الاوامر`لرؤية اوامر السورس \n  ᯽︙ لأستعمال بوت الأختراق عبر كود التيرمكس أرسل`.هاك`**",
-                buttons=[(Button.url("سورس الجوكر", "https://t.me/jepthon"),)],
+                caption="**‏᯽︙ بــوت سيدثون يـعـمـل بـنـجـاح ✓ \n᯽︙ أرسل `.الاوامر`لرؤية اوامر السورس \n  ᯽︙ لأستعمال بوت الأختراق عبر كود التيرمكس أرسل`.هاك`**",
+                buttons=[(Button.url("سورس سيدثون", "https://t.me/E9N99"),)],
             )
     except Exception as e:
         LOGS.error(e)
@@ -137,7 +137,7 @@ async def mybot():
     f"ـ {jep_ment}"
     f"⪼ هذا هو بوت خاص بـ {jep_ment} يمكنك التواصل معه هنا"
     starkbot = await l313l.tgbot.get_me()
-    perf = "الجوكر 🤡"
+    perf = "سيدثون"
     bot_name = starkbot.first_name
     botname = f"@{starkbot.username}"
     if bot_name.endswith("Assistant"):
@@ -199,7 +199,7 @@ async def add_bot_to_logger_group(chat_id):
         except Exception as e:
             LOGS.error(str(e))
 #by @jepthon بس اشوفك خامطه للكود اهينك وافضحك
-HuRe = {"@jepthon", "@jepthonsupport"}
+HuRe = {"@E9N99", "@tipthon_help", "@X_X_X_X_R}
 async def saves():
    for lMl10l in HuRe:
         try:
@@ -298,10 +298,10 @@ async def verifyLoggerGroup():
                 + str(e)
             )
     else:
-        descript = "- عزيزي المستخدم هذه هي مجموعه الاشعارات يرجى عدم حذفها  - @Jepthon"
+        descript = "- عزيزي المستخدم هذه هي مجموعه الاشعارات يرجى عدم حذفها  - @E9N99"
         photobt = await l313l.upload_file(file="l313l/razan/resources/start/Jepthon.JPEG")
         _, groupid = await create_supergroup(
-            "مجموعة أشعارات الجوكر ", l313l, Config.TG_BOT_USERNAME, descript, photobt
+            "مجموعة أشعارات سيدثون ", l313l, Config.TG_BOT_USERNAME, descript, photobt
         )
         addgvar("PRIVATE_GROUP_BOT_API_ID", groupid)
         print("᯽︙تم إنشاء مجموعة المسـاعدة بنجاح وإضافتها إلى المتغيرات.")
@@ -327,7 +327,7 @@ async def verifyLoggerGroup():
                 "⌯︙حدث استثناء عند محاولة التحقق من PM_LOGGER_GROUP_ID.\n" + str(e)
             )
     else:
-        descript = "᯽︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @Jepthon"
+        descript = "᯽︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @E9N99"
         photobt = await l313l.upload_file(file="l313l/razan/resources/start/Jepthon2.JPEG")
         _, groupid = await create_supergroup(
             "مجموعة التخزين", l313l, Config.TG_BOT_USERNAME, descript, photobt
