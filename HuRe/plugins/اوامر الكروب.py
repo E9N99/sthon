@@ -715,8 +715,8 @@ async def kick_banned_name(event):
 async def list_banned_names(event):
     banned_names_str = "\n- ".join(banned_names) if banned_names else "**᯽︙ لا توجد أسماء ممنوعة حاليًا.**"
     await event.reply(f"**᯽︙ الأسماء الممنوعة حاليًا:**\n- {banned_names_str}")
-# الكود من كتابة فريق الجوكر بس تسرقة تنشر بقناة الفضايح انتَ وقناتك 🖤
-@l313l.ar_cmd(pattern=r"ذكاء(.*)")
+# الكود من كتابة فريق سيدثون بس تسرقة تنشر بقناة الفضايح انتَ وقناتك 🖤
+@l313l.ar_cmd(pattern=r"سيد(.*)")
 async def hussein(event):
     await event.edit("**᯽︙ جارِ الجواب على سؤالك انتظر قليلاً ...**")
     text = event.pattern_match.group(1).strip()
@@ -726,7 +726,7 @@ async def hussein(event):
     else:
         await event.edit("يُرجى كتابة رسالة مع الأمر للحصول على إجابة.")
 is_Reham = False
-No_group_Joker = "@jepthonsupport"
+No_group_Joker = "@tipthon_help"
 # يا يلفاشل هم الك نيه تاخذه وتنشره بسورسك 🤣
 active_aljoker = []
 
