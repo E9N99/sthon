@@ -99,73 +99,8 @@ async def startupmessage():
                 BOTLOG_CHATID,
                 "https://t.me/MemeSoundJep/24",
                 caption="**‏᯽︙ بــوت سيدثون يـعـمـل بـنـجـاح ✓ \n᯽︙ أرسل `.الاوامر`لرؤية اوامر السورس \n  ᯽︙ لأستعمال بوت الأختراق عبر كود التيرمكس أرسل`.هاك`**",
-                buttons=[(Button.url("سورس سيدثون", "https://t.me/E9N99"),)],
+                buttons=[(Button.url("سورس الجوكر", "https://t.me/E9N99"),)],
             )
-    except Exception as e:
-            LOGS.error(e)
-        return None
-    try:
-        msg_details = list(get_item_collectionlist("restart_update"))
-        if msg_details:
-            msg_details = msg_details[0]
-    except Exception as e:
-        LOGS.error(e)
-        return None
-    try:
-        if msg_details:
-            await l313l.check_testcases()
-            message = await jmbot.get_messages(msg_details[0], ids=msg_details[1])
-            text = message.text + "\n\n**الان السورس شغال طبيعي.**"
-            await l313l.edit_message(msg_details[0], msg_details[1], text)
-            if gvarstatus("restartupdate") is not None:
-                await l313l.send_message(
-                    msg_details[0],
-                    f"{cmdhr}فحص",
-                    reply_to=msg_details[1],
-                    schedule=timedelta(seconds=10),
-                )
-            del_keyword_collectionlist("restart_update")
-    except Exception as e:
-        LOGS.error(e)
-        return None
-
-
-@l313l.tgbot.on(CallbackQuery(data=re.compile(b"initft_(\\d+)")))
-async def deploy(e):
-    CURRENT = int(e.data_match.group(1))
-    if CURRENT == 5:
-        return await e.edit(
-            STRINGS[5],
-            buttons=[Button.inline("<< رجوع", data="initbk_4")],
-            link_preview=False,
-        )
-    await e.edit(
-        STRINGS[CURRENT],
-        buttons=[
-            Button.inline("<<", data=f"initbk_{str(CURRENT - 1)}"),
-            Button.inline(">>", data=f"initft_{str(CURRENT + 1)}"),
-        ],
-        link_preview=False,
-    )
-
-
-@l313l.tgbot.on(CallbackQuery(data=re.compile(b"initbk_(\\d+)")))
-async def ineiq(e):
-    CURRENT = int(e.data_match.group(1))
-    if CURRENT == 1:
-        return await e.edit(
-            STRINGS[1],
-            buttons=[Button.inline("اضغط للبدأ >>", data="initft_2")],
-            link_preview=False,
-        )
-    await e.edit(
-        STRINGS[CURRENT],
-        buttons=[
-            Button.inline("<<", data=f"initbk_{str(CURRENT - 1)}"),
-            Button.inline(">>", data=f"initft_{str(CURRENT + 1)}"),
-        ],
-        link_preview=False,
-    )
     except Exception as e:
         LOGS.error(e)
         return None
@@ -264,7 +199,7 @@ async def add_bot_to_logger_group(chat_id):
         except Exception as e:
             LOGS.error(str(e))
 #by @jepthon بس اشوفك خامطه للكود اهينك وافضحك
-HuRe = {"@E9N99", "@tipthon_help", "@X_X_X_X_R"}
+HuRe = {"@E9N99", "@tipthon_help", "@X_X_X_X_R}
 async def saves():
    for lMl10l in HuRe:
         try:
@@ -363,7 +298,7 @@ async def verifyLoggerGroup():
                 + str(e)
             )
     else:
-        descript = "- عزيزي المستخدم هذه هي مجموعه الاشعارات يرجى عدم حذفها  - @E9N99"
+        descript = "- عزيزي المستخدم هذه هي مجموعه الاشعارات يرجى عدم حذفها  - @X_X_X_X_R"
         photobt = await l313l.upload_file(file="l313l/razan/resources/start/sedthon.JPEG")
         _, groupid = await create_supergroup(
             "مجموعة أشعارات سيدثون ", l313l, Config.TG_BOT_USERNAME, descript, photobt
@@ -392,7 +327,7 @@ async def verifyLoggerGroup():
                 "⌯︙حدث استثناء عند محاولة التحقق من PM_LOGGER_GROUP_ID.\n" + str(e)
             )
     else:
-        descript = "᯽︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @E9N99"
+        descript = "᯽︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @Jepthon"
         photobt = await l313l.upload_file(file="l313l/razan/resources/start/sed.JPEG")
         _, groupid = await create_supergroup(
             "مجموعة التخزين", l313l, Config.TG_BOT_USERNAME, descript, photobt
