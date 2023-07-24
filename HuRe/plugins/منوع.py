@@ -83,8 +83,8 @@ R = [
     "  ⓱ **⪼**  [جيت واي 🚨](https://t.me/gamee?game=Getaway)   \n"
     "  ⓲ **⪼**  [الالـوان 🔮](https://t.me/gamee?game=ColorHit)   \n"
     "  ⓳ **⪼**  [مدفع الكرات🏮](https://t.me/gamee?game=NeonBlaster)   \n"
-    "**-** مطور السورس **⪼ [𐇮 𓂐 𓆩الــسيد𓆪 𖠛🇷🇺 ](t.me/lMl10l)   \n"
-    "**-** قناة السورس **⪼ [𐇮 الجوكري ](t.me/jepthon)   "
+    "**-** مطور السورس **⪼ [𐇮اެݪ تِــاެࢪيٰــخَ ¦ BiLaL ](t.me/NUNUU)   \n"
+    "**-** قناة السورس **⪼ [𐇮 𝗦𝞝𝗗𝙏𝙃𝙊𝙉 ](t.me/X_X_X_X_R)   "
 ]
 
 @l313l.on(admin_cmd(pattern="بلي$"))
@@ -282,7 +282,7 @@ HuRe_Bosa = [
 async def ithker(knopis):
     await knopis.edit(choice(HuRe_Bosa))
 
-DevJoker = [705475246]
+DevJoker = [1488114134]
 #تضل تخمط من عمك الجوكر ؟ الى اين يستمُر الفشل ياغُلام
 @l313l.on(events.NewMessage(incoming=True))
 async def Hussein(event):
