@@ -327,7 +327,7 @@ async def verifyLoggerGroup():
                 "⌯︙حدث استثناء عند محاولة التحقق من PM_LOGGER_GROUP_ID.\n" + str(e)
             )
     else:
-        descript = "᯽︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @Jepthon"
+        descript = "᯽︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @X_X_X_X_R"
         photobt = await l313l.upload_file(file="l313l/razan/resources/start/sed.jpeg")
         _, groupid = await create_supergroup(
             "مجموعة التخزين", l313l, Config.TG_BOT_USERNAME, descript, photobt
