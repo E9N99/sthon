@@ -8,8 +8,8 @@ from .core.session import l313l
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
 __version__ = "3.1.3"
-__license__ = "كـتابة وتـعديل فريـق سيدثوو"
-__author__ = "سيدثوو <https://T.ME/E9N99>"
+__license__ = كـتابة وتـعديل فريـق سيدثون"
+__author__ = "سيدثون <https://T.ME/E9N99>"
 __copyright__ = "BiLaL TEAM (C) 2021 - 2023  " + __author__
 
 l313l.version = __version__
