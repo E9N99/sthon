@@ -90,17 +90,93 @@ async def setup_bot():
         sys.exit()
 
 async def startupmessage():
-    """
-    Start up message in telegram logger group
-    """
+    if not gvarstatus("DEPLOY"):
+        try:
+            if BOTLOG:
+                await l313l.tgbot.send_file(
+                    BOTLOG_CHATID,
+                    "https://graph.org//file/c20c4f492da1811e1bef0.jpg",
+                    caption="**شكرا لتنصيبك سورس سيدثون**\n • هنا بعض الملاحظات التي يجب ان تعرفها عن استخدامك لسورس سيدثون
+                    buttons=[(Button.inline("اضغط هنا", data="initft_2"),)],
+                )
+                addgvar("DEPLOY", "Done")
+        except Exception as e:
+            LOGS.error(e)
+    else:
+        try:
+            if BOTLOG:
+                await l313l.tgbot.send_message(
+                    BOTLOG_CHATID,
+                    "**لقد تم بنجاح تنصيب سورس سيدثون **\n➖➖➖➖➖➖➖➖➖➖\n**السورس**: @E9N99\n**المطور**: @NUNUU\n➖➖➖➖➖➖➖➖➖➖\n**مجموعة الدعم**: @tipthon_help\n➖➖➖➖➖➖➖➖➖➖",
+                    buttons=[
+                        (Button.url("كروب المساعدة", "https://t.me/tipthon_help"),)
+                    ],
+                )
+        except Exception as e:
+            LOGS.error(e)
+        return None
     try:
-        if BOTLOG:
-            Config.CATUBLOGO = await l313l.tgbot.send_file(
-                BOTLOG_CHATID,
-                "https://t.me/MemeSoundJep/24",
-                caption="**‏᯽︙ بــوت سيدثون يـعـمـل بـنـجـاح ✓ \n᯽︙ أرسل `.الاوامر`لرؤية اوامر السورس \n  ᯽︙ لأستعمال بوت الأختراق عبر كود التيرمكس أرسل`.هاك`**",
-                buttons=[(Button.url("سورس سيدثون", "https://t.me/E9N99"),)],
-            )
+        msg_details = list(get_item_collectionlist("restart_update"))
+        if msg_details:
+            msg_details = msg_details[0]
+    except Exception as e:
+        LOGS.error(e)
+        return None
+    try:
+        if msg_details:
+            await l313l.check_testcases()
+            message = await jmbot.get_messages(msg_details[0], ids=msg_details[1])
+            text = message.text + "\n\n**الان السورس شغال طبيعي.**"
+            await l313l.edit_message(msg_details[0], msg_details[1], text)
+            if gvarstatus("restartupdate") is not None:
+                await l313l.send_message(
+                    msg_details[0],
+                    f"{cmdhr}فحص",
+                    reply_to=msg_details[1],
+                    schedule=timedelta(seconds=10),
+                )
+            del_keyword_collectionlist("restart_update")
+    except Exception as e:
+        LOGS.error(e)
+        return None
+
+
+@l313l.tgbot.on(CallbackQuery(data=re.compile(b"initft_(\\d+)")))
+async def deploy(e):
+    CURRENT = int(e.data_match.group(1))
+    if CURRENT == 5:
+        return await e.edit(
+            STRINGS[5],
+            buttons=[Button.inline("<< رجوع", data="initbk_4")],
+            link_preview=False,
+        )
+    await e.edit(
+        STRINGS[CURRENT],
+        buttons=[
+            Button.inline("<<", data=f"initbk_{str(CURRENT - 1)}"),
+            Button.inline(">>", data=f"initft_{str(CURRENT + 1)}"),
+        ],
+        link_preview=False,
+    )
+
+
+@l313l.tgbot.on(CallbackQuery(data=re.compile(b"initbk_(\\d+)")))
+async def ineiq(e):
+    CURRENT = int(e.data_match.group(1))
+    if CURRENT == 1:
+        return await e.edit(
+            STRINGS[1],
+            buttons=[Button.inline("اضغط للبدأ >>", data="initft_2")],
+            link_preview=False,
+        )
+    await e.edit(
+        STRINGS[CURRENT],
+        buttons=[
+            Button.inline("<<", data=f"initbk_{str(CURRENT - 1)}"),
+            Button.inline(">>", data=f"initft_{str(CURRENT + 1)}"),
+        ],
+        link_preview=False,
+    )
     except Exception as e:
         LOGS.error(e)
         return None
