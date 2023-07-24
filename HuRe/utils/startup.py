@@ -96,7 +96,7 @@ async def startupmessage():
                 await l313l.tgbot.send_file(
                     BOTLOG_CHATID,
                     "https://graph.org//file/c20c4f492da1811e1bef0.jpg",
-                    caption="**شكرا لتنصيبك سورس سيدثون**\n • هنا بعض الملاحظات التي يجب ان تعرفها عن استخدامك لسورس سيدثون
+                    caption="**شكرا لتنصيبك سورس سيدثون**\n • هنا بعض الملاحظات التي يجب ان تعرفها عن استخدامك لسورس سيدثون"
                     buttons=[(Button.inline("اضغط هنا", data="initft_2"),)],
                 )
                 addgvar("DEPLOY", "Done")
