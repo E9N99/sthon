@@ -101,7 +101,7 @@ async def startupmessage():
                 caption="**‏᯽︙ بــوت سيدثون يـعـمـل بـنـجـاح ✓ \n᯽︙ أرسل `.الاوامر`لرؤية اوامر السورس \n  ᯽︙ لأستعمال بوت الأختراق عبر كود التيرمكس أرسل`.هاك`**",
                 buttons=[(Button.url("سورس سيدثون", "https://t.me/E9N99"),)],
             )
-        except Exception as e:
+         except Exception as e:
             LOGS.error(e)
         return None
     try:
