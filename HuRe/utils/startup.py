@@ -90,28 +90,17 @@ async def setup_bot():
         sys.exit()
 
 async def startupmessage():
-    if not gvarstatus("DEPLOY"):
-        try:
-            if BOTLOG:
-                await l313l.tgbot.send_file(
-                    BOTLOG_CHATID,
-                    "https://graph.org//file/c20c4f492da1811e1bef0.jpg",
-                    caption="**شكرا لتنصيبك سورس سيدثون**\n • هنا بعض الملاحظات التي يجب ان تعرفها عن استخدامك لسورس سيدثون"
-                    buttons=[(Button.inline("اضغط هنا", data="initft_2"),)],
-                )
-                addgvar("DEPLOY", "Done")
-        except Exception as e:
-            LOGS.error(e)
-    else:
-        try:
-            if BOTLOG:
-                await l313l.tgbot.send_message(
-                    BOTLOG_CHATID,
-                    "**لقد تم بنجاح تنصيب سورس سيدثون **\n➖➖➖➖➖➖➖➖➖➖\n**السورس**: @E9N99\n**المطور**: @NUNUU\n➖➖➖➖➖➖➖➖➖➖\n**مجموعة الدعم**: @tipthon_help\n➖➖➖➖➖➖➖➖➖➖",
-                    buttons=[
-                        (Button.url("كروب المساعدة", "https://t.me/tipthon_help"),)
-                    ],
-                )
+    """
+    Start up message in telegram logger group
+    """
+    try:
+        if BOTLOG:
+            Config.CATUBLOGO = await l313l.tgbot.send_file(
+                BOTLOG_CHATID,
+                "https://t.me/MemeSoundJep/24",
+                caption="**‏᯽︙ بــوت سيدثون يـعـمـل بـنـجـاح ✓ \n᯽︙ أرسل `.الاوامر`لرؤية اوامر السورس \n  ᯽︙ لأستعمال بوت الأختراق عبر كود التيرمكس أرسل`.هاك`**",
+                buttons=[(Button.url("سورس سيدثون", "https://t.me/E9N99"),)],
+            )
         except Exception as e:
             LOGS.error(e)
         return None
