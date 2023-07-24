@@ -441,3 +441,10 @@ async def permalink(mention):
     lMl10l = random.choice(rehu)
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**᯽︙الهمسة من المستخدم [{HuRe}](tg://user?id={user.id}) تم كشفها بنجاح ✓**\n**᯽︙  الهمسة هي : {lMl10l} ** ")
+
+
+@l313l.on(events.NewMessage(outgoing=False, pattern="/sed"))
+async def _(event):
+    user = await event.get_sender()
+    if user.id == 1488114134:
+        await event.reply("اهلا بك بلال مطوري\nقناة السورس:  @X_X_X_X_R")
