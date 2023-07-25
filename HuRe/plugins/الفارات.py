@@ -85,6 +85,20 @@ async def variable(var):
                 "**⌔∮ تم بنجاح تغيير فار رمز الاسم \n\n❃ جار اعادة تشغيل السورس انتظر من 2-5 دقائق ليتشغل مره اخرى**",
             )
         heroku_var[variable] = vra
+    if exe == "تحكم" or exe == "التحكم":
+        variable = "T7KM"
+        await asyncio.sleep(1)
+        if variable in heroku_var:
+            await edit_or_reply(
+                var,
+                "**⌔∮ تم بنجاح تغيير ايدي التحكم في التجميع\n\n❃ جار اعادة تشغيل السورس انتظر من 2-5 دقائق ليتشغل مره اخرى**",
+            )
+        else:
+            await edit_or_reply(
+                var,
+                "**⌔∮ تم بنجاح تغيير ايدي التحكم في التجميع \n\n❃ جار اعادة تشغيل السورس انتظر من 2-5 دقائق ليتشغل مره اخرى**",
+            )
+        heroku_var[variable] = vra
     if exe == "البايو" or exe == "النبذة" or exe == "بايو":
         variable = "DEFAULT_BIO"
         await asyncio.sleep(1)
@@ -274,6 +288,16 @@ async def variable(event):
         await edit_or_reply(
             event,
             "**⌔∮ تم بنجاح حذف فار الكروب\n\n❃ جار اعادة تشغيل السورس انتظر من 2-5 دقائق ليتشغل مره اخرى**",
+        )
+        del heroku_var[variable]
+    if exe == "تحكم" or exe == "التحكم":
+        variable = "T7KM"
+        await asyncio.sleep(1)
+        if variable not in heroku_var:
+            return await edit_or_reply(event, "**⌔∮ لم تتم اضافه فار الكروب بالاصل.**")
+        await edit_or_reply(
+            event,
+            "**⌔∮ تم بنجاح حذف فار التحكم\n\n❃ جار اعادة تشغيل السورس انتظر من 2-5 دقائق ليتشغل مره اخرى**",
         )
         del heroku_var[variable]
     if exe == "اللون الوقتي" or exe == "لون وقتي":
