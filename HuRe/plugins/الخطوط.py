@@ -1,4 +1,4 @@
-# Reda - Hussein
+# التاريخ - BiLaL
 # © HuRe Team 2023
 # ها شعدك داخل ع الملف تريد تخمط ؟ ابو زربة لهل درجة فاشل  
 from telethon import events
@@ -48,21 +48,22 @@ async def btext(event):
 
 @l313l.on(events.NewMessage(outgoing=True))
 async def reda(event):
-    isbold = gvarstatus("bold")
-    if isbold and "." not in event.message.message:
-        try:
-            await event.edit(f"**{event.message.message}**")
-        except MessageIdInvalidError:
-            pass
-    isramz = gvarstatus("ramz")
-    if isramz and "." not in event.message.message:
-        try:
-            await event.edit(f"`{event.message.message}`")
-        except MessageIdInvalidError:
-            pass
-    istshwesh = gvarstatus("tshwesh")
-    if istshwesh and "." not in event.message.message:
-        try:
-            await event.edit(f"~~{event.message.message}~~")
-        except MessageIdInvalidError:
-            pass
+    if event.message.text and not event.message.media and "." not in event.message.text:
+        isbold = gvarstatus("bold")
+        isramz = gvarstatus("ramz")
+        istshwesh = gvarstatus("tshwesh")
+        if isbold:
+            try:
+                await event.edit(f"**{event.message.text}**")
+            except MessageIdInvalidError:
+                pass
+        if isramz:
+            try:
+                await event.edit(f"`{event.message.text}`")
+            except MessageIdInvalidError:
+                pass
+        if istshwesh:
+            try:
+                await event.edit(f"~~{event.message.text}~~")
+            except MessageIdInvalidError:
+                pass
