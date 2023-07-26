@@ -909,8 +909,8 @@ async def approve_p_m(event):
     await edit_or_reply(
         event,
         APPROVED_PMs,
-        file_name="قائـمة الحـماية جـيبثون.txt",
-        caption="قائـمة الـمسموح لـهم الـحالية\n سـورس جـيبثون الـعربي \n @import random
+        file_name="قائـمة الحـماية سيدثون.txt",
+        caption="قائـمة الـمسموح لـهم الـحالية\n سـورس سيدثون الـعربي \n @E9N99,
 import re
 from datetime import datetime
 
@@ -933,7 +933,7 @@ from . import mention
 plugin_category = "utils"
 LOGS = logging.getLogger(__name__)
 cmdhd = Config.COMMAND_HAND_LER
-#ترجمه وكتابة فريق جـيبثون
+#ترجمه وكتابة فريق سيدثون
 
 async def do_pm_permit_action(event, chat):  # sourcery no-metrics
     reply_to_id = await reply_id(event)
@@ -992,7 +992,7 @@ async def do_pm_permit_action(event, chat):  # sourcery no-metrics
                 totalwarns=totalwarns,
                 warns=warns,
                 remwarns=remwarns,
-            )#ترجمه وكتابة فريق جـيبثون
+            )#ترجمه وكتابة فريق سيدثون
         else:
             USER_BOT_WARN_ZERO = f"⌯︙حذࢪتك وكتـلك لا تكࢪࢪ تَم حظࢪك بنجاح ما ٱكدر اخليك تزعج المالك \n- ⌯︙بباي 🙁🤍"
         msg = await event.reply(USER_BOT_WARN_ZERO)
