@@ -131,30 +131,28 @@ async def startupmessage():
 
 
 async def mybot():
-    JEPTH_USER = l313l.me.first_name
-    The_noon = l313l.uid
-    jep_ment = f"[{JEPTH_USER}](tg://user?id={The_noon})"
-    f"ـ {jep_ment}"
-    f"⪼ هذا هو بوت خاص بـ {jep_ment} يمكنك التواصل معه هنا"
-    starkbot = await l313l.tgbot.get_me()
-    perf = "سيدثون"
-    bot_name = starkbot.first_name
-    botname = f"@{starkbot.username}"
-    if bot_name.endswith("Assistant"):
-        if not starkbot.inline_query_enabled:
-            print(" (inline) معطل للبوت")
-            return
-        print("تم تشغيل البوت")
-    else:
-        try:
-            await l313l.send_message("@BotFather", "/setinline")
-            await asyncio.sleep(1)
-            await l313l.send_message("@BotFather", botname)
-            await asyncio.sleep(1)
-            await l313l.send_message("@BotFather", perf)
-            await asyncio.sleep(2)
-        except Exception as e:
-            print(e)
+    try:
+        starkbot = await l313l.tgbot.get_me()
+        sedd = "سيدثون"
+        bot_name = starkbot.first_name
+        botname = f"@{starkbot.username}"
+        if bot_name.endswith("Assistant"):
+            print("تم تشغيل البوت")
+        if starkbot.bot_inline_placeholder:
+            print("Aljoker ForEver")
+        else:
+            try:
+                await l313l.send_message("@BotFather", "/setinline")
+                await asyncio.sleep(1)
+                await l313l.send_message("@BotFather", botname)
+                await asyncio.sleep(1)
+                await l313l.send_message("@BotFather", sedd)
+                await asyncio.sleep(2)
+            except Exception as e:
+                print(e)
+    except Exception as e:
+        print(e)
+
 
 async def ipchange():
     """
