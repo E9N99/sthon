@@ -796,14 +796,14 @@ async def stop_aljoker(event):
     global aljoker
     aljoker = False
     await event.edit("**᯽︙ تم ايقاف النشر التلقائي بنجاح ✓** ")
-
-BiLaL = False
-active_sthon = []
+#تعديل وحقوق بلال
+sthon = False
+sedthon = []
 @l313l.on(events.NewMessage(incoming=True))
 async def Hussein(event):
-    if not BiLaL:
+    if not sthon:
         return
-    if event.is_private or event.chat_id not in active_sthon:
+    if event.is_private or event.chat_id not in sedthon:
         return
     sender_id = event.sender_id
     if sender_id != 1488114134:
@@ -811,40 +811,17 @@ async def Hussein(event):
             await event.delete()
             sender = await event.get_sender()
             sthon_entity = await l313l.get_entity(sender.id)
-            sthon_profile = f"[{aljoker_entity.first_name}](tg://user?id={sthon_entity.id})"
+            sthon_profile = f"[{sthon_entity.first_name}](tg://user?id={sthon_entity.id})"
             await event.reply(f"**᯽︙ عذرًا {sthon_profile}، يُرجى عدم إرسال الرسائل التي تحتوي على إيموجي المُميز**")
-@l313l.ar_cmd(
-    pattern="المميز تفعيل$",
-    command=("المميز تفعيل", plugin_category),
-    info={
-        "header": "",
-        "description": "",
-        "usage": [
-            "{tr}المميز تفعيل",
-        ],
-    },
-    require_admin=True,
-)
-async def enable_emoji_blocker(event):
-    global BiLaL
-    BiLaL = True
-    active_sthon.append(event.chat_id)
-    await event.edit(f"**᯽︙ تم تفعيل منع ارسال الايموجي المُميز بنجاح ✓**")
-
-@l313l.ar_cmd(
-    pattern="المميز تعطيل$",
-    command=("المميز تعطيل", plugin_category),
-    info={
-        "header": "",
-        "description": "",
-        "usage": [
-            "{tr}المميز تعطيل",
-        ],
-    },
-    require_admin=True,
-)
+@l313l.ar_cmd(pattern="المميز تفعيل")
 async def disable_emoji_blocker(event):
-    global BiLaL
-    BiLaL = False
-    active_sthon.remove(event.chat_id)
-    await event.edit("᯽︙ تم تعطيل امر منع الايموجي المُميز بنجاح ✓")
+    global sthon
+    sthon = True
+    sedthon.append(event.chat_id)
+    await event.edit("**᯽︙ ✓ تم تفعيل امر منع الايموجي المُميز بنجاح**")
+@l313l.ar_cmd(pattern="المميز تعطيل")
+async def disable_emoji_blocker(event):
+    global sthon
+    sthon = False
+    sedthon.remove(event.chat_id)
+    await event.edit("**᯽︙ تم تعطيل امر منع الايموجي المُميز بنجاح ✓ **")
