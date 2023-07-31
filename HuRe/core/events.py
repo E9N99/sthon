@@ -95,9 +95,9 @@ async def safe_check_text(msg):  # sourcery no-metrics
     if not msg:
         return False
     msg = str(msg)
-    from .session import HuRe
+    from .session import l131l
 
-    phone = str((await catub.get_entity(HuRe.uid)).phone)
+    phone = str((await l131l.get_entity(l131l.uid)).phone)
     return bool(
         (
             (Config.STRING_SESSION in msg)
