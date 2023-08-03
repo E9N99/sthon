@@ -28,7 +28,8 @@ from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from .pluginmanager import load_module
 from .tools import create_supergroup
 LOGS = logging.getLogger("HuRe")
-##Reda hands here
+ logging.getLogger('telethon').setLevel(logging.WARNING)
+##BiLaL hands here
 cmdhr = Config.COMMAND_HAND_LER
 bot = l313l
 ENV = bool(os.environ.get("ENV", False))
