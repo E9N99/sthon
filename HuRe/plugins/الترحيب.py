@@ -1,5 +1,5 @@
 # Copyright (C) 2021 HuRe TEAM
-# FILES WRITTEN BY  @lMl10l
+# FILES WRITTEN BY  @NUNUU
 
 from telethon import events
 from telethon.utils import get_display_name
@@ -22,18 +22,13 @@ LOGS = logging.getLogger(__name__)
 
 
 @l313l.on(events.ChatAction)
-async def _(event):  # sourcery no-metrics  # sourcery skip: low-code-quality
+async def _(event):
     cws = get_current_welcome_settings(event.chat_id)
     if (
         cws
         and (event.user_joined or event.user_added)
         and not (await event.get_user()).bot
     ):
-        if gvarstatus("clean_welcome") is None:
-            try:
-                await event.client.delete_messages(event.chat_id, cws.previous_welcome)
-            except Exception as e:
-                LOGS.warn(str(e))
         a_user = await event.get_user()
         chat = await event.get_chat()
         me = await event.client.get_me()
