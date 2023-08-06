@@ -1,4 +1,8 @@
-
+# اذا تخمط اذكر الحقوق رجـاءا  - 
+# كتابة وتعديل وترتيب  ~ @NUNUU
+# For ~ @E9N99
+#تعديل BiLaL / بـلال
+#من تعرف تخمط اذكر حقوق لتسوي نفسك مطور
 from ..sql_helper.group import auto_g, del_auto_g, get_auto_g
 import webcolors
 import asyncio
@@ -23,7 +27,7 @@ from . import AUTONAME, DEFAULT_GROUP, DEFAULT_BIO, edit_delete, l313l, logging
 from colour import Color
 
 plugin_category = "tools"
-# لتخمط ابن الكحبة
+# BiLaL
 DEFAULTUSERBIO = DEFAULT_BIO or "﴿ لا تَحزَن إِنَّ اللَّهَ مَعَنا ﴾ "
 DEFAULTUSERGRO = DEFAULT_GROUP or ""
 DEFAULTUSER = AUTONAME or ""
@@ -78,7 +82,6 @@ async def digitalpicloop():
         fnt = ImageFont.truetype(jep, 65)
         drawn_text.text((200, 200), current_time, font=fnt, fill=colo)
         img.save(autophoto_path)
-        file = await l313l.upload_file(autophoto_path)
         try:
             if i > 0:
                 await l313l(
@@ -87,14 +90,14 @@ async def digitalpicloop():
                     )
                 )
             i += 1
-            await l313l(functions.photos.UploadProfilePhotoRequest(file))
+            result = await l313l(functions.photos.UploadProfilePhotoRequest(file=await l313l.upload_file(autophoto_path)))
             os.remove(autophoto_path)
             await asyncio.sleep(60)
         except BaseException:
             return
         DIGITALPICSTART = gvarstatus("digitalpic") == "true"
 
-#Reda
+#BiLaL
 #اننننسخخخخخ هههههههههههههههههههههههههههههههههههههههههههههههههههههههههههههههههههههههه
 async def digitalgrouppicloop():
     "2KjZiNin2LPYt9ipINiz2YjYsdizINis2YrYqNir2YjZhiAo2KfYsNinINin2LPYqtio2K/ZhNiq2Ycg2LHYp9itINiq2KvYqNiqINmB2LTZhNmDKSDZhdi5INiq2K3Zitin2KrZiiDYp9iu2YjZg9mFINix2LbYpyBAcmQwcjA="
