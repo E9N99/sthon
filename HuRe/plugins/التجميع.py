@@ -1,4 +1,5 @@
- #bilal
+#by BiLaL For HuRe-HuRe
+# BiLaL
 # يمنع منعاً باتاً تخمط الملف خلي عندك كرامه ولتسرقة
 # Added some f. by BiLaL
 
@@ -16,10 +17,12 @@ from ..Config import Config
 import re
 from telethon import events
 c = requests.session()
-bot_username = '@zmmbot'
+bot_username = '@EEObot'
 bot_username2 = '@A_MAN9300BOT'
 bot_username3 = '@MARKTEBOT'
 bot_username4 = '@qweqwe1919bot'
+bot_username5 = '@xnsex21bot'
+bot_username6 = '@DamKombot'
 HuRe = ['yes']
 ConsoleJoker = Config.T7KM
 its_Reham = False
@@ -240,7 +243,7 @@ async def _(event):
         
 @l313l.on(admin_cmd(pattern="(ايقاف التجميع|ايقاف تجميع)"))
 async def cancel_collection(event):
-    await l313l.send_message('@zmmbot', '/start')
+    await l313l.send_message('@EEObot', '/start')
     await event.edit("** ᯽︙ تم الغاء التجميع من بوت المليار **")
     
 @l313l.on(admin_cmd(pattern="(تجميع الجوكر|تجميع جوكر)"))
@@ -369,6 +372,82 @@ async def _(event):
 
     else:
         await event.edit("يجب الدفع لاستعمال هذا الامر !")
+@l313l.on(admin_cmd(pattern="(تجميع العرب|تجميع عرب)"))
+async def _(event):
+    await event.edit("**᯽︙سيتم تجميع النقاط من بوت العرب , قبل كل شي تأكد من انك قمت بالانضمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
+    channel_entity = await l313l.get_entity(bot_username5)
+    await l313l.send_message(bot_username5, '/start')
+    await asyncio.sleep(4)
+    msg0 = await l313l.get_messages(bot_username5, limit=1)
+    await msg0[0].click(2)
+    await asyncio.sleep(4)
+    msg1 = await l313l.get_messages(bot_username5, limit=1)
+    await msg1[0].click(0)
+
+    chs = 1
+    for i in range(100):
+        await asyncio.sleep(4)
+        list = await l313l(GetHistoryRequest(peer=channel_entity, limit=1, offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
+        msgs = list.messages[0]
+        if msgs.message.find('لا يوجد قنوات في الوقت الحالي , قم بتجميع النقاط بطريقة مختلفة') != -1:
+            await l313l.send_message(event.chat_id, "تم الانتهاء من التجميع")
+            break
+
+        url = msgs.reply_markup.rows[0].buttons[0].url
+
+        try:
+            try:
+                await l313l(JoinChannelRequest(url))
+            except:
+                bott = url.split('/')[-1]
+                await l313l(ImportChatInviteRequest(bott))
+            msg2 = await l313l.get_messages(bot_username5, limit=1)
+            await msg2[0].click(text='تحقق')
+            chs += 1
+            await event.edit(f"تم الانضمام في {chs} قناة")
+        except:
+            msg2 = await l313l.get_messages(bot_username5, limit=1)
+            await msg2[0].click(text='التالي')
+            chs += 1
+            await event.edit(f"القناة رقم {chs}")
+
+    await l313l.send_message(event.chat_id, "تم الانتهاء من التجميع")
+@l313l.on(admin_cmd(pattern="تجميع دعمكم"))
+async def _(event):
+    await event.edit("**᯽︙سيتم تجميع النقاط من بوت دعمكم , قبل كل شي تأكد من انك قمت بالانضمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
+    channel_entity = await l313l.get_entity(bot_username6)
+    await l313l.send_message('@DamKombot', '/start')
+    await asyncio.sleep(4)
+    msg0 = await l313l.get_messages(bot_username6, limit=1)
+    await msg0[0].click(1)
+    await asyncio.sleep(4)
+    msg1 = await l313l.get_messages(bot_username6, limit=1)
+    await msg1[0].click(0)
+    chs = 1
+    for i in range(100):
+        await asyncio.sleep(4)
+        list = await l313l(GetHistoryRequest(peer=channel_entity, limit=1, offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
+        msgs = list.messages[0]
+        if msgs.message.find('لا يوجد قنوات حالياً 🤍') != -1:
+            await l313l.send_message(event.chat_id, "تم الانتهاء من التجميع")
+            break
+        msg_text = msgs.message  # الكود تمت كتابتهُ من قبل سورس سيدثون 
+        if "اشترك فالقناة @" in msg_text:
+            aljoker_channel = msg_text.split('@')[1].split()[0]
+            try:
+                entity = await l313l.get_entity(aljoker_channel)
+                if entity:
+                    await l313l(JoinChannelRequest(entity.id))
+                    await asyncio.sleep(4)
+                    msg2 = await l313l.get_messages(bot_username6, limit=1)
+                    await msg2[0].click(text='اشتركت ✅')
+                    chs += 1
+                    await event.edit(f"تم الانظمام الى القناة رقم {chs}")
+            except:
+                await l313l.send_message(event.chat_id, f"**خطأ , ممكن تبندت**")
+                break
+
+    await l313l.send_message(event.chat_id, "تم الانتهاء من التجميع")
 
 @l313l.ar_cmd(pattern="راتب وعد(?:\s|$)([\s\S]*)")
 async def hussein(event):
