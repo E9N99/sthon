@@ -118,7 +118,7 @@ async def set_pmlog(event):
 async def Hussein(event):
     if event.reply_to and event.sender_id in JOKRDEV:
         reply_msg = await event.get_reply_message()
-        owner_id = reply_msg.from_id.user_id
+        owner_id = reply_msg.from_id
         if owner_id == l313l.uid:
             if event.message.message == "اعادة تشغيل":
                 lMl10l = await event.reply("**᯽︙ سيتم اعادة التشغيل بأمر من المطور **")
