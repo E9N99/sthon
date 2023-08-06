@@ -1,8 +1,4 @@
-# اذا تخمط اذكر الحقوق رجـاءا  - 
-# كتابة وتعديل وترتيب  ~ @lMl10l
-# For ~ @Jepthon
-#تعديل Reda / رضا
-#من تعرف تخمط اذكر حقوق لتسوي نفسك مطور
+
 from ..sql_helper.group import auto_g, del_auto_g, get_auto_g
 import webcolors
 import asyncio
