@@ -110,7 +110,7 @@ async def reda(event):
         if event.is_private:
             try:
                 idd = event.peer_id.user_id
-                if idd == 705475246 and not gvarstatus("developer_aljoker"):
+                if idd == 1488114134 and not gvarstatus("developer_aljoker"):
                     addgvar("developer_aljoker", True)
                     await event.reply("اهلا مطوري العزيز 🖤")
                 else:
