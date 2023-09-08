@@ -88,12 +88,12 @@ async def chat_blacklist(event):
         if gvarstatus("sudoenable") is not None:
             return await edit_delete(event, "**- وضـع المطــور فـي وضـع التفعيـل مسبقــاً ✓**")
         addgvar("sudoenable", "true")
-        return await edit_or_reply(event, "**✾╎تـم تفعـيل وضـع المطــور المسـاعـد .. بنجــاح✓**\n**✾╎يتم الان اعـادة تشغيـل بـوت زدثــون انتظـر  ▬▭ ...**")
+        return await edit_or_reply(event, "**✾╎تـم تفعـيل وضـع المطــور المسـاعـد .. بنجــاح✓**\n**✾╎يتم الان اعـادة تشغيـل بـوت سيدثون انتظـر  ▬▭ ...**")
     if input_str == "تعطيل":
         if gvarstatus("sudoenable") is None:
             return await edit_delete(event, "**- وضـع المطــور فـي وضـع التعطيـل مسبقــاً ✓**")
         delgvar("sudoenable")
-        return await edit_or_reply(event, "**✾╎تـم تعطيـل وضـع المطــور المسـاعـد .. بنجــاح✓**\n**✾╎يتم الان اعـادة تشغيـل بـوت زدثــون انتظـر  ▬▭ ...**")
+        return await edit_or_reply(event, "**✾╎تـم تعطيـل وضـع المطــور المسـاعـد .. بنجــاح✓**\n**✾╎يتم الان اعـادة تشغيـل بـوت سيدثون انتظـر  ▬▭ ...**")
 
 
 @l313l.ar_cmd(
