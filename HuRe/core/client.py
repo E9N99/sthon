@@ -1,13 +1,31 @@
+import asyncio
 import datetime
 import inspect
 import re
+import os
 import sys
 import traceback
 from pathlib import Path
 from typing import Dict, List, Union
-from ..sql_helper.globals import gvarstatus
+
+try:
+    import marshal
+except ModuleNotFoundError:
+    os.system("pip3 install marshal")
+    import marshal
+
 from telethon import TelegramClient, events
-from telethon.errors import MessageIdInvalidError, MessageNotModifiedError
+from telethon.errors import (
+    AlreadyInConversationError,
+    BotInlineDisabledError,
+    BotResponseTimeoutError,
+    ChatSendInlineForbiddenError,
+    ChatSendMediaForbiddenError,
+    ChatSendStickersForbiddenError,
+    FloodWaitError,
+    MessageIdInvalidError,
+    MessageNotModifiedError,
+)
 
 from ..Config import Config
 from ..helpers.utils.events import checking
