@@ -90,3 +90,19 @@ async def get_users(event):
                 except Exception as e:
                     error = str(e) ; f = f + 1             
     return await roz.edit(f"**▾∮اڪتـملت الأضافـة ✅** \n\n• تـم بنجـاح اضافـة `{s}` \n• خـطأ بأضافـة `{f}`")
+
+@l313l.on(admin_cmd(pattern=r"ضيف_جهاتي ?(.*)"))
+async def Hussein(event):
+    channel_id = event.chat_id  
+    contacts = await client(functions.contacts.GetContactsRequest(hash=0))
+    added_count = 0 
+    for user in contacts.users:
+        try:
+            await client(functions.channels.InviteToChannelRequest(
+                channel=channel_id,
+                users=[user.id],
+            ))
+            added_count += 1
+        except Exception as e:
+            await event.reply(f"**᯽︙ تم إضافة {added_count} من جهات اتصالي**")
+    await event.reply(f"**᯽︙ تم إضافة {added_count} من جهات اتصالي**")
