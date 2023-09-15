@@ -21,7 +21,7 @@ StartTime = time.time()
 JEPVERSION = "3.1.3"
 
 
-if Config.UPSTREAM_REPO == "jepthoniq":
+if Config.UPSTREAM_REPO == "E9N99":
     UPSTREAM_REPO_URL = "https://github.com/E9N99/sthon"
 else:
     UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
