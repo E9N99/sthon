@@ -97,7 +97,7 @@ async def startupmessage():
         if BOTLOG:
             Config.CATUBLOGO = await l313l.tgbot.send_file(
                 BOTLOG_CHATID,
-                "https://t.me/MemeSoundJep/24",
+                "https://telegra.ph/file/c583dba75383115efacc3.mp4",
                 caption="**‏᯽︙ بــوت سيدثون يـعـمـل بـنـجـاح ✓ \n᯽︙ أرسل `.الاوامر`لرؤية اوامر السورس \n  ᯽︙ لأستعمال بوت الأختراق عبر كود التيرمكس أرسل`.هاك`**",
                 buttons=[(Button.url("سورس سيدثون", "https://t.me/E9N99"),)],
             )
