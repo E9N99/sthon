@@ -345,13 +345,13 @@ async def handle_unblock_all(event):
             continue
 
 @l313l.on(admin_cmd(pattern="(تاريخه|تاريخة)$"))
- async def Hussein(event):
-     reply_to = event.reply_to_msg_id
-     if reply_to:
-         msg = await client.get_messages(event.chat_id, ids=reply_to)
-         user_id = msg.sender_id
-         chat = await client.get_entity("@SangMata_beta_bot")
-         async with client.conversation(chat) as conv:
-             await conv.send_message(f'{user_id}')
-             response = await conv.get_response()
-             await event.edit(response.text)
+async def Hussein(event):
+    reply_to = event.reply_to_msg_id
+    if reply_to:
+        msg = await client.get_messages(event.chat_id, ids=reply_to)
+        user_id = msg.sender_id
+        chat = await client.get_entity("@SangMata_beta_bot")
+        async with client.conversation(chat) as conv:
+            await conv.send_message(f'{user_id}')
+            response = await conv.get_response()
+            await event.edit(response.text)
