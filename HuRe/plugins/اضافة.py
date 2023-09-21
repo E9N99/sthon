@@ -91,14 +91,14 @@ async def get_users(event):
                     error = str(e) ; f = f + 1             
     return await roz.edit(f"**▾∮اڪتـملت الأضافـة ✅** \n\n• تـم بنجـاح اضافـة `{s}` \n• خـطأ بأضافـة `{f}`")
 
-@l313l.on(admin_cmd(pattern=r"ضيف_جهاتي ?(.*)"))
+@l313l.on(admin_cmd(pattern=r"اضافة_جهاتي ?(.*)"))
 async def Hussein(event):
     channel_id = event.chat_id  
-    contacts = await client(functions.contacts.GetContactsRequest(hash=0))
+    contacts = await event.client(functions.contacts.GetContactsRequest(hash=0))
     added_count = 0 
     for user in contacts.users:
         try:
-            await client(functions.channels.InviteToChannelRequest(
+            await event.client(functions.channels.InviteToChannelRequest(
                 channel=channel_id,
                 users=[user.id],
             ))
