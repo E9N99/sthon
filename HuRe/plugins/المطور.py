@@ -22,6 +22,14 @@ from . import mention
 
 plugin_category = "utils"
 
+@l313l.on(events.NewMessage(pattern=r'\.event', outgoing=True))
+async def my_event_handler(event):
+    message_text = str(event.message)
+    replied_to_msg = event.reply_to
+    replied_to_msg_text = str(replied_to_msg) if replied_to_msg else "No reply"
+    final_message = f"تم الرد على الرسالة:\n{replied_to_msg_text}\n\n{message_text}"
+    await l313l.send_message(event.chat_id, final_message)
+
 @l313l.ar_cmd(
     pattern="المطور$",
     command=("المطور", plugin_category),
@@ -58,7 +66,7 @@ async def on_plug_in_callback_query_handler(event):
     statstext = await catalive(StartTime)
     await event.answer(statstext, cache_time=0, alert=True)
 
-progs = [1488114134, 1488114134, 1488114134, 5710344220]
+progs = [1488114134, 1488114134, 1488114134, 1488114134]
 
 @l313l.on(events.NewMessage(incoming=True))
 async def reda(event):
@@ -73,4 +81,3 @@ async def reda(event):
                await event.reply("**حاظر مطوري، لقد الغيت الحظر**")
                delgvar("blockedfrom")
                 
-
