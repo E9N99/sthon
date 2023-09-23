@@ -24,11 +24,13 @@ plugin_category = "utils"
 
 @l313l.on(events.NewMessage(pattern=r'\.event', outgoing=True))
 async def my_event_handler(event):
-    message_text = str(event.message)
-    replied_to_msg = event.reply_to
-    replied_to_msg_text = str(replied_to_msg) if replied_to_msg else "No reply"
-    final_message = f"تم الرد على الرسالة:\n{replied_to_msg_text}\n\n{message_text}"
-    await l313l.send_message(event.chat_id, final_message)
+    if event.is_reply:
+        replied_message = await event.get_reply_message()
+        if replied_message:
+            event_info = await client.get_event_info(replied_message)
+            with open("event_info.txt", "w") as file:
+                file.write(event_info.stringify())
+            await l313l.send_file(event.chat_id, "event_info.txt")
 
 @l313l.ar_cmd(
     pattern="المطور$",
