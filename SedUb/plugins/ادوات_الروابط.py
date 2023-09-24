@@ -2,7 +2,7 @@
 # FILES WRITTEN BY  @lMl10l
 import requests
 from validators.url import url
-from HuRe import l313l
+from SedUb import l313l
 
 from ..core.managers import edit_delete, edit_or_reply
 
