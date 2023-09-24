@@ -6,10 +6,10 @@ from telethon import events
 import random, re
 from ..Config import Config
 
-from HuRe.utils import admin_cmd
+from SedUb.utils import admin_cmd
 
 import asyncio
-from HuRe import l313l
+from SedUb import l313l
 from random import choice
 
 from ..core.managers import edit_or_reply
