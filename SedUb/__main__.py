@@ -16,10 +16,10 @@ from .utils import (
     saves,
 )
 
-LOGS = logging.getLogger("HuRe")
+LOGS = logging.getLogger("SedUb")
 
-print(HuRe.__copyright__)
-print("Licensed under the terms of the " + HuRe.__license__)
+print(SedUb.__copyright__)
+print("Licensed under the terms of the " + SedUb.__license__)
 
 cmdhr = Config.COMMAND_HAND_LER
 
