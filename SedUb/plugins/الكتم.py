@@ -8,7 +8,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChatBannedRights
 from telethon.utils import get_display_name
 
-from HuRe import l313l
+from SedUb import l313l
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import _format
