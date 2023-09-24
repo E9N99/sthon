@@ -7,7 +7,7 @@ from datetime import datetime
 
 from telethon.tl import functions, types
 
-from HuRe import l313l
+from SedUb import l313l
 
 from ..Config import Config
 from ..core.logger import logging
