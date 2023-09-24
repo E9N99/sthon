@@ -1,6 +1,6 @@
 import sys
-import HuRe
-from HuRe import BOTLOG_CHATID, HEROKU_APP, PM_LOGGER_GROUP_ID
+import SedUb
+from SedUb import BOTLOG_CHATID, HEROKU_APP, PM_LOGGER_GROUP_ID
 from .Config import Config
 from .core.logger import logging
 from .core.session import l313l
