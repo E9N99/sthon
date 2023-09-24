@@ -1,10 +1,10 @@
 # Copyright (C) 2021 HuRe TEAM
-# FILES WRITTEN BY  @lMl10l
+# FILES WRITTEN BY  @NUNUU
 import asyncio
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from HuRe import l313l
+from SedUb import l313l
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers import get_user_from_event, sanga_seperator
