@@ -7,7 +7,7 @@ from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
 from telethon.tl.functions.photos import DeletePhotosRequest, GetUserPhotosRequest
 from telethon.tl.types import Channel, Chat, InputPhoto, User
 
-from HuRe import l313l
+from SedUb import l313l
 
 from ..Config import Config
 from ..core.logger import logging
