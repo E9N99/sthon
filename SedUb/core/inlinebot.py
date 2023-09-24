@@ -228,7 +228,7 @@ async def inline_handler(event):  # sourcery no-metrics
             buttons = [
                 (
                     Button.inline("الحـالة ⚒️", data="stats"),
-                    Button.url(" HuRe UsᴇʀBoᴛ", "https://t.me/X_X_X_X_R"),
+                    Button.url(" SedUb UsᴇʀBoᴛ", "https://t.me/X_X_X_X_R"),
                 )
             ]
             ALIVE_PIC = gvarstatus("ALIVE_PIC")
@@ -300,7 +300,7 @@ async def inline_handler(event):  # sourcery no-metrics
             query = query[7:]
             user, txct = query.split(" ", 1)
             builder = event.builder
-            troll = os.path.join("./HuRe", "troll.txt")
+            troll = os.path.join("./SedUb", "troll.txt")
             try:
                 jsondata = json.load(open(troll))
             except Exception:
@@ -350,7 +350,7 @@ async def inline_handler(event):  # sourcery no-metrics
             query = query[7:]
             user, txct = query.split(" ", 1)
             builder = event.builder
-            secret = os.path.join("./HuRe", "secrets.txt")
+            secret = os.path.join("./SedUb", "secrets.txt")
             try:
                 jsondata = json.load(open(secret))
             except Exception:
