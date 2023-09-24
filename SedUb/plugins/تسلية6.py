@@ -7,7 +7,7 @@ import asyncio
 import os
 import re
 
-from HuRe import l313l
+from SedUb import l313l
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import reply_id
@@ -92,7 +92,7 @@ async def nekobot(cat):
     info={
         "header": "Change my mind banner with given custom text",
         "usage": "{tr}غير عقلي <text>",
-        "examples": "{tr}غير عقلي Catuserbot is One of the Popular HuRe",
+        "examples": "{tr}غير عقلي Catuserbot is One of the Popular SedUb",
     },
 )
 async def nekobot(cat):
@@ -122,7 +122,7 @@ async def nekobot(cat):
     info={
         "header": "kanna chan sticker with given custom text",
         "usage": "{tr}كانا text",
-        "examples": "{tr}kanna HuRe is One of the Popular HuRe",
+        "examples": "{tr}kanna SedUb is One of the Popular SedUb",
     },
 )
 async def nekobot(cat):
@@ -153,7 +153,7 @@ async def nekobot(cat):
     info={
         "header": "The desired person tweet sticker with given custom text",
         "usage": "{tr}تويت <username> ; <text>",
-        "examples": "{tr}tweet iamsrk ; HuRe is One of the Popular HuRe",
+        "examples": "{tr}tweet iamsrk ; SedUb is One of the Popular SedUb",
     },
 )
 async def nekobot(cat):
