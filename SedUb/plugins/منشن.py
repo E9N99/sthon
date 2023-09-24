@@ -1,7 +1,7 @@
 # By Reda for HuRe
-# Tel: @rd0r0
+# Tel: @NUNUU
 # شعندك داخل للملف تريد تخمطة ههههههههه اخمط ونسبة لنفسك ماوصيك :*
-from HuRe import l313l
+from SedUb import l313l
 import asyncio
 import time
 from ..core.managers import edit_or_reply
