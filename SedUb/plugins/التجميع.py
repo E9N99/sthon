@@ -248,7 +248,7 @@ async def cancel_collection(event):
     
 @l313l.on(admin_cmd(pattern="(تجميع الجوكر|تجميع جوكر)"))
 async def _(event):
-    if HuRe[0] == "yes":
+    if SedUb[0] == "yes":
         await event.edit("**᯽︙سيتم تجميع النقاط من بوت الجوكر , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
         channel_entity = await l313l.get_entity(bot_username2)
         await l313l.send_message('@A_MAN9300BOT', '/start')
@@ -261,7 +261,7 @@ async def _(event):
 
         chs = 1
         for i in range(100):
-            if HuRe[0] == 'no':
+            if SedUb[0] == 'no':
                 break
             await asyncio.sleep(2)
 
@@ -290,7 +290,7 @@ async def _(event):
         await event.edit("يجب الدفع لاستعمال هذا الامر !")
 @l313l.on(admin_cmd(pattern="(تجميع العقاب|تجميع عقاب)"))
 async def _(event):
-    if HuRe[0] == "yes":
+    if SedUb[0] == "yes":
         await event.edit("**᯽︙سيتم تجميع النقاط من بوت العقاب , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
         channel_entity = await l313l.get_entity(bot_username3)
         await l313l.send_message('@MARKTEBOT', '/start')
@@ -332,7 +332,7 @@ async def _(event):
         await event.edit("يجب الدفع لاستعمال هذا الامر !")
 @l313l.on(admin_cmd(pattern="(تجميع المليون|تجميع مليون)"))
 async def _(event):
-    if HuRe[0] == "yes":
+    if SedUb[0] == "yes":
         await event.edit("**᯽︙سيتم تجميع النقاط من بوت المليون , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
         channel_entity = await l313l.get_entity(bot_username4)
         await l313l.send_message('@qweqwe1919bot', '/start')
