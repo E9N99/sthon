@@ -5,7 +5,7 @@ from asyncio.exceptions import TimeoutError
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from HuRe import l313l
+from SedUb import l313l
 from ..helpers.utils import reply_id
 
 # الي يخمط ويكول من كتابتي الا امه انيجه وقد اعذر من انذر
