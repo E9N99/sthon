@@ -399,7 +399,7 @@ async def inline_handler(event):  # sourcery no-metrics
         elif match3:
             query = query[5:]
             builder = event.builder
-            hide = os.path.join("./HuRe", "hide.txt")
+            hide = os.path.join("./SedUb", "hide.txt")
             try:
                 jsondata = json.load(open(hide))
             except Exception:
@@ -422,8 +422,8 @@ async def inline_handler(event):  # sourcery no-metrics
         elif string == "help":
             _result = main_menu()
             result = builder.article(
-                title="© HuRe Help",
-                description="Help menu for HuRe",
+                title="© SedUb Help",
+                description="SedUb menu for SedUb",
                 text=_result[0],
                 buttons=_result[1],
                 link_preview=False,
