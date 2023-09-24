@@ -9,14 +9,14 @@ import re
 import time
 from datetime import datetime
 
-from HuRe.utils import sudo_cmd
+from SedUb.utils import sudo_cmd
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl import types
 from telethon.utils import get_attributes
 from youtube_dl import YoutubeDL
 from urlextract import URLExtract
 from wget import download
-from HuRe import l313l
+from SedUb import l313l
 from youtube_dl.utils import (
     ContentTooShortError,
     DownloadError,
@@ -380,7 +380,7 @@ async def kakashi(event):
     )
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from HuRe import l313l
+from SedUb import l313l
 
 
 @l313l.on(admin_cmd(pattern="تيك توك(?: |$)(.*)"))
