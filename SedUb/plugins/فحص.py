@@ -15,7 +15,7 @@ from telethon.errors.rpcerrorlist import (
 )
 from telethon.events import CallbackQuery
 
-from HuRe import StartTime, l313l, JEPVERSION
+from SedUb import StartTime, l313l, JEPVERSION
 from ..Config import Config
 from ..core.managers import edit_or_reply
 from ..helpers.functions import catalive, check_data_base_heal_th, get_readable_time
@@ -67,8 +67,8 @@ async def amireallyalive(event):
     except BaseException:
         pass
     if HuRe_IMG:
-        HuRe = [x for x in HuRe_IMG.split()]
-        PIC = random.choice(HuRe)
+        SedUb = [x for x in HuRe_IMG.split()]
+        PIC = random.choice(SedUb)
         try:
             await event.client.send_file(
                 event.chat_id, PIC, caption=caption, reply_to=reply_to_id
