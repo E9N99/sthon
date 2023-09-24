@@ -1,9 +1,9 @@
 
-from HuRe import bot, l313l
+from SedUb import bot, l313l
 #By Source sedthon @E9N99
 from telethon import events, functions, types, Button
 from datetime import timedelta
-from HuRe.utils import admin_cmd
+from SedUb.utils import admin_cmd
 import asyncio
 from ..Config import Config
 import os, asyncio, re
