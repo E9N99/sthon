@@ -2,7 +2,7 @@ import importlib
 import sys
 from pathlib import Path
 
-from HuRe import CMD_HELP, LOAD_PLUG
+from SedUb import CMD_HELP, LOAD_PLUG
 
 from ..Config import Config
 from ..core import LOADED_CMDS, PLG_INFO
@@ -20,7 +20,7 @@ def load_module(shortname, plugin_path=None):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        path = Path(f"HuRe/plugins/{shortname}.py")
+        path = Path(f"SedUb/plugins/{shortname}.py")
         checkplugins(path)
         name = "SedUb.plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
