@@ -60,19 +60,19 @@ async def get_user_from_id(user, event):
     return user_obj
 @l313l.on(admin_cmd(pattern="{up_admin} ?(.*)"))
 async def gben(HuRe):
-    dc = razan = HuRe
+    dc = razan = SedUb
     i = 0
     sender = await dc.get_sender()
-    me = await HuRe.client.get_me()
+    me = await SedUb.client.get_me()
     await razan.edit("▾∮ يتم رفع المستخدم في جميع المجموعات")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
-    await HuRe.get_chat()
-    if HuRe.is_private:
-        user = HuRe.chat
-        rank = HuRe.pattern_match.group(1)
+    await SedUb.get_chat()
+    if SedUb.is_private:
+        user = SedUb.chat
+        rank = SedUb.pattern_match.group(1)
     else:
-        HuRe.chat.title
+        SedUb.chat.title
     try:
         user, rank = await get_full_user(HuRe)
     except:
