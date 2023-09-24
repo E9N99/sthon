@@ -1,7 +1,7 @@
 from asyncio import sleep
 
-from HuRe import l313l
-from HuRe.core.logger import logging
+from SedUb import l313l
+from SedUb.core.logger import logging
 
 plugin_category = "tools"
 LOGS = logging.getLogger(__name__)
