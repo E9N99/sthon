@@ -3,7 +3,7 @@
 
 import asyncio
 from telethon import events
-from HuRe import l313l
+from SedUb import l313l
 import random
 from ..core.managers import edit_or_reply
 from ..helpers.utils import _format
