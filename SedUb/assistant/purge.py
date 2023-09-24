@@ -1,4 +1,4 @@
-#(c) Copyright HuRe 2020-21
+#(c) Copyright SedUb 2020-21
 #جميع الحقوق محفودظة لسورس سيدثون 
 #By ~  @RR9R7
 import asyncio
@@ -7,7 +7,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import MessageDeleteForbiddenError
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from HuRe import bot
+from SedUb import bot
 from .. import *
 
 OWNER_ID = bot.uid
