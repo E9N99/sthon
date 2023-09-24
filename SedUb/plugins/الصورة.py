@@ -1,5 +1,5 @@
 #ترجمه فريق الجوكر على التيلكرام
-from HuRe import CMD_HELP, l313l
+from SedUb import CMD_HELP, l313l
 
 from ..core.managers import edit_delete, edit_or_reply
 
