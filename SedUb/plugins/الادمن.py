@@ -23,7 +23,7 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from HuRe import l313l
+from SedUb import l313l
 
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
