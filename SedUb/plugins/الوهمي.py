@@ -100,15 +100,15 @@ async def _(e):
 
 
 @l313l.on(admin_cmd(pattern="للكل تاك$"))
-async def listall(HuRe):
-    if HuRe.fwd_from:
+async def listall(SedUb):
+    if SedUb.fwd_from:
         return
     mentions = "- هذه هي قائمة جميع الاعضاء هنا: "
     chat = await bot.get_input_chat()
     async for x in borg.iter_participants(chat, 2000):
         mentions += f" \n[{x.first_name}](tg://user?id={x.id})"
-    await HuRe.reply(mentions)
-    await HuRe.delete()
+    await SedUb.reply(mentions)
+    await SedUb.delete()
 
 R = (
     "┈┈╱▔▔▔▔▔▔▔▔▔▔▔▏\n"
