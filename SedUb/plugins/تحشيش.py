@@ -6,7 +6,7 @@ from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.utils import get_input_location
 
-from HuRe import l313l
+from SedUb import l313l
 from random import choice
 from l313l.razan.resources.strings import *
 from telethon import events
@@ -21,7 +21,7 @@ plugin_category = "utils"
 
 
 
-#كـتابة المـلف وتعديل.    :   السيد حسين.   اخمط وسمي روحك مطور فرخي 😂
+#كـتابة المـلف وتعديل.    :   السيد بلال.   اخمط وسمي روحك مطور فرخي 😂
 # اذا انت ابن حرام اخمط 😂
 # اي بعدك تريد تخمط ترا من تخمط مراح تنجح
 rehu = [
