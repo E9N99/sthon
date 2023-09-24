@@ -19,7 +19,7 @@ from pySmartDL import SmartDL
 from telethon.errors import FloodWaitError, ChannelInvalidError
 from telethon.tl import functions
 from telethon import types
-from HuRe import BOTLOG_CHATID
+from SedUb import BOTLOG_CHATID
 from ..Config import Config
 from ..helpers.utils import _format
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
