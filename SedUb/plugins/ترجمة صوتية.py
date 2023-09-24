@@ -1,7 +1,7 @@
 import os
 from telethon import functions 
 import subprocess
-from HuRe.helpers.functions.functions import translate
+from SedUb.helpers.functions.functions import translate
 from datetime import datetime
 from ALJoker import get_string
 
@@ -10,7 +10,7 @@ from ALJoker import get_string
 from gtts import gTTS
 
 
-from HuRe import l313l
+from SedUb import l313l
 
 
 from ..core.managers import edit_delete, edit_or_reply
