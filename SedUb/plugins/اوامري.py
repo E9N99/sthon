@@ -5,7 +5,7 @@ from telethon.events import CallbackQuery
 
 from l313l.razan.resources.assistant import *
 from l313l.razan.resources.mybot import *
-from HuRe import l313l
+from SedUb import l313l
 from ..core import check_owner
 from ..Config import Config
 
@@ -60,14 +60,14 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             elif JEP_IC:
                 result = builder.document(
                     JEP_IC,
-                    title="HuRe",
+                    title="SedUb",
                     text=ROE,
                     buttons=buttons,
                     link_preview=False,
                 )
             else:
                 result = builder.article(
-                    title="HuRe",
+                    title="SedUb",
                     text=ROE,
                     buttons=buttons,
                     link_preview=False,
