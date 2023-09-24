@@ -3,7 +3,7 @@ import re
 from telethon import Button
 from telethon.events import CallbackQuery, InlineQuery
 
-from HuRe import CMD_HELP, l313l
+from SedUb import CMD_HELP, l313l
 
 # 𝗧𝗲𝗹𝗲𝗚𝗿𝗮𝗠 : @jepthon  ~ @lMl10l
 from ..core.decorators import check_owner
