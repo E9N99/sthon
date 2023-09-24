@@ -11,7 +11,7 @@ from telethon.errors.rpcerrorlist import (
 )
 from telethon.events import CallbackQuery
 
-from HuRe import StartTime, l313l, JEPVERSION
+from SedUb import StartTime, l313l, JEPVERSION
 
 from ..Config import Config
 from ..core.managers import edit_or_reply
