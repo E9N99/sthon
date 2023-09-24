@@ -1,9 +1,9 @@
 import sys
 import os
 from typing import Any, Dict, List, Union
-from glob import glob
-from HuRe import *
-from HuRe.helpers.functions.functions import translate
+from SedUb import glob
+from SedUb import *
+from SedUb.helpers.functions.functions import translate
 try:
     from yaml import safe_load
 except ModuleNotFoundError:
