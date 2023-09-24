@@ -4,14 +4,14 @@ import re
 
 from telethon.events import CallbackQuery
 
-from HuRe import l313l
+from SedUb import l313l
 
 
 @l313l.tgbot.on(CallbackQuery(data=re.compile(b"rzan_(.*)")))
 async def on_plug_in_callback_query_handler(event):
     timestamp = int(event.pattern_match.group(1).decode("UTF-8"))
-    if os.path.exists("./HuRe/secrets.txt"):
-        jsondata = json.load(open("./HuRe/secrets.txt"))
+    if os.path.exists("./SedUb/secrets.txt"):
+        jsondata = json.load(open("./SedUb/secrets.txt"))
         try:
             message = jsondata[f"{timestamp}"]
             userid = message["userid"]
