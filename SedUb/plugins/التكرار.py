@@ -24,18 +24,18 @@ async def spam_function(event, HuRe, l313l, sleeptimem, sleeptimet, DelaySpam=Fa
             if gvarstatus("spamwork") is None:
                 return
             if event.reply_to_msg_id:
-                await HuRe.reply(spam_message)
+                await SedUb.reply(spam_message)
             else:
                 await event.client.send_message(event.chat_id, spam_message)
             await asyncio.sleep(sleeptimet)
-    elif event.reply_to_msg_id and HuRe.media:
+    elif event.reply_to_msg_id and SedUb.media:
         for _ in range(counter):
             if gvarstatus("spamwork") is None:
                 return
-            HuRe = await event.client.send_file(
-                event.chat_id, HuRe, caption=HuRe.text
+            SedUb = await event.client.send_file(
+                event.chat_id, HuRe, caption=SedUb.text
             )
-            await _catutils.unsavegif(event, HuRe)
+            await _catutils.unsavegif(event, SedUb)
             await asyncio.sleep(sleeptimem)
         if BOTLOG:
             if DelaySpam is not True:
@@ -65,9 +65,9 @@ async def spam_function(event, HuRe, l313l, sleeptimem, sleeptimet, DelaySpam=Fa
                 )
 
             SedUb = await event.client.send_file(BOTLOG_CHATID, HuRe)
-            await _catutils.unsavegif(event, HuRe)
+            await _catutils.unsavegif(event, SedUb)
         return
-    elif event.reply_to_msg_id and HuRe.text:
+    elif event.reply_to_msg_id and SedUb.text:
         spam_message = SedUb.text
         for _ in range(counter):
             if gvarstatus("spamwork") is None:
