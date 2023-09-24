@@ -2,10 +2,10 @@ import random
 from telethon import events
 import random, re
 
-from HuRe.utils import admin_cmd
+from SedUb.utils import admin_cmd
 
 import asyncio
-from HuRe import l313l
+from SedUb import l313l
 
 from ..core.managers import edit_or_reply
 from l313l.razan.resources.strings import *
@@ -28,7 +28,7 @@ async def _(event):
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
             await event.edit(
-                "˛ HuRe ، ٰFٓoٍَِNٌtSَ\n"
+                "˛ SedUb ، ٰFٓoٍَِNٌtSَ\n"
                 "•━═━═━═━═━━═━═━═━═━•\n"
                 "**قائـمة اوامر الزغرفة :**\n"
                 " `.زغرفة0`\n"
@@ -43,7 +43,7 @@ async def _(event):
                 " `.زغرفة9`\n"
                 " **اكتب الاسم مع الامر للـزغرفة فقط انكليزي**\n"
                 "•━═━═━═━═━━═━═━═━═━•‌‌\n"
-                "˛ HuRe ، ٰUٍsٓEِrBُoََt - [CَِٓHُ](t.me/X_X_X_X_R)"
+                "˛ SedUb ، ٰUٍsٓEِrBُoََt - [CَِٓHُ](t.me/X_X_X_X_R)"
             )
 #by ~ @lMl10l
 @l313l.ar_cmd(
