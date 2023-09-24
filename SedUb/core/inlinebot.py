@@ -11,7 +11,7 @@ from telethon.errors import QueryIdInvalidError
 from telethon.events import CallbackQuery, InlineQuery
 from youtubesearchpython import VideosSearch
 
-from HuRe import l313l
+from SedUb import l313l
 
 from ..Config import Config
 from ..helpers.functions import rand_key
