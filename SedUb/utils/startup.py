@@ -335,7 +335,7 @@ async def verifyLoggerGroup():
         flag = True
     if flag:
         executable = sys.executable.replace(" ", "\\ ")
-        args = [executable, "-m", "HuRe"]
+        args = [executable, "-m", "SedUb"]
         os.execle(executable, *args, os.environ)
         sys.exit(0)
 
@@ -365,4 +365,4 @@ async def install_externalrepo(repo, branch, cfolder):
         )
     if os.path.exists(rpath):
         await runcmd(f"pip3 install --no-cache-dir -r {rpath}")
-    await load_plugins(folder="HuRe", extfolder=cfolder)
+    await load_plugins(folder="SedUb", extfolder=cfolder)
