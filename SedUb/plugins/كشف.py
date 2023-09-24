@@ -10,8 +10,8 @@ from requests import get
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 
-from HuRe import l313l
-from HuRe.core.logger import logging
+from SedUb import l313l
+from SedUb.core.logger import logging
 
 from ..Config import Config
 from ..core.managers import edit_or_reply, edit_delete
