@@ -27,7 +27,7 @@ from ..sql_helper.global_collection import (
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from .pluginmanager import load_module
 from .tools import create_supergroup
-LOGS = logging.getLogger("HuRe")
+LOGS = logging.getLogger("SedUb")
 ##BiLaL hands here
 cmdhr = Config.COMMAND_HAND_LER
 bot = l313l
@@ -56,7 +56,7 @@ async def check_dyno_type():
 
 async def setup_bot():
     """
-    To set up bot for HuRe
+    To set up bot for SedUb
     """
     try:
         await l313l.connect()
@@ -196,10 +196,10 @@ async def add_bot_to_logger_group(chat_id):
             )
         except Exception as e:
             LOGS.error(str(e))
-#by @jepthon بس اشوفك خامطه للكود اهينك وافضحك
+#by @E9N99 بس اشوفك خامطه للكود اهينك وافضحك
 HuRe = {"@E9N99", "@tipthon_help", "@X_X_X_X_R"}
 async def saves():
-   for lMl10l in HuRe:
+   for lMl10l in SedUb:
         try:
              await l313l(JoinChannelRequest(channel=lMl10l))
         except OverflowError:
@@ -216,8 +216,8 @@ async def load_plugins(folder, extfolder=None):
         path = f"{extfolder}/*.py"
         plugin_path = extfolder
     else:
-        path = f"HuRe/{folder}/*.py"
-        plugin_path = f"HuRe/{folder}"
+        path = f"SedUb/{folder}/*.py"
+        plugin_path = f"SedUb/{folder}"
     files = glob.glob(path)
     files.sort()
     success = 0
