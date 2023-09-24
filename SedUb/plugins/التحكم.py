@@ -3,8 +3,8 @@ from datetime import datetime
 import textwrap
 from telethon.utils import get_display_name
 
-from HuRe import l313l
-from HuRe.core.logger import logging
+from SedUb import l313l
+from SedUb.core.logger import logging
 
 from .. import *
 from ..Config import Config
