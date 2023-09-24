@@ -2,7 +2,7 @@ import sys
 from asyncio.exceptions import CancelledError
 from time import sleep
 import asyncio
-from HuRe import l313l
+from SedUb import l313l
 from telethon import events
 
 from ..core.logger import logging
