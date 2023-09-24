@@ -1,5 +1,5 @@
-from HuRe.Config import Config
-from HuRe.plugins import mention
+from SedUb.Config import Config
+from SedUb.plugins import mention
 
 RAZAN = Config.TG_BOT_USERNAME
 # for alive
