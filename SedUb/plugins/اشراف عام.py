@@ -74,7 +74,7 @@ async def gben(HuRe):
     else:
         SedUb.chat.title
     try:
-        user, rank = await get_full_user(HuRe)
+        user, rank = await get_full_user(SedUb)
     except:
         pass
     if me == user:
@@ -87,7 +87,7 @@ async def gben(HuRe):
         return await razan.edit(f"**▾∮ هنالك شي خطأ**")
     if user:
         telchanel = [d.entity.id
-                     for d in await HuRe.client.get_dialogs()
+                     for d in await SedUb.client.get_dialogs()
                      if (d.is_group or d.is_channel)
                      ]
         rgt = ChatAdminRights(add_admins=True,
@@ -110,18 +110,18 @@ async def gben(HuRe):
     )
 
 @l313l.on(admin_cmd(pattern="{down_admin} ?(.*)"))
-async def gben(HuRe):
+async def gben(SedUb):
     dc = razan = HuRe
     i = 0
     sender = await dc.get_sender()
-    me = await HuRe.client.get_me()
+    me = await SedUb.client.get_me()
     await razan.edit("**▾∮ يتم تنزيل الشخص من رتبة الاشراف في جميع الكروبات**")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await HuRe.get_chat()
     if HuRe.is_private:
-        user = HuRe.chat
-        rank = HuRe.pattern_match.group(1)
+        user = SedUb.chat
+        rank = SedUb.pattern_match.group(1)
     else:
         HuRe.chat.title
     try:
@@ -138,7 +138,7 @@ async def gben(HuRe):
         return await razan.edit(f"**▾∮ هنالك شي خطأ**")
     if user:
         telchanel = [d.entity.id
-                     for d in await HuRe.client.get_dialogs()
+                     for d in await SedUb.client.get_dialogs()
                      if (d.is_group or d.is_channel)
                      ]
         rgt = ChatAdminRights(add_admins=None,
@@ -149,7 +149,7 @@ async def gben(HuRe):
                                    pin_messages=None)
         for x in telchanel:
           try:
-             await HuRe.client(EditAdminRequest(x, user, rgt, rank))
+             await SedUb.client(EditAdminRequest(x, user, rgt, rank))
              i += 1
              await razan.edit(f"**▾∮ يتم تنزيله في **: `{i}` من المجموعات")
           except:
