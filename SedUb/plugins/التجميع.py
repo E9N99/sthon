@@ -303,7 +303,7 @@ async def _(event):
 
         chs = 1
         for i in range(100):
-            if HuRe[0] == 'no':
+            if SedUb[0] == 'no':
                 break
             await asyncio.sleep(3)
 
@@ -345,7 +345,7 @@ async def _(event):
 
         chs = 1
         for i in range(100):
-            if HuRe[0] == 'no':
+            if SedUb[0] == 'no':
                 break
             await asyncio.sleep(2)
 
