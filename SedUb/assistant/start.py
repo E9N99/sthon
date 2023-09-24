@@ -7,14 +7,14 @@ import re
 
 from telethon import Button, custom, events
 from telethon.tl.functions.users import GetFullUserRequest
-from HuRe import bot
-from HuRe.sql_helper.blacklist_assistant import (
+from SedUb import bot
+from SedUb.sql_helper.blacklist_assistant import (
     add_nibba_in_db,
     is_he_added,
     removenibba,
 )
-from HuRe.sql_helper.botusers_sql import add_me_in_db, his_userid
-from HuRe.sql_helper.idadder_sql import (
+from SedUb.sql_helper.botusers_sql import add_me_in_db, his_userid
+from SedUb.sql_helper.idadder_sql import (
     add_usersid_in_db,
     already_added,
     get_all_users,
@@ -81,7 +81,7 @@ async def users(event):
         for starked in total_users:
             users_list += ("==> {} \n").format(int(starked.chat_id))
         with io.BytesIO(str.encode(users_list)) as tedt_file:
-            tedt_file.name = "HuRe.txt"
+            tedt_file.name = "SedUb.txt"
             await tgbot.send_file(
                 event.chat_id,
                 tedt_file,
