@@ -1,6 +1,6 @@
-from HuRe import l313l, bot
+from SedUb import l313l, bot
 import time
-from HuRe import BOTLOG_CHATID
+from SedUb import BOTLOG_CHATID
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 import asyncio
 from ..Config import Config
