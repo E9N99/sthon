@@ -3,7 +3,7 @@
 import telethon.password as pwd_mod
 from telethon.tl import functions
 
-from HuRe import l313l
+from SedUb import l313l
 
 from ..Config import Config
 
