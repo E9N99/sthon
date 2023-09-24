@@ -1,8 +1,8 @@
 #edit  ~ @lMl10l for l313l 
 
 from telethon import events
-from HuRe.utils import admin_cmd
-from HuRe import l313l
+from SedUb.utils import admin_cmd
+from SedUb import l313l
 from . import *
  
 #جميع الحقوق محفوظة لسـورس الجوكر تخـمط تبيـن فشلـك
