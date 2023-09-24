@@ -5,7 +5,7 @@ from telethon.errors.rpcerrorlist import UserNotParticipantError
 from telethon.tl.functions.messages import ExportChatInviteRequest
 from telethon.tl.functions.users import GetFullUserRequest
 
-from HuRe import l313l
+from SedUb import l313l
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
@@ -50,7 +50,7 @@ async def _(event):
     if not jok:
         return await edit_or_reply(event, "**᯽︙ عـذراً .. قـم بـ إضـافة معـرف/ايـدي القنـاة الى الامـر اولاً**")
     if jok.startswith("@"):
-        HuRe = jok
+        SedUb = jok
     elif jok.startswith("https://t.me/"):
         SedUb = jok.replace("https://t.me/", "@")
     elif str(jok).startswith("-100"):
@@ -61,7 +61,7 @@ async def _(event):
         except BaseException:
             return await edit_or_reply(event, "**᯽︙ عـذراً .. معـرف/ايـدي القنـاة غيـر صـالح**\n**✾╎الرجـاء التـأكـد مـن المعـرف/الايـدي**")
     try:
-        HuRe = (await event.client.get_entity(SedUb)).id
+        SedUb = (await event.client.get_entity(SedUb)).id
     except BaseException:
         return await event.reply("**᯽︙ عـذراً .. معـرف/ايـدي القنـاة غيـر صـالح**\n**✾╎الرجـاء التـأكـد مـن المعـرف/الايـدي**")
     if is_post(str(SedUb) , event.chat_id):
@@ -90,7 +90,7 @@ async def _(event):
         except BaseException:
             return await edit_or_reply(event, "**᯽︙ عـذراً .. معـرف/ايـدي القنـاة غيـر صـالح**\n**✾╎الرجـاء التـأكـد مـن المعـرف/الايـدي**")
     try:
-        HuRe = (await event.client.get_entity(SedUb)).id
+        SedUb = (await event.client.get_entity(SedUb)).id
     except BaseException:
         return await event.reply("**᯽︙ عـذراً .. معـرف/ايـدي القنـاة غيـر صـالح**\n**✾╎الرجـاء التـأكـد مـن المعـرف/الايـدي**")
     if not is_post(str(SedUb), event.chat_id):
