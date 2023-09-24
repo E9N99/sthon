@@ -6,7 +6,7 @@ from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.utils import get_display_name
 
-from HuRe import l313l
+from SedUb import l313l
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.tools import media_type
@@ -15,7 +15,7 @@ from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from . import BOTLOG, BOTLOG_CHATID
 
 Mukrr = Config.MUKRR_ET or "مكرر"
-async def spam_function(event, HuRe, l313l, sleeptimem, sleeptimet, DelaySpam=False):
+async def spam_function(event, SedUb, l313l, sleeptimem, sleeptimet, DelaySpam=False):
 
     counter = int(l313l[0])
     if len(l313l) == 2:
@@ -33,7 +33,7 @@ async def spam_function(event, HuRe, l313l, sleeptimem, sleeptimet, DelaySpam=Fa
             if gvarstatus("spamwork") is None:
                 return
             SedUb = await event.client.send_file(
-                event.chat_id, HuRe, caption=SedUb.text
+                event.chat_id, SedUb, caption=SedUb.text
             )
             await _catutils.unsavegif(event, SedUb)
             await asyncio.sleep(sleeptimem)
@@ -64,7 +64,7 @@ async def spam_function(event, HuRe, l313l, sleeptimem, sleeptimet, DelaySpam=Fa
                     + f"**⌔∮ تم تنفيذ التكرار الوقتي  بنجاح في ** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **مع** {counter} **عدد المرات مع الرسالة أدناه مع التأخير** {sleeptimet} ** الثواني **",
                 )
 
-            SedUb = await event.client.send_file(BOTLOG_CHATID, HuRe)
+            SedUb = await event.client.send_file(BOTLOG_CHATID, SedUb)
             await _catutils.unsavegif(event, SedUb)
         return
     elif event.reply_to_msg_id and SedUb.text:
