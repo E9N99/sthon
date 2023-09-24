@@ -1,5 +1,5 @@
-from HuRe import *
-from HuRe import l313l
+from SedUb import *
+from SedUb import l313l
 from SedUb.utils import admin_cmd
 from telethon.tl.types import Channel, Chat, User
 from telethon.tl import functions, types
