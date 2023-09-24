@@ -5,7 +5,7 @@ import heroku3
 import requests
 import urllib3
 
-from HuRe import l313l
+from SedUb import l313l
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
