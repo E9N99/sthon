@@ -10,7 +10,7 @@ from telethon.errors.rpcerrorlist import (
     WebpageMediaEmptyError,
 )
 
-from HuRe import l313l
+from SedUb import l313l
 from telethon import events
 from ..core.managers import edit_or_reply
 from ..helpers.utils import reply_id
