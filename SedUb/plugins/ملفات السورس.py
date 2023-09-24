@@ -26,13 +26,13 @@ async def reda(event):
     pattern="الملفات$",
     command=("الملفات", plugin_category),
     info={
-        "header": "To list all plugins in HuRe.",
+        "header": "To list all plugins in SedUb.",
         "usage": "{tr}plugins",
     },
 )
 async def _(event):
-    "To list all plugins in HuRe"
-    cmd = "ls HuRe/plugins"
+    "To list all plugins in SedUb"
+    cmd = "ls SedUb/plugins"
     o = (await _catutils.runcmd(cmd))[0]
     OUTPUT = f"**[سيدثون](tg://need_update_for_some_feature/) الـمـلفـات:**\n{o}"
     await edit_or_reply(event, OUTPUT)
@@ -42,13 +42,13 @@ async def _(event):
     pattern="فاراتي$",
     command=("فاراتي", plugin_category),
     info={
-        "header": "To list all environment values in HuRe.",
-        "description": "to show all heroku vars/Config values in your HuRe",
+        "header": "To list all environment values in SedUb.",
+        "description": "to show all heroku vars/Config values in your SedUb",
         "usage": "{tr}env",
     },
 )
 async def _(event):
-    "To show all config values in HuRe"
+    "To show all config values in SedUb"
     cmd = "env"
     o = (await _catutils.runcmd(cmd))[0]
     OUTPUT = (
