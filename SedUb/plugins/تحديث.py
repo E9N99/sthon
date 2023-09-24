@@ -9,7 +9,7 @@ import urllib3
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 from telethon import events 
-from HuRe import HEROKU_APP, UPSTREAM_REPO_URL, l313l
+from SedUb import HEROKU_APP, UPSTREAM_REPO_URL, l313l
 
 from ..Config import Config
 from ..core.logger import logging
@@ -38,7 +38,7 @@ UPSTREAM_REPO_BRANCH = Config.UPSTREAM_REPO_BRANCH
 REPO_REMOTE_NAME = "temponame"
 IFFUCI_ACTIVE_BRANCH_NAME = "HuRe"
 NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
-HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/HuRe"
+HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/SedUb"
 RESTARTING_APP = "re-starting heroku application"
 IS_SELECTED_DIFFERENT_BRANCH = (
     "looks like a custom branch {branch_name} "
@@ -183,7 +183,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
     else:
         remote = repo.create_remote("heroku", heroku_git_url)
     try:
-        remote.push(refspec="HEAD:refs/heads/HuRe", force=True)
+        remote.push(refspec="HEAD:refs/heads/SedUb", force=True)
         build_status = heroku_app.builds(order_by="created_at", sort="desc")[0]
         url = build_status.output_stream_url
         log_content = " "
@@ -214,7 +214,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         os.remove("log_file.txt")
         return
     try:
-        remote.push("HuRe:main", force=True)
+        remote.push("SedUb:main", force=True)
     except Exception as error:
         await event.edit(f"{txt}\n**هذا هو سجل الاخطاء:**\n`{error}`")
         return repo.__del__()
