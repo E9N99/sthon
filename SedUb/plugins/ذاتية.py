@@ -1,9 +1,9 @@
-from HuRe import l313l
+from SedUb import l313l
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 import os
 import datetime
 from telethon import events
-from HuRe import *
+from SedUb import *
 #ها يالفاشل شعدك داخل هنا 🫣 اعتمد ع نفسك لتخلي سورس سيدثون مصدر طشت سورسك
 Aljoker_Asbo3 = {
     'Monday': 'الاثنين',
