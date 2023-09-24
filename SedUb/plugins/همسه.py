@@ -1,9 +1,9 @@
 from telethon import events
 import random, re
-from HuRe.utils import admin_cmd
+from SedUb.utils import admin_cmd
 import asyncio 
 
-# Wespr File by  @lMl10l
+# Wespr File by  @NUNUU
 # Copyright (C) 2021 HuRe TEAM
 @borg.on(
     admin_cmd(pattern="همسة ?(.*)")
