@@ -465,7 +465,7 @@ async def Hussein(event):
                     origin = repo.create_remote("upstream", off_repo)
                     origin.fetch()
                     force_update = True
-                    repo.create_head("HuRe", origin.refs.HuRe)
+                    repo.create_head("SedUb", origin.refs.SedUb)
                     repo.heads.HuRe.set_tracking_branch(origin.refs.HuRe)
                     repo.heads.HuRe.checkout(True)
                 ac_br = repo.active_branch.name
