@@ -35,16 +35,16 @@ LOGS = logging.getLogger(__name__)
 
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 
-autopic_path = os.path.join(os.getcwd(), "HuRe", "original_pic.png")
-digitalpic_path = os.path.join(os.getcwd(), "HuRe", "digital_pic.png")
-digital_group_pic_path = os.path.join(os.getcwd(), "HuRe", "digital_group_pic.png")
-autophoto_path = os.path.join(os.getcwd(), "HuRe", "photo_pfp.png")
-auto_group_photo_path = os.path.join(os.getcwd(), "HuRe", "photo_pfp.png")
+autopic_path = os.path.join(os.getcwd(), "SedUb", "original_pic.png")
+digitalpic_path = os.path.join(os.getcwd(), "SedUb", "digital_pic.png")
+digital_group_pic_path = os.path.join(os.getcwd(), "SedUb", "digital_group_pic.png")
+autophoto_path = os.path.join(os.getcwd(), "SedUb", "photo_pfp.png")
+auto_group_photo_path = os.path.join(os.getcwd(), "SedUb", "photo_pfp.png")
 
 digitalpfp = Config.DIGITAL_PIC or "https://telegra.ph/file/63a826d5e5f0003e006a0.jpg"
 digitalgrouppfp = Config.DIGITAL_GROUP_PIC or "https://telegra.ph/file/63a826d5e5f0003e006a0.jpg"
 lMl10l = Config.TIME_JEP or ""
-jep = Config.DEFAULT_PIC or "HuRe/helpers/styles/PaybAck.ttf"
+jep = Config.DEFAULT_PIC or "SedUb/helpers/styles/PaybAck.ttf"
 normzltext = "1234567890"
 namerzfont = Config.JP_FN or "𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵𝟬"
 namew8t = Config.NAME_ET or "اسم وقتي"
