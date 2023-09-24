@@ -13,7 +13,7 @@ from telethon.events import CallbackQuery
 from telethon.utils import get_attributes
 from wget import download
 
-from HuRe import l313l
+from SedUb import l313l
 
 from ..Config import Config
 from ..core import check_owner, pool
@@ -35,7 +35,7 @@ BASE_YT_URL = "https://www.youtube.com/watch?v="
 YOUTUBE_REGEX = re.compile(
     r"(?:youtube\.com|youtu\.be)/(?:[\w-]+\?v=|embed/|v/|shorts/)?([\w-]{11})"
 )
-PATH = "./HuRe/cache/ytsearch.json"
+PATH = "./SedUb/cache/ytsearch.json"
 plugin_category = "bot"
 
 
