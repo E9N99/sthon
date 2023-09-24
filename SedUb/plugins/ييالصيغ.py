@@ -11,7 +11,7 @@ from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import InputPeerChannel
 from telethon.errors import ChannelPrivateError
 from telethon.utils import get_peer_id
-from HuRe import l313l
+from SedUb import l313l
 from telethon import types
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
