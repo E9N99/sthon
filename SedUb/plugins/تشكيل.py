@@ -1,8 +1,8 @@
 import pyfiglet
-from HuRe import l313l
-from HuRe.helpers.utils import _format
-from HuRe.core.managers import edit_delete, edit_or_reply
-from HuRe.plugins import _format, l313l, deEmojify
+from SedUb import l313l
+from SedUb.helpers.utils import _format
+from SedUb.core.managers import edit_delete, edit_or_reply
+from SedUb.plugins import _format, l313l, deEmojify
 
 plugin_category = "utils"
 
