@@ -7,7 +7,7 @@ from SedUb.helpers.functions.functions import translate
 try:
     from yaml import safe_load
 except ModuleNotFoundError:
-    from HuRe.helpers.functions.functions import safe_load
+    from SedUb.helpers.functions.functions import safe_load
 
 os.getenv("LANGUAGE", "ar")
 
