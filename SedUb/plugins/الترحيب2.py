@@ -6,7 +6,7 @@ from asyncio import sleep
 from telethon.utils import get_display_name
 from telethon import events
 
-from HuRe import l313l
+from SedUb import l313l
 from ..Config import Config
 
 
