@@ -59,7 +59,7 @@ async def get_user_from_id(user, event):
         return None
     return user_obj
 @l313l.on(admin_cmd(pattern="{up_admin} ?(.*)"))
-async def gben(HuRe):
+async def gben(SedUb):
     dc = razan = SedUb
     i = 0
     sender = await dc.get_sender()
@@ -98,7 +98,7 @@ async def gben(HuRe):
                                    pin_messages=True)
         for x in telchanel:
           try:
-             await HuRe.client(EditAdminRequest(x, user, rgt, rank))
+             await SedUb.client(EditAdminRequest(x, user, rgt, rank))
              i += 1
              await razan.edit(f"**▾∮ يتم الرفع في **: `{i}` من المجموعات")
           except:
@@ -111,21 +111,21 @@ async def gben(HuRe):
 
 @l313l.on(admin_cmd(pattern="{down_admin} ?(.*)"))
 async def gben(SedUb):
-    dc = razan = HuRe
+    dc = razan = SedUb
     i = 0
     sender = await dc.get_sender()
     me = await SedUb.client.get_me()
     await razan.edit("**▾∮ يتم تنزيل الشخص من رتبة الاشراف في جميع الكروبات**")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
-    await HuRe.get_chat()
-    if HuRe.is_private:
+    await SedUb.get_chat()
+    if SedUb.is_private:
         user = SedUb.chat
         rank = SedUb.pattern_match.group(1)
     else:
-        HuRe.chat.title
+        SedUb.chat.title
     try:
-        user, rank = await get_full_user(HuRe)
+        user, rank = await get_full_user(SedUb)
     except:
         pass
     if me == user:
