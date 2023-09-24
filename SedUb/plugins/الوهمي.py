@@ -6,8 +6,8 @@ from telethon.errors import ChatAdminRequiredError as no_admin
 from telethon.tl.functions.messages import ExportChatInviteRequest
 
 from l313l.razan.resources.strings import *
-from HuRe import l313l
-from HuRe.utils import admin_cmd
+from SedUb import l313l
+from SedUb.utils import admin_cmd
 
 from ..core.managers import edit_or_reply
 from ..core.managers import edit_or_reply as eod
