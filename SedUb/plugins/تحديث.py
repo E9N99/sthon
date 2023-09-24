@@ -346,8 +346,8 @@ async def Hussein(event):
         origin = repo.create_remote("upstream", off_repo)
         origin.fetch()
         repo.create_head("HuRe", origin.refs.master)
-        repo.heads.HuRe.set_tracking_branch(origin.refs.master)
-        repo.heads.HuRe.checkout(True)
+        repo.heads.SedUb.set_tracking_branch(origin.refs.master)
+        repo.heads.SedUb.checkout(True)
     with contextlib.suppress(BaseException):
         repo.create_remote("upstream", off_repo)
     ac_br = repo.active_branch.name
@@ -390,9 +390,9 @@ async def reda(event):
             origin = repo.create_remote("upstream", off_repo)
             origin.fetch()
             force_update = True
-            repo.create_head("HuRe", origin.refs.HuRe)
-            repo.heads.HuRe.set_tracking_branch(origin.refs.HuRe)
-            repo.heads.HuRe.checkout(True)
+            repo.create_head("HuRe", origin.refs.SedUb)
+            repo.heads.SedUb.set_tracking_branch(origin.refs.SedUb)
+            repo.heads.SedUb.checkout(True)
         ac_br = repo.active_branch.name
         if ac_br != UPSTREAM_REPO_BRANCH:
             await event.edit(
@@ -466,8 +466,8 @@ async def Hussein(event):
                     origin.fetch()
                     force_update = True
                     repo.create_head("SedUb", origin.refs.SedUb)
-                    repo.heads.HuRe.set_tracking_branch(origin.refs.HuRe)
-                    repo.heads.HuRe.checkout(True)
+                    repo.heads.SedUb.set_tracking_branch(origin.refs.SedUb)
+                    repo.heads.SedUb.checkout(True)
                 ac_br = repo.active_branch.name
                 if ac_br != UPSTREAM_REPO_BRANCH:
                     await event.edit(
