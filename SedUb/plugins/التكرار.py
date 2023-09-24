@@ -1,21 +1,23 @@
 # By HuRe 2021-2022
 import asyncio
 import base64
+import re
 from telethon.tl import functions, types
 from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.utils import get_display_name
-from telethon import events
 from SedUb import l313l
+from telethon import events
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.tools import media_type
 from ..helpers.utils import _catutils
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from . import BOTLOG, BOTLOG_CHATID
-
+yaAli = False
+client = l313l
 Mukrr = Config.MUKRR_ET or "مكرر"
-async def spam_function(event, SedUb, l313l, sleeptimem, sleeptimet, DelaySpam=False):
+async def spam_function(event, JoKeRUB, l313l, sleeptimem, sleeptimet, DelaySpam=False):
 
     counter = int(l313l[0])
     if len(l313l) == 2:
@@ -64,10 +66,10 @@ async def spam_function(event, SedUb, l313l, sleeptimem, sleeptimet, DelaySpam=F
                     + f"**⌔∮ تم تنفيذ التكرار الوقتي  بنجاح في ** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **مع** {counter} **عدد المرات مع الرسالة أدناه مع التأخير** {sleeptimet} ** الثواني **",
                 )
 
-            SedUb = await event.client.send_file(BOTLOG_CHATID, SedUb)
+            SedUb = await event.client.send_file(BOTLOG_CHATID, JoKeRUB)
             await _catutils.unsavegif(event, SedUb)
         return
-    elif event.reply_to_msg_id and SedUb.text:
+    elif event.reply_to_msg_id and JoKeRUB.text:
         spam_message = SedUb.text
         for _ in range(counter):
             if gvarstatus("spamwork") is None:
@@ -269,8 +271,7 @@ async def stopspamrz(event):
         delgvar("spamwork")
         return await edit_delete(event, "**⌔∮ تم بنجاح ايقاف التكرار **")
     return await edit_delete(event, "**⌔∮ عذرا لم يتم تفعيل التكرار بالاصل**")
-    #تم اضافة الاوامر ادناه بمساعدة من فريق الجوكر
-
+#جميع الاكواد ادناه تمت كتابتها من قبل مطورين الجوكر ممنوع السرقة !
 async def aljoker_nshr(l313l, sleeptimet, chat, message, seconds):
     global yaAli
     yaAli = True
@@ -371,51 +372,3 @@ async def stop_aljoker(event):
     global yaAli
     yaAli = False
     await event.edit("**᯽︙ تم ايقاف النشر التلقائي بنجاح ✓** ")
-
-message_counts = {}
-active_chats = set()
-disabled_chats = set()
-@l313l.ar_cmd(pattern="النشر تعطيل")
-async def Hussein(event):
-    chat_id = event.chat_id
-    if event.is_group:
-        if chat_id not in active_chats:
-            active_chats.add(chat_id)
-            disabled_chats.discard(chat_id)
-            await event.edit("**᯽︙✓ تم تفعيل امر منع النشر التلقائي **")
-        else:
-            await event.edit("**᯽︙ امر منع النشر التلقائي مُفعل بالفعل**")
-
-@l313l.ar_cmd(pattern="النشر تفعيل")
-async def Hussein(event):
-    chat_id = event.chat_id
-    if event.is_group:
-        if chat_id in active_chats:
-            active_chats.discard(chat_id)
-            disabled_chats.add(chat_id)
-            await event.edit("**᯽︙✓ تم تعطيل امر منع النشر التلقائي **")
-        else:
-            await event.edit("**᯽︙ امر منع النشر التلقائي معطل بالفعل **")
-
-@l313l.on(events.NewMessage)
-async def Hussein(event):
-    chat_id = event.chat_id
-    if chat_id in disabled_chats:
-        return
-    user_id = event.sender_id
-    message_text = event.text
-    if user_id not in message_counts:
-        message_counts[user_id] = {'last_message': None, 'count': 0}
-    if message_counts[user_id]['last_message'] == message_text:
-        message_counts[user_id]['count'] += 1
-    else:
-        message_counts[user_id]['last_message'] = message_text
-        message_counts[user_id]['count'] = 1
-    if message_counts[user_id]['count'] >= 3:
-        await client.edit_permissions(chat_id, user_id, send_messages=False)
-        sender = await event.get_sender()
-        aljoker_entity = await l313l.get_entity(sender.id)
-        aljoker_profile = f"[{aljoker_entity.first_name}](tg://user?id={aljoker_entity.id})"
-        explanation_message = f"**᯽︙ تم تقييد {aljoker_profile} من إرسال الرسائل بسبب تفعيله نشر التلقائي**"
-        await event.reply(explanation_message)
-        del message_counts[user_id]
