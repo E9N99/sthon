@@ -12,7 +12,7 @@ import time
 from datetime import timedelta
 import math
 import base64
-from HuRe import l313l 
+from SedUb import l313l 
 #from ..Config import Config
 #By Reda
 @l313l.ar_cmd(pattern="تك")
