@@ -12,9 +12,9 @@ from telethon.tl.types import (ChannelParticipantsAdmins,
                                    ChatBannedRights,
                                      MessageEntityMentionName,
                                        MessageMediaPhoto)
-from HuRe.utils import admin_cmd
+from SedUb.utils import admin_cmd
 from ..Config import Config
-from HuRe import CMD_HELP, l313l
+from SedUb import CMD_HELP, l313l
 up_admin = Config.UP_ET or "ارفع"
 down_admin = Config.DOWN_ET or "تزل"
 async def get_full_user(event):  
