@@ -64,11 +64,11 @@ async def spam_function(event, HuRe, l313l, sleeptimem, sleeptimet, DelaySpam=Fa
                     + f"**⌔∮ تم تنفيذ التكرار الوقتي  بنجاح في ** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **مع** {counter} **عدد المرات مع الرسالة أدناه مع التأخير** {sleeptimet} ** الثواني **",
                 )
 
-            HuRe = await event.client.send_file(BOTLOG_CHATID, HuRe)
+            SedUb = await event.client.send_file(BOTLOG_CHATID, HuRe)
             await _catutils.unsavegif(event, HuRe)
         return
     elif event.reply_to_msg_id and HuRe.text:
-        spam_message = HuRe.text
+        spam_message = SedUb.text
         for _ in range(counter):
             if gvarstatus("spamwork") is None:
                 return
@@ -111,7 +111,7 @@ async def spam_function(event, HuRe, l313l, sleeptimem, sleeptimet, DelaySpam=Fa
 
 @l313l.ar_cmd(pattern="كرر (.*)")
 async def spammer(event):
-    HuRe = await event.get_reply_message()
+    SedUb = await event.get_reply_message()
     l313l = ("".join(event.text.split(maxsplit=1)[1:])).split(" ", 1)
     try:
         counter = int(l313l[0])
@@ -127,7 +127,7 @@ async def spammer(event):
         sleeptimem = 0.3
     await event.delete()
     addgvar("spamwork", True)
-    await spam_function(event, HuRe, l313l, sleeptimem, sleeptimet)
+    await spam_function(event, SedUb, l313l, sleeptimem, sleeptimet)
 
 @l313l.on(admin_cmd(pattern=f"{Mukrr}"))
 async def spammer(event):
