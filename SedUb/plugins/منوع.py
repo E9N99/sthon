@@ -8,7 +8,7 @@ from telethon.tl.functions.phone import CreateGroupCallRequest as startvc
 from telethon.tl.functions.phone import DiscardGroupCallRequest as stopvc
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
-from HuRe import l313l
+from SedUb import l313l
 from ..core.managers import edit_delete, edit_or_reply
 import os
 import tempfile
