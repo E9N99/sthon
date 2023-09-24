@@ -1,14 +1,14 @@
-#ترجمه فريق الجوكر على التيلكرام
+#ترجمه فريق سيدثون على التيلكرام
 import json
 
 import requests
-#ترجمه فريق الجوكر على التيلكرام
+#ترجمه فريق سيدثون على التيلكرام
 from ..sql_helper.globals import gvarstatus
 from . import l313l, edit_delete, edit_or_reply
 
 plugin_category = "extra"
 
-#ترجمه فريق الجوكر على التيلكرام
+#ترجمه فريق سيدثون على التيلكرام
 @l313l.ar_cmd(
     pattern="صلاة(?: |$)(.*)",
     command=("صلاة", plugin_category),
@@ -26,7 +26,7 @@ async def get_adzan(adzan):
     if request.status_code != 200:
         await edit_delete(
             adzan, f"** لم يـتم العثور على معلومات لـهذه المدينه {LOKASI}**\n يرجى كتابة اسم محافظتك وباللغه الانكليزي ", 5
-        ) #ترجمه فريق الجوكر على التيلكرام
+        ) #ترجمه فريق سيدثون على التيلكرام
         return
     result = json.loads(request.text)
     l313lresult = f"<b>اوقـات صـلاه المـسلمين 👳‍♂️ </b>\
@@ -47,4 +47,4 @@ async def get_adzan(adzan):
     await edit_or_reply(adzan, l313lresult, "html")
 
 # Copyright (C) 2021 HuRe TEAM
-# FILES WRITTEN BY  @lMl10l
+# FILES WRITTEN BY  @NUNUU
