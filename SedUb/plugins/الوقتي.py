@@ -27,7 +27,7 @@ from . import AUTONAME, DEFAULT_GROUP, DEFAULT_BIO, edit_delete, l313l, logging
 from colour import Color
 
 plugin_category = "tools"
-# BiLaL
+# لتخمط ابن الكحبة
 DEFAULTUSERBIO = DEFAULT_BIO or "﴿ لا تَحزَن إِنَّ اللَّهَ مَعَنا ﴾ "
 DEFAULTUSERGRO = DEFAULT_GROUP or ""
 DEFAULTUSER = AUTONAME or ""
