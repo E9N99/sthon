@@ -1,9 +1,9 @@
 import asyncio
 from datetime import datetime
-from ALJoker import languages
+from BiLaL import languages
 from telethon.tl import functions, types
-from HuRe.helpers.functions.functions import translate 
-from HuRe import CMD_HELP, l313l
+from SedUb.helpers.functions.functions import translate 
+from SedUb import CMD_HELP, l313l
 
 from ..Config import Config
 from ..core.logger import logging
