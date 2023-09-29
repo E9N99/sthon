@@ -505,3 +505,37 @@ async def Hussein(event):
                 if conf == "الان":
                     await event.edit("** ᯽︙ يتم تحديث سورس سيدثون بامر المطور اجبارياً**")
                     await update(event, repo, ups_rem, ac_br)
+
+@l313l.ar_cmd(pattern="أيقاف السورس$")
+async def _(event):
+    if BOTLOG:
+        await event.client.send_message(
+            BOTLOG_CHATID, "#ايقاف_التشغيل \n" "تم ايقاف تشغيل السورس"
+        )
+    await edit_or_reply(
+        event, "**⌔∮ جارِ إيقاف تشغيل السورس الآن ... شغِّلني يدويًا لاحقًا**"
+    )
+    if HEROKU_APP is not None:
+        HEROKU_APP.process_formation()["worker"].scale(0)
+    else:
+        os._exit(143)
+
+
+@l313l.ar_cmd(pattern="أيقاف مؤقت( [0-9]+)?$")
+async def _(event):
+    if " " not in event.pattern_match.group(1):
+        return await edit_or_reply(
+            event, "⌔∮ استخدام الامر؛  `.أيقاف مؤقت` <وقت بالثواني>"
+        )
+    counter = int(event.pattern_match.group(1))
+    if BOTLOG:
+        await event.client.send_message(
+            BOTLOG_CHATID,
+            "❃ لقد وضعت السورس في وضع السكون لمدة " + str(counter) + " ثواني",
+        )
+    event = await edit_or_reply(
+        event, f"**⌔∮ حسنا تم ايقاف البوت لمده {counter} ثواني**"
+    )
+    sleep(counter)
+    await event.edit("**⪼ اهلا الان اشتغل بشكل طبيعي**")
+
