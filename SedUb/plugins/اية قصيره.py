@@ -23,3 +23,9 @@ async def jepvois(Voice):
   url = f"https://t.me/dev_bilal/108"
   await Voice.client.send_file(Voice.chat_id,url,caption="⎊︙ سوره الفاتحة\n⎊︙ بصوت القارئ ماهر المعيقلي\n⎊︙ BY : @X_X_X_X_R🌺",parse_mode="html")
   await Voice.delete()
+
+@l313l.on(admin_cmd(outgoing=True, pattern="ايه قصيره$"))
+async def jepvois(Voice):
+  url = f"https://t.me/dev_bilal"
+  await Voice.client.send_file(Voice.chat_id,url,caption="⎊︙ سورس سيدثون \n⎊︙ ايه جميلة ربما من نصيبك\n⎊︙ BY : @X_X_X_X_R🌺",parse_mode="html")
+  await Voice.delete()
