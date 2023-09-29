@@ -91,7 +91,7 @@ async def aljoker313(joker313):
   await joker313.client.send_file(joker313.chat_id,url,caption="᯽︙ عظم الله لنا ولكم الاجر بهذا المُصاب الجلل 🏴",parse_mode="html")
   await joker313.delete()
 
-@l313l.on(admin_cmd(outgoing=True, pattern="غنيلي$"))
+@l313l.on(admin_cmd(outgoing=True, pattern="غ$"))
 async def aljoker313(joker313):
     await joker313.edit("**᯽︙ تم تعطيل هذا الامر من قبل ادارة سورس سيدثون احتراماً لشهر المصائب محرم الحرام 🏴**")
     
@@ -551,3 +551,22 @@ async def jepmeme(memejep):
   url = f"https://t.me/MemeSoundJep/102"
   await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Jep)
   await memejep.delete()
+    @l313l.ar_cmd(pattern="$ غنيلي")
+async def _(event):
+    BiLaL = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل الاغنيـه ...𓅫╰**")
+    try:
+        sedgan = [
+            desah
+            async for desah in event.client.iter_messages(
+                "@TEAMSUL", filter=InputMessagesFilterVoice
+            )
+        ]
+        aing = await event.client.get_me()
+        await event.client.send_file(
+            event.chat_id,
+            file=random.choice(sedgan),
+            caption=f"**✦┊تم اختياࢪ الاغنيـه لك 💞🎶**ٴ▁ ▂ ▉ ▄ ▅ ▆ ▇ ▅ ▆ ▇ █ ▉ ▂ ▁\n\n[➧𝙎𝙊𝙐𝙍𝘾𝙀 𝗦𝞝𝗗𝙏𝙃𝙊𝙉](https://t.me/X_X_X_X_R)",
+        )
+        await BiLaL.delete()
+    except Exception:
+        await BiLaL.edit("**╮•⎚ عذرًا .. لـم استطـع ايجـاد المطلـوب ☹️💔**")
