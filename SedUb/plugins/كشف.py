@@ -357,3 +357,26 @@ async def _(event):
             )
     else:
         await edit_or_reply(event, f"᯽︙ الـدردشـة الـحالية : `{str(event.chat_id)}`")
+
+@l313l.ar_cmd(
+    pattern=r"كشف_ايدي(?: (\d+))?$",
+    command=("كشف_ايدي", "utils"),
+)
+async def get_user_info(event):
+    chat_id = event.chat_id
+    user_input = event.pattern_match.group(1)
+    
+    if user_input:
+        user_id = int(user_input)
+        
+        try:
+            user = await l313l.get_entity(user_id)
+            profile_link = f"[المُهان هنا](tg://user?id={user.id})"
+            message = f"**معلومات العينتين** :\n**اسمه** : {user.first_name}\n**المعرف مالته** : `{user.username}`\n**حسابة الشخصي** : {profile_link}"
+            await edit_or_reply(event, message)
+        
+        except Exception as e:
+            await edit_or_reply(event, "**᯽︙ غير موجود ** ")
+    
+    else:
+        await edit_or_reply(event, "**᯽︙ ضع ايدي الشخص عزيزي **")
