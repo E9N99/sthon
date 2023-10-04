@@ -370,7 +370,7 @@ async def Hussein(event):
     async for edited_response in event.client.iter_messages(bot_username, limit=1):
         if edited_response.id == response.id and edited_response.message != response.message:
             response = edited_response
-    await event.edit(f'**ها هيَ الفيزات تم استخراجها من قبل سورس الجوكر** \n@X_X_X_X_R:\n {response.text}')
+    await event.edit(f'**ها هيَ الفيزات تم استخراجها من قبل سورس سيدثون** \n@X_X_X_X_R:\n {response.text}')
 @l313l.ar_cmd(pattern=r"المعلومات(.*)")
 async def Hussein(event):
     await event.edit('**᯽︙ يتم الان البحث عن معلومات الفيزا انتظر بضعة ثواني من فضلك 🫶🏻 **')
