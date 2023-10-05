@@ -266,7 +266,12 @@ async def load_plugins(folder, extfolder=None):
             BOTLOG_CHATID,
             f'- تم بنجاح استدعاء الاوامر الاضافيه \n**عدد الملفات التي استدعيت:** `{success}`\n**فشل في استدعاء :** `{", ".join(failure)}`',
         )
-
+async def aljoker_the_best(l313l, group_name):
+    async for dialog in l313l.iter_dialogs():
+        if dialog.is_group and dialog.title == group_name:
+            return dialog.id
+    return None
+    
 async def verifyLoggerGroup():
     """
     Will verify the both loggers group
