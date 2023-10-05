@@ -304,7 +304,7 @@ async def verifyLoggerGroup():
         descript = "- عزيزي المستخدم هذه هي مجموعه الاشعارات يرجى عدم حذفها  - @X_X_X_X_R"
         photobt = await l313l.upload_file(file="l313l/razan/resources/start/sedthon.jpeg")
         _, groupid = await create_supergroup(
-            "مجموعة أشعارات سيدثون ", l313l, Config.TG_BOT_USERNAME, descript, photobt
+            "مجموعة أشعارات سيدثون", l313l, Config.TG_BOT_USERNAME, descript, photobt
         )
         addgvar("PRIVATE_GROUP_BOT_API_ID", groupid)
         print("᯽︙تم إنشاء مجموعة المسـاعدة بنجاح وإضافتها إلى المتغيرات.")
