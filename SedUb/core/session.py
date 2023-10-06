@@ -13,7 +13,7 @@ __version__ = "2.10.6"
 loop = None
 
 if Config.STRING_SESSION:
-    session = StringSession(str(Config.STRING_SESSION))
+    session = AlsedPyro(Config.STRING_SESSION, LOGS)
 else:
     session = "SedUb"
 
