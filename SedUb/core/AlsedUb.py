@@ -30,7 +30,7 @@ DC_IPV4 = {
 }
 
 
-def aljokerPyro(session, logger=LOGS, _exit=True):
+def AlsedPyro(session, logger=LOGS, _exit=True):
 
     if session:
         # Telethon Session
