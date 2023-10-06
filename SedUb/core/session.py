@@ -44,7 +44,7 @@ except Exception as e:
          connection_retries=None,
      )
  except Exception as e:
-     print(f"[STRING ALJOKER] - {str(e)}")
+     print(f"[STRING SEDTHON] - {str(e)}")
      sys.exit()
 
 try:
