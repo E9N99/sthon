@@ -31,22 +31,6 @@ try:
 except Exception as e:
     print(f"[STRING SESSION] - {str(e)}")
     sys.exit()
-
- try:
-     l313l = HuReClient(
-         aljokerPyro(Config.STRING_SESSION, LOGS),
-         api_id=Config.APP_ID,
-         api_hash=Config.API_HASH,
-         loop=loop,
-         app_version=__version__,
-         connection=ConnectionTcpAbridged,
-         auto_reconnect=True,
-         connection_retries=None,
-     )
- except Exception as e:
-     print(f"[STRING SEDTHON] - {str(e)}")
-     sys.exit()
-
 try:
     l313l.tgbot = tgbot = HuReClient(
         session="arTgbot",
