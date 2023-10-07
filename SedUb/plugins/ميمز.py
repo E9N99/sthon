@@ -551,7 +551,7 @@ async def jepmeme(memejep):
   url = f"https://t.me/MemeSoundJep/102"
   await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Jep)
   await memejep.delete()
-    @l313l.ar_cmd(pattern="$ غنيلي")
+@l313l.ar_cmd(pattern="$ غنيلي")
 async def _(event):
     BiLaL = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل الاغنيـه ...𓅫╰**")
     try:
