@@ -94,8 +94,11 @@ async def aljoker313(joker313):
   await joker313.delete()
 
 @l313l.on(admin_cmd(outgoing=True, pattern="غنيلي$"))
-async def aljoker313(joker313):
-    await joker313.edit("**᯽︙ تم تعطيل هذا الامر من قبل ادارة سورس سيدثون احتراماً لشهر المصائب محرم الحرام 🏴**")
+async def BiLaL(vois):
+  rl = random.randint(1,385)
+  url = f"https://t.me/DwDi1/{rl}"
+  await vois.client.send_file(vois.chat_id,url,caption="᯽︙ BY : @X_X_X_X_R 🎀",parse_mode="html")
+  await vois.delete()
     
 @l313l.on(admin_cmd(outgoing=True, pattern="شعر$"))
 async def jepvois(vois):
