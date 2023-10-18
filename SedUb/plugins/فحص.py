@@ -21,7 +21,7 @@ from ..core.managers import edit_or_reply
 from ..helpers.functions import catalive, check_data_base_heal_th, get_readable_time
 from ..helpers.utils import reply_id
 from ..sql_helper.globals import gvarstatus
-from . import mention
+
  
 plugin_category = "utils"
 
@@ -45,6 +45,9 @@ async def amireallyalive(event):
     ms = (end - start).microseconds / 1000
     _, check_sgnirts = check_data_base_heal_th()
     EMOJI = gvarstatus("ALIVE_EMOJI") or "⿻┊‌‎"
+    me = await l313l.get_me()
+     first_name = me.first_name
+     mention = first_name
     ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**父[ 𝗦𝞝𝗗𝙏𝙃𝙊𝙉 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 ✓ ](t.me/X_X_X_X_R)父**"
     HuRe_IMG = gvarstatus("ALIVE_PIC") or Config.A_PIC
     l313l_caption = gvarstatus("ALIVE_TEMPLATE") or temp
