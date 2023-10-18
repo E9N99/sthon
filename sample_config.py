@@ -10,9 +10,8 @@ class Config(object):
     ALIVE_PIC = os.environ.get("ALIVE_PIC", None)
     SC_TEXT = os.environ.get("SCPIC_TEXT", None)
     A_TEXT = os.environ.get("A_TEXT", None)
-    # MUST NEEDED VARS
-    # set this value with your name
     ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
+    # MUST NEEDED VARS
     # Get the values for following 2 from my.telegram.org
     APP_ID = int(os.environ.get("APP_ID", "8897410"))
     API_HASH = os.environ.get("API_HASH", "43cb89a7b70782868b77ace21c1341a9") or None
@@ -38,6 +37,7 @@ class Config(object):
 
     # تعديلي
     PING_PIC = os.environ.get("PING_PIC")
+    T7KM = os.environ.get("T7KM")
     TIME_JEP = os.environ.get("TIME_JEP", None)
     JP_FN = os.environ.get("JP_FN", None)
     ID_EM = os.environ.get("ID_EM", None)
@@ -46,6 +46,7 @@ class Config(object):
     ALIVE_ET = os.environ.get("ALIVE_ET", None)
     UP_ET = os.environ.get("UP_ET", None)
     DOWN_ET = os.environ.get("DOWN_ET", None)
+    MUKRR_ET = os.environ.get("MUKRR_ET", None)
     WEL_ET = os.environ.get("WEL_ET", None)
     DEFAULT_PIC = os.environ.get("DEFAULT_PIC", None)
     COLOR_TIME = os.environ.get("COLOR_TIME", None)
@@ -58,7 +59,7 @@ class Config(object):
     BIO_ET = os.environ.get("BIO_ET", None)
     PHOTO_ET = os.environ.get("PHOTO_ET", None)    
     LOAD_MYBOT = os.environ.get("LOAD_MYBOT", "True")
-    JMTHON_START = os.environ.get("JMTHON_START", None)
+    JOKER_START = os.environ.get("JOKER_START", None)
     PMPERMIT_TEXT_Jepthon = os.environ.get("PMPERMIT_TEXT_Jepthon", None)
     UB_BLACK_LIST_CHAT = {
         int(x) for x in os.environ.get("UB_BLACK_LIST_CHAT", "").split()
@@ -197,7 +198,7 @@ class Config(object):
     COUNTRY = str(os.environ.get("COUNTRY", ""))
     TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
     # For updater plugin
-    UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "master")
+    UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "HuRe")
     ENV = os.environ.get("ENV", "ANYTHING")
     # dont touch this at all
     SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
