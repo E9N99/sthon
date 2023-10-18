@@ -38,11 +38,8 @@ thumb_image_path = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg"
 USERID = l313l.uid if Config.OWNER_ID == 0 else Config.OWNER_ID
 
 # mention user
-me = l313l.get_me()
- first_name = me.first_name
- ALIVE_NAME = first_name
- mention = f"[{ALIVE_NAME}](tg://user?id={USERID})"
- hmention = f"<a href = tg://user?id={USERID}>{ALIVE_NAME}</a>"
+mention = f"[{Config.ALIVE_NAME}](tg://user?id={USERID})"
+ hmention = f"<a href = tg://user?id={USERID}>{Config.ALIVE_NAME}</a>"
 PM_START = []
 PMMESSAGE_CACHE = {}
 PMMENU = "pmpermit_menu" not in Config.NO_LOAD
