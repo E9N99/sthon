@@ -38,7 +38,6 @@ class Config(object):
 
     # تعديلي
     PING_PIC = os.environ.get("PING_PIC")
-    T7KM = os.environ.get("T7KM")
     TIME_JEP = os.environ.get("TIME_JEP", None)
     JP_FN = os.environ.get("JP_FN", None)
     ID_EM = os.environ.get("ID_EM", None)
@@ -47,7 +46,6 @@ class Config(object):
     ALIVE_ET = os.environ.get("ALIVE_ET", None)
     UP_ET = os.environ.get("UP_ET", None)
     DOWN_ET = os.environ.get("DOWN_ET", None)
-    MUKRR_ET = os.environ.get("MUKRR_ET", None)
     WEL_ET = os.environ.get("WEL_ET", None)
     DEFAULT_PIC = os.environ.get("DEFAULT_PIC", None)
     COLOR_TIME = os.environ.get("COLOR_TIME", None)
@@ -60,7 +58,7 @@ class Config(object):
     BIO_ET = os.environ.get("BIO_ET", None)
     PHOTO_ET = os.environ.get("PHOTO_ET", None)    
     LOAD_MYBOT = os.environ.get("LOAD_MYBOT", "True")
-    JOKER_START = os.environ.get("JOKER_START", None)
+    JMTHON_START = os.environ.get("JMTHON_START", None)
     PMPERMIT_TEXT_Jepthon = os.environ.get("PMPERMIT_TEXT_Jepthon", None)
     UB_BLACK_LIST_CHAT = {
         int(x) for x in os.environ.get("UB_BLACK_LIST_CHAT", "").split()
@@ -199,7 +197,7 @@ class Config(object):
     COUNTRY = str(os.environ.get("COUNTRY", ""))
     TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
     # For updater plugin
-    UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "HuRe")
+    UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "master")
     ENV = os.environ.get("ENV", "ANYTHING")
     # dont touch this at all
     SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
