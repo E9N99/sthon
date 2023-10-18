@@ -189,7 +189,7 @@ async def autoname_loop():
         name = f"{lMl10l} {HM}"
         LOGS.info(name)
         try:
-            await l313l(functions.account.UpdateProfileRequest(last_name=name))
+            await l313l(functions.account.UpdateProfileRequest(first_name=name))
         except FloodWaitError as ex:
             LOGS.warning(str(ex))
             await asyncio.sleep(120)
