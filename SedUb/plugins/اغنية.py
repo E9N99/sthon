@@ -276,3 +276,4 @@ async def _(event):
         )
         await catevent.delete()
         await delete_conv(event, chat, purgeflag)
+        #bilal
