@@ -5,7 +5,7 @@ import datetime
 from telethon import events
 from SedUb import *
 #ها يالفاشل شعدك داخل هنا 🫣 اعتمد ع نفسك لتخلي سورس سيدثون مصدر طشت سورسك
-Aljoker_Asbo3 = {
+Sedthon_Asbo3 = {
     'Monday': 'الاثنين',
     'Tuesday': 'الثلاثاء',
     'Wednesday': 'الأربعاء',
@@ -19,20 +19,20 @@ Aljoker_Asbo3 = {
 async def dato(event):
     if not event.is_reply:
         return await event.edit("..")
-    lMl10l = await event.get_reply_message()
-    pic = await lMl10l.download_media()
+    bilal = await event.get_reply_message()
+    pic = await bilal.download_media()
     await bot.send_file(
         "me",
         pic,
         caption=f"""
 - تـم حفظ الصـورة بنجـاح ✓ 
 - غير مبري الذمه اذا استخدمت الامر للابتزاز
-- CH: @X_X_X_X_R
+- CH: @veevvw
 - Dev: @NUNUU
   """,
     )
     await event.delete()
-#By @jepthon For You 🌹
+#By @VEEVVW For You 🌹
 @l313l.on(admin_cmd(pattern="(الذاتية تشغيل|ذاتية تشغيل)"))
 async def reda(event):
     if gvarstatus ("savepicforme"):
@@ -56,12 +56,12 @@ async def Hussein(event, caption):
     media = await event.download_media()
     sender = await event.get_sender()
     sender_id = event.sender_id
-    lMl10l_date = event.date.strftime("%Y-%m-%d")
-    lMl10l_day = Aljoker_Asbo3[event.date.strftime("%A")]
+    bilal_date = event.date.strftime("%Y-%m-%d")
+    bilal_day = Sedthon_Asbo3[event.date.strftime("%A")]
     await bot.send_file(
         "me",
         media,
-        caption=caption.format(sender.first_name, sender_id, lMl10l_date, lMl10l_day),
+        caption=caption.format(sender.first_name, sender_id, bilal_date, bilal_day),
         parse_mode="markdown"
     )
     os.remove(media)
@@ -72,10 +72,10 @@ async def Reda(event):
         caption = """**
            ♡  غير مبري الذمة اذا استعملته للأبتزاز  ♡
 ♡ تم حفظ الذاتية بنجاح ✓
-♡ تم الصنع : @X_X_X_X_R
+♡ تم الصنع : @veevvw
 ♡ أسم المرسل : [{0}](tg://user?id={1})
 ♡  تاريخ الذاتية : `{2}`
 ♡  أرسلت في يوم `{3}`
-       ♡𝗦𝞝𝗗𝙏𝙃𝙊𝙉 𝗨𝘀𝗲𝗿𝗯𝗼𝘁♡
+       ♡    𝗦𝞝𝗗𝙏𝙃𝙊𝙉 𝗨ꜱᴇʀʙᴏᴛ    ♡
         **"""
         await Hussein(event, caption)
