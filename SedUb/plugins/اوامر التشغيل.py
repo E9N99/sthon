@@ -1,10 +1,12 @@
 import sys
+import glob
+import os
+import re
 from asyncio.exceptions import CancelledError
 from time import sleep
 import asyncio
 from SedUb import l313l
 from telethon import events
-
 from ..core.logger import logging
 from ..core.managers import edit_or_reply
 from ..sql_helper.global_collection import (
@@ -14,6 +16,7 @@ from ..sql_helper.global_collection import (
 )
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from . import BOTLOG, BOTLOG_CHATID, HEROKU_APP
+from ..helpers.utils import _catutils
 
 LOGS = logging.getLogger(__name__)
 plugin_category = "tools"
