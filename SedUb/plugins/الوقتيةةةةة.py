@@ -12,8 +12,7 @@ import shutil
 import time
 from datetime import datetime
 from telethon import events
-from SedUb import glob
-from BiLaL import get_string
+from ALJoker import get_string
 from telethon.errors import ChatAdminRequiredError
 from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
@@ -44,10 +43,8 @@ auto_group_photo_path = os.path.join(os.getcwd(), "SedUb", "photo_pfp.png")
 
 digitalpfp = Config.DIGITAL_PIC or "https://telegra.ph/file/63a826d5e5f0003e006a0.jpg"
 digitalgrouppfp = Config.DIGITAL_GROUP_PIC or "https://telegra.ph/file/63a826d5e5f0003e006a0.jpg"
-
 jep = Config.DEFAULT_PIC or "SedUb/helpers/styles/PaybAck.ttf"
 normzltext = "1234567890"
-
 namew8t = Config.NAME_ET or "اسم وقتي"
 biow8t = Config.BIO_ET or "بايو وقتي"
 phow8t = Config.PHOTO_ET or "الصورة الوقتية"
@@ -181,8 +178,8 @@ async def autoname_loop():
         time.strftime("%d-%m-%y")
         HM = time.strftime("%I:%M")
         for normal in HM:
-             namerzfont = gvarstatus("JP_FN") or "𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗𝟎"
             if normal in normzltext:
+                namerzfont = gvarstatus("JP_FN") or "𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗𝟎"
                 namefont = namerzfont[normzltext.index(normal)]
                 HM = HM.replace(normal, namefont)
                 lMl10l = gvarstatus("TIME_JEP") or ""
@@ -207,7 +204,7 @@ async def autobio_loop():
                 namerzfont = gvarstatus("JP_FN") or "𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗𝟎"
                 namefont = namerzfont[normzltext.index(normal)]
                 HI = HI.replace(normal, namefont)
-                DEFAULTUSERBIO = gvarstatus("DEFAULT_BIO") or " ﴿ لا تَحزَن إِنَّ اللَّهَ مَعَنا ﴾ "
+                DEFAULTUSERBIO = gvarstatus("DEFAULT_BIO") or " ﴿ لا تَحزَن إِنَّ اللَّهَ مَعَنا ﴾  "
         bio = f"{DEFAULTUSERBIO} {HI}"
         LOGS.info(bio)
         try:
