@@ -1,29 +1,3 @@
-import sys
-import glob
-import os
-import re
-from asyncio.exceptions import CancelledError
-from time import sleep
-import asyncio
-from SedUb import l313l
-from telethon import events
-from ..core.logger import logging
-from ..core.managers import edit_or_reply
-from ..sql_helper.global_collection import (
-    add_to_collectionlist,
-    del_keyword_collectionlist,
-    get_collectionlist_items,
-)
-from ..sql_helper.globals import addgvar, delgvar, gvarstatus
-from . import BOTLOG, BOTLOG_CHATID, HEROKU_APP
-from ..helpers.utils import _catutils
-
-LOGS = logging.getLogger(__name__)
-plugin_category = "tools"
-
-JOKRDEV = [1488114134, 1488114134, 1488114134,1488114134]
-
-
 import glob
 import os
 import re
