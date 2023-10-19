@@ -2,7 +2,6 @@ import time
 
 import heroku3
 
-from glob import *
 from .Config import Config
 from .core.logger import logging
 from .core.session import l313l
@@ -10,12 +9,12 @@ from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
 __version__ = "3.1.3"
 __license__ = "كـتابة وتـعديل فريـق سيدثون"
-__author__ = "سيدثون <https://T.ME/E9N99>"
-__copyright__ = "BiLaL TEAM (C) 2021 - 2023  " + __author__
+__author__ = "سيدثون <https://T.ME/veevvw>"
+__copyright__ = "AlJOKER TEAM (C) 2021 - 2023  " + __author__
 
 l313l.version = __version__
 l313l.tgbot.version = __version__
-LOGS = logging.getLogger("E9N99")
+LOGS = logging.getLogger("sthon")
 bot = l313l
 
 StartTime = time.time()
