@@ -21,11 +21,10 @@ from ..core.managers import edit_or_reply
 from ..helpers.functions import catalive, check_data_base_heal_th, get_readable_time
 from ..helpers.utils import reply_id
 from ..sql_helper.globals import gvarstatus
-
  
 plugin_category = "utils"
 
-#كتـابة وتعـديل:  @lMl10l
+#كتـابة وتعـديل:  
 file_path = "installation_date.txt"
 if os.path.exists(file_path) and os.path.getsize(file_path) > 0:
     with open(file_path, "r") as file:
@@ -46,9 +45,9 @@ async def amireallyalive(event):
     _, check_sgnirts = check_data_base_heal_th()
     EMOJI = gvarstatus("ALIVE_EMOJI") or "⿻┊‌‎"
     me = await l313l.get_me()
-     first_name = me.first_name
-     mention = first_name
-    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**父[ 𝗦𝞝𝗗𝙏𝙃𝙊𝙉 𝗨𝘀𝗲𝗿𝗯𝗼𝘁 ✓ ](t.me/X_X_X_X_R)父**"
+    first_name = me.first_name
+    mention = first_name
+    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**父[ 𝙹𝙾𝙺𝙴𝚁 𝙸𝚂 𝚆𝙾𝚁𝙺𝙸𝙽𝙶 ✓ ](t.me/veevvw)父**"
     HuRe_IMG = gvarstatus("ALIVE_PIC") or Config.A_PIC
     l313l_caption = gvarstatus("ALIVE_TEMPLATE") or temp
     caption = l313l_caption.format(
@@ -96,4 +95,4 @@ temp = """{ALIVE_TEXT}
 **‌‎{EMOJI}‌‎𝚄𝙿𝚃𝙸𝙼𝙴 𖠄 `{uptime}`** ٫
 ‌‎**{EMOJI}‌‎‌‎𝙿𝙸𝙽𝙶 𖠄 `{ping}`** ٫
 ‌‎**{EMOJI}‌‎‌‎𝚂𝙴𝚃𝚄𝙿 𝙳𝙰𝚃𝙴 𖠄 `{Tare5}`** ٫
-**𖠄 𝗦𝞝𝗗𝙏𝙃𝙊𝙉 𝘂𝘀𝗲𝗿𝗯𝗼𝘁 𖠄**"""
+**𖠄 J𝗼𝗸𝗲𝗿 𝘂𝘀𝗲𝗿𝗯𝗼𝘁 𖠄**"""
