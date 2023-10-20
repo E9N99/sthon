@@ -11,7 +11,7 @@ from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import InputPeerChannel
 from telethon.errors import ChannelPrivateError
 from telethon.utils import get_peer_id
-from JoKeRUB import l313l
+from SedUb import l313l
 from telethon import types
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
@@ -35,9 +35,9 @@ PATH = os.path.join("./temp", "temp_vid.mp4")
 thumb_loc = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
 cancel_process = False
 
-#Copyright  By  @jepthon  © 2021
-#WRITE BY  @lMl10l  
-#Edited By Reda 
+#Copyright  By  @veevvw  © 2021
+#WRITE BY  @nunuu  
+#Edited By BiLaL 
 
 
 @l313l.ar_cmd(
@@ -347,8 +347,8 @@ async def _(event):
             os.remove(new_required_file_name)
             await event.delete()
             
-#Copyright  By  @jepthon  © 2021
-#WRITE BY  @lMl10l
+#Copyright  By  @veevvw  © 2021
+#WRITE BY  @nunuu
 
 @l313l.ar_cmd(
     pattern="تحويل متحركة ?([0-9.]+)?$",
@@ -385,7 +385,7 @@ async def _(event):
     for i in [inputfile, outputfile]:
         if os.path.exists(i):
             os.remove(i)
-#write Code By #Hussein For Aljoker 🤡
+#write Code By #Hussein For  SedUb
 @l313l.ar_cmd(
     pattern=r"بنتيرست (.+)",
     command=("بنتيرست", plugin_category),
