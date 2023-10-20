@@ -3,7 +3,7 @@ from math import floor
 
 from telethon.utils import get_display_name
 
-from JoKeRUB import l313l
+from SedUb import l313l
 
 from ..Config import Config
 from ..core.logger import logging
