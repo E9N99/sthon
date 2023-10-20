@@ -1,9 +1,9 @@
-# Copyright (C) 2021 JoKeRUB TEAM
-# FILES WRITTEN BY  @lMl10l
+# Copyright (C) 2021 SedUb TEAM
+# FILES WRITTEN BY  @SedUb
 #يابقية الله في الارض
 import requests
 from validators.url import url
-from JoKeRUB import l313l
+from SedUb import l313l
 
 from ..core.managers import edit_delete, edit_or_reply
 
