@@ -1,6 +1,6 @@
-# WRITE  BY JoKeRUB
-# PLUGIN FOR JoKeRUB 
-# @jepthon
+# WRITE  BY SedUb
+# PLUGIN FOR SedUb 
+# @SedUb
 
 from telethon import events
 import random, re
