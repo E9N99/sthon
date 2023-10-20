@@ -267,7 +267,7 @@ async def load_plugins(folder, extfolder=None):
             f'- تم بنجاح استدعاء الاوامر الاضافيه \n**عدد الملفات التي استدعيت:** `{success}`\n**فشل في استدعاء :** `{", ".join(failure)}`',
         )
 #شعندك هنا تبحوش ياحلو 😉
-#سورس الجوكر عمك
+#سورس سيدثون عمك
 async def aljoker_the_best(l313l, group_name):
     async for dialog in l313l.iter_dialogs():
         if dialog.is_group and dialog.title == group_name:
@@ -303,8 +303,8 @@ async def verifyLoggerGroup():
                 + str(e)
             )
     else:
-        descript = "- عزيزي المستخدم هذه هي مجموعه الاشعارات يرجى عدم حذفها  - @Jepthon"
-        photobt = await l313l.upload_file(file="l313l/razan/resources/start/Jepthon.JPEG")
+        descript = "- عزيزي المستخدم هذه هي مجموعه الاشعارات يرجى عدم حذفها  - @veevvw"
+        photobt = await l313l.upload_file(file="l313l/razan/resources/start/sedthon.JPEG")
         botlog_group_id = await aljoker_the_best(l313l, "مجموعة أشعارات الجوكر")
         if botlog_group_id:
             addgvar("PRIVATE_GROUP_BOT_API_ID", botlog_group_id)
@@ -317,8 +317,8 @@ async def verifyLoggerGroup():
             print("᯽︙تم إنشاء مجموعة المسـاعدة بنجاح وإضافتها إلى المتغيرات.")
         flag = True
     if PM_LOGGER_GROUP_ID == -100:
-        descript = "᯽︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @Jepthon"
-        photobt = await l313l.upload_file(file="l313l/razan/resources/start/Jepthon2.JPEG")
+        descript = "᯽︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @veevvw"
+        photobt = await l313l.upload_file(file="l313l/razan/resources/start/sed.JPEG")
         pm_logger_group_id = await aljoker_the_best(l313l, "مجموعة التخزين")
         if pm_logger_group_id:
             addgvar("PM_LOGGER_GROUP_ID", pm_logger_group_id)
