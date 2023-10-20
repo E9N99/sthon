@@ -16,7 +16,7 @@ from telethon.tl.types import (
     InputMessagesFilterVoice,
 )
 
-from JoKeRUB import l313l
+from SedUb import l313l
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import reply_id
