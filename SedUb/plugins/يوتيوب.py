@@ -9,14 +9,14 @@ import re
 import time
 from datetime import datetime
 
-from JoKeRUB.utils import sudo_cmd
+from SedUb.utils import sudo_cmd
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl import types
 from telethon.utils import get_attributes
 from youtube_dl import YoutubeDL
 from urlextract import URLExtract
 from wget import download
-from JoKeRUB import l313l
+from SedUb import l313l
 from youtube_dl.utils import (
     ContentTooShortError,
     DownloadError,
@@ -372,7 +372,7 @@ async def kakashi(event):
         end = datetime.now()
         ms = (end - start).seconds
         await cat.edit(
-            f"꙳ ¦ تم تنزيل بواسطة  : @jepthon ",
+            f"꙳ ¦ تم تنزيل بواسطة  : @VEEVVW ",
             parse_mode="html",
         )
     await event.client.delete_messages(
@@ -380,7 +380,7 @@ async def kakashi(event):
     )
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from JoKeRUB import l313l
+from SedUb import l313l
 
 
 @l313l.on(admin_cmd(pattern="تيك توك(?: |$)(.*)"))
