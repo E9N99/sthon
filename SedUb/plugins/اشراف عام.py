@@ -1,4 +1,4 @@
-#    جميع الحقوق محفوظة كتابة وتعديل  :   @lMl10l
+#    جميع الحقوق محفوظة كتابة وتعديل  :   @nunuu
 #    اخمط مع ذكر الحقوق غيرها انت مطور فاشل
 marculs=9
 from telethon.errors.rpcerrorlist import (UserIdInvalidError,
@@ -14,7 +14,7 @@ from telethon.tl.types import (ChannelParticipantsAdmins,
                                        MessageMediaPhoto)
 from JoKeRUB.utils import admin_cmd
 from ..Config import Config
-from JoKeRUB import CMD_HELP, l313l
+from SedUb import CMD_HELP, l313l
 up_admin = Config.UP_ET or "ارفع"
 down_admin = Config.DOWN_ET or "تزل"
 async def get_full_user(event):  
@@ -59,22 +59,22 @@ async def get_user_from_id(user, event):
         return None
     return user_obj
 @l313l.on(admin_cmd(pattern="{up_admin} ?(.*)"))
-async def gben(JoKeRUB):
-    dc = razan = JoKeRUB
+async def gben(SedUb):
+    dc = razan = SedUb
     i = 0
     sender = await dc.get_sender()
-    me = await JoKeRUB.client.get_me()
+    me = await SedUb.client.get_me()
     await razan.edit("▾∮ يتم رفع المستخدم في جميع المجموعات")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
-    await JoKeRUB.get_chat()
-    if JoKeRUB.is_private:
-        user = JoKeRUB.chat
-        rank = JoKeRUB.pattern_match.group(1)
+    await SedUb.get_chat()
+    if SedUb.is_private:
+        user = SedUb.chat
+        rank = SedUb.pattern_match.group(1)
     else:
-        JoKeRUB.chat.title
+        SedUb.chat.title
     try:
-        user, rank = await get_full_user(JoKeRUB)
+        user, rank = await get_full_user(SedUb)
     except:
         pass
     if me == user:
@@ -87,7 +87,7 @@ async def gben(JoKeRUB):
         return await razan.edit(f"**▾∮ هنالك شي خطأ**")
     if user:
         telchanel = [d.entity.id
-                     for d in await JoKeRUB.client.get_dialogs()
+                     for d in await SedUb.client.get_dialogs()
                      if (d.is_group or d.is_channel)
                      ]
         rgt = ChatAdminRights(add_admins=True,
@@ -98,7 +98,7 @@ async def gben(JoKeRUB):
                                    pin_messages=True)
         for x in telchanel:
           try:
-             await JoKeRUB.client(EditAdminRequest(x, user, rgt, rank))
+             await SedUb.client(EditAdminRequest(x, user, rgt, rank))
              i += 1
              await razan.edit(f"**▾∮ يتم الرفع في **: `{i}` من المجموعات")
           except:
@@ -110,22 +110,22 @@ async def gben(JoKeRUB):
     )
 
 @l313l.on(admin_cmd(pattern="{down_admin} ?(.*)"))
-async def gben(JoKeRUB):
-    dc = razan = JoKeRUB
+async def gben(SedUb):
+    dc = razan = SedUb
     i = 0
     sender = await dc.get_sender()
-    me = await JoKeRUB.client.get_me()
+    me = await SedUb.client.get_me()
     await razan.edit("**▾∮ يتم تنزيل الشخص من رتبة الاشراف في جميع الكروبات**")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
-    await JoKeRUB.get_chat()
-    if JoKeRUB.is_private:
-        user = JoKeRUB.chat
-        rank = JoKeRUB.pattern_match.group(1)
+    await SedUb.get_chat()
+    if SedUb.is_private:
+        user = SedUb.chat
+        rank = SedUb.pattern_match.group(1)
     else:
-        JoKeRUB.chat.title
+        SedUb.chat.title
     try:
-        user, rank = await get_full_user(JoKeRUB)
+        user, rank = await get_full_user(SedUb)
     except:
         pass
     if me == user:
@@ -138,7 +138,7 @@ async def gben(JoKeRUB):
         return await razan.edit(f"**▾∮ هنالك شي خطأ**")
     if user:
         telchanel = [d.entity.id
-                     for d in await JoKeRUB.client.get_dialogs()
+                     for d in await SedUb.client.get_dialogs()
                      if (d.is_group or d.is_channel)
                      ]
         rgt = ChatAdminRights(add_admins=None,
@@ -149,7 +149,7 @@ async def gben(JoKeRUB):
                                    pin_messages=None)
         for x in telchanel:
           try:
-             await JoKeRUB.client(EditAdminRequest(x, user, rgt, rank))
+             await SedUb.client(EditAdminRequest(x, user, rgt, rank))
              i += 1
              await razan.edit(f"**▾∮ يتم تنزيله في **: `{i}` من المجموعات")
           except:
