@@ -1,8 +1,8 @@
 from asyncio import sleep
 import requests
 import json
-from JoKeRUB.helpers.functions.functions import translate
-from JoKeRUB import l313l
+from SedUb.helpers.functions.functions import translate
+from SedUb import l313l
 from telethon import events, types
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from ..core.managers import edit_delete, edit_or_reply
@@ -112,7 +112,7 @@ async def Reda_is_Here(event):
 async def reda(event):
     if gvarstatus("transnow"):
         if event.media or isinstance(event.media, types.MessageMediaDocument) or isinstance(event.media, types.MessageMediaInvoice):
-            print ("JoKeRUB")
+            print ("SedUb")
         else:
             original_message = event.message.message
             translated_message = await gtrans(soft_deEmojify(original_message.strip()), gvarstatus("translang") or "en")
