@@ -1,4 +1,4 @@
-#JoKeRUB - @lMl10l - @313
+#SedUb - @SedUb - @313
 # L E O - M U H A M M E D
 
 
@@ -7,7 +7,7 @@ from datetime import datetime
 
 from telethon.tl import functions, types
 
-from JoKeRUB import l313l
+from SedUb import l313l
 
 from ..Config import Config
 from ..core.logger import logging
@@ -19,7 +19,7 @@ from . import BOTLOG, BOTLOG_CHATID
 plugin_category = "utils"
 
 LOGS = logging.getLogger(__name__)
-#JoKeRUB - lMl10l - 313
+#JoKeRUB - SedUb - 313
 # L E O - M U H A M M E D
 
 class AFK:
