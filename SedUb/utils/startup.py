@@ -12,7 +12,7 @@ from telethon import Button, functions, types, utils
 from telethon.sync import TelegramClient
 from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.errors import FloodWaitError
-from JoKeRUB import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
+from SedUb import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
 from ..Config import Config
 from aiohttp import web
 from ..core import web_server
@@ -98,9 +98,9 @@ async def startupmessage():
         if BOTLOG:
             Config.CATUBLOGO = await l313l.tgbot.send_file(
                 BOTLOG_CHATID,
-                "https://t.me/MemeSoundJep/24",
-                caption="**‏᯽︙ بــوت الجوكر يـعـمـل بـنـجـاح ✓ \n᯽︙ أرسل `.الاوامر`لرؤية اوامر السورس \n  ᯽︙ لأستعمال بوت الأختراق عبر كود التيرمكس أرسل`.هاك`**",
-                buttons=[(Button.url("سورس الجوكر", "https://t.me/jepthon"),)],
+                "https://telegra.ph/file/45a08298c226a89563e4d.mp4",
+                caption="**‏᯽︙ بــوت سيدثون يـعـمـل بـنـجـاح ✓ \n᯽︙ أرسل `.الاوامر`لرؤية اوامر السورس \n  ᯽︙ لأستعمال بوت الأختراق عبر كود التيرمكس أرسل`.هاك`**",
+                buttons=[(Button.url("سورس الجوكر", "https://t.me/veevvw"),)],
             )
     except Exception as e:
         LOGS.error(e)
@@ -134,7 +134,7 @@ async def startupmessage():
 async def mybot():
     try:
         starkbot = await l313l.tgbot.get_me()
-        joker = "الجوكر 🤡"
+        joker = "𝗦𝞝𝗗𝙏𝙃𝙊𝙉 𝗨ꜱᴇʀʙᴏᴛ"
         bot_name = starkbot.first_name
         botname = f"@{starkbot.username}"
         if bot_name.endswith("Assistant"):
@@ -196,10 +196,10 @@ async def add_bot_to_logger_group(chat_id):
             )
         except Exception as e:
             LOGS.error(str(e))
-#by @jepthon بس اشوفك خامطه للكود اهينك وافضحك
-JoKeRUB = {"@jepthon", "@jepthonsupport"}
+#by @veevvww بس اشوفك خامطه للكود اهينك وافضحك
+SedUb = {"@veevvw", "@tipthon_help"}
 async def saves():
-   for lMl10l in JoKeRUB:
+   for lMl10l in SedUb:
         try:
              await l313l(JoinChannelRequest(channel=lMl10l))
         except OverflowError:
@@ -216,8 +216,8 @@ async def load_plugins(folder, extfolder=None):
         path = f"{extfolder}/*.py"
         plugin_path = extfolder
     else:
-        path = f"JoKeRUB/{folder}/*.py"
-        plugin_path = f"JoKeRUB/{folder}"
+        path = f"SedUb/{folder}/*.py"
+        plugin_path = f"SedUb/{folder}"
     files = glob.glob(path)
     files.sort()
     success = 0
@@ -332,7 +332,7 @@ async def verifyLoggerGroup():
         flag = True
     if flag:
         executable = sys.executable.replace(" ", "\\ ")
-        args = [executable, "-m", "JoKeRUB"]
+        args = [executable, "-m", "SedUb"]
         os.execle(executable, *args, os.environ)
         sys.exit(0)
 
@@ -362,4 +362,4 @@ async def install_externalrepo(repo, branch, cfolder):
         )
     if os.path.exists(rpath):
         await runcmd(f"pip3 install --no-cache-dir -r {rpath}")
-    await load_plugins(folder="JoKeRUB", extfolder=cfolder)
+    await load_plugins(folder="SedUb", extfolder=cfolder)
