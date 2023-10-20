@@ -1,7 +1,7 @@
 import time
 
 import heroku3
-from events import *
+from event import *
 from .Config import Config
 from .core.logger import logging
 from .core.session import l313l
