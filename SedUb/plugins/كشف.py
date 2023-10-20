@@ -7,8 +7,8 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.utils import get_input_location
 from ..sql_helper.globals import gvarstatus
 
-from JoKeRUB import l313l
-from JoKeRUB.core.logger import logging
+from SedUb import l313l
+from SedUb.core.logger import logging
 
 from ..Config import Config
 from ..core.managers import edit_or_reply
@@ -76,7 +76,7 @@ async def fetch_info(replied_user, event):
     full_name = full_name or first_name
     username = "@{}".format(username) if username else ("لايـوجـد معـرف")
     user_bio = "لاتـوجـد نبـذة" if not user_bio else user_bio
-    rotbat = "⌁ من مطورين السورس 𓄂𓆃 ⌁" if user_id == 705475246 else ("⌁ العضـو 𓅫 ⌁")
+    rotbat = "⌁ من مطورين السورس 𓄂𓆃 ⌁" if user_id == 1488114134 else ("⌁ العضـو 𓅫 ⌁")
     rotbat = "⌁ مـالك الحساب 𓀫 ⌁" if user_id == (await event.client.get_me()).id and user_id != 705475246  else rotbat
     caption = "✛━━━━━━━━━━━━━✛\n"
     caption += f"<b> {JEP_EM}╎الاسـم    ⇠ </b> {full_name}\n"
@@ -184,8 +184,8 @@ async def who(event):
         await cat.delete()
     except TypeError:
         await cat.edit(caption, parse_mode="html")
-#كـتابة  @lMl10l
-#تعديل وترتيب  @lMl10l
+#كـتابة  @nunuu
+#تعديل وترتيب  @nunuu
 @l313l.ar_cmd(
     pattern="رابط الحساب(?:\s|$)([\s\S]*)",
     command=("رابط الحساب", plugin_category),
@@ -252,7 +252,7 @@ async def _(event):
             )
     else:
         await edit_or_reply(event, f"᯽︙ الـدردشـة الـحالية : `{str(event.chat_id)}`")
-#by Reda For aljoker 🤡
+#by 
 @l313l.ar_cmd(
     pattern=r"كشف_ايدي(?: (\d+))?$",
     command=("كشف_ايدي", "utils"),
