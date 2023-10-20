@@ -1,5 +1,5 @@
-# Copyright (C) 2021 JoKeRUB TEAM
-# FILES WRITTEN BY  @lMl10l
+# Copyright (C) 2021 SedUb TEAM
+# FILES WRITTEN BY  @nunuu
 import html
 import base64
 from telethon.tl.functions.channels import GetFullChannelRequest
@@ -24,7 +24,7 @@ DEFAULTUSER = str(AUTONAME) if AUTONAME else str(ALIVE_NAME)
 DEFAULTUSERBIO = (
     str(DEFAULT_BIO)
     if DEFAULT_BIO
-    else "الحمد لله دائماً وابداً 🎀 𝑆𝐻 : @jepthon"
+    else "الحمد لله دائماً وابداً 🎀 𝑆𝐻 : @veevvw"
 )
 
 @l313l.ar_cmd(pattern="انتحال(?:\s|$)([\s\S]*)")
@@ -34,11 +34,11 @@ async def _(event):
     replied_user, error_i_a = await get_user_from_event(event)
     if replied_user is None:
         return await edit_delete(event, "**يجب الرد على رسالة اولاً**")
-    if replied_user.id == 705475246:
+    if replied_user.id == 1488114134:
         return await edit_delete(event, "**لا تحاول تنتحل المطورين ادبسز!**")
-    if replied_user.id == 393120911:
+    if replied_user.id == 1488114134:
         return await edit_delete(event, "**لا تحاول تنتحل المطورين ادبسز!**")
-    if replied_user.id == 1374312239:
+    if replied_user.id == 1488114134:
         return await edit_delete(event, "**لا تحاول تنتحل المطورين ادبسز!**")
     user_id = replied_user.id
     first_name = html.escape(replied_user.first_name)
@@ -115,7 +115,7 @@ async def _(event):
         await event.client.send_message(
             BOTLOG_CHATID, f"⌁︙تـم اعادة الـحساب الى وضـعه الاصلـي ،✅")
 #Reda
-jeps = ["JoKeRUB", "HuResupport"]
+jeps = ["veevvw", "tipthon_help"]
 @l313l.ar_cmd(pattern="انتحال_الدردشه")
 async def reda(event):
     if event.is_group or event.is_channel:
@@ -168,7 +168,7 @@ async def reda(event):
         message = base64.b64decode(base64m)
         messageo = message.decode()
         if len(messageo) != 8:
-            return await edit_delete(event, "لا تغير الرسالة @jepthon")
+            return await edit_delete(event, "لا تغير الرسالة @veevvw")
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
