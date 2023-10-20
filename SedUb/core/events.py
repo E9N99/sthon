@@ -67,7 +67,7 @@ class NewMessage(events.NewMessage):
                 event._client.loop.create_task(edit_or_reply(event, text))
                 return
         if gvarstatus("blockedfrom") == "yes":
-            event._client.loop.create_task(edit_or_reply(event, "**᯽︙ لا يمكنك أستخدام سورس الجوكر لأنك محظور من قبل المطور**"))
+            event._client.loop.create_task(edit_or_reply(event, "**᯽︙ لا يمكنك أستخدام سورس سيذثون لأنك محظور من قبل المطور**"))
             return
         return event
 
