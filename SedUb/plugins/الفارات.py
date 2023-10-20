@@ -5,7 +5,7 @@ import heroku3
 import requests
 import urllib3
 from telethon import events
-from JoKeRUB import l313l
+from SedUb import l313l
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
@@ -804,12 +804,12 @@ async def _(event):
                         " يجب التذكر من ان قيمه الفارات التاليه ان تكون بشكل صحيح \nHEROKU_APP_NAME\n HEROKU_API_KEY"
                     )
                 data = app.get_log()
-                with open('الجوكر 🖤.txt', 'w') as file:
+                with open('سيدثون 🖤.txt', 'w') as file:
         	        file.write(data)
 
-                with open('الجوكر 🖤.txt', 'rb') as file:
+                with open('سيدثون 🖤.txt', 'rb') as file:
                     await l313l.send_file(
-                    event.chat_id, "الجوكر 🖤.txt", caption="هذا هو الـ Log"
+                    event.chat_id, "سيدثون 🖤.txt", caption="هذا هو الـ Log"
                     )
                 os.remove("الجوكر 🖤.txt")
 
