@@ -8,7 +8,7 @@ import textwrap
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterDocument
 
-from JoKeRUB import l313l
+from SedUb import l313l
 
 from ..core.managers import edit_or_reply
 from ..helpers.functions import deEmojify, hide_inlinebot, waifutxt
