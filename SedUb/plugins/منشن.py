@@ -1,7 +1,7 @@
-# By Reda for JoKeRUB
-# Tel: @rd0r0
+# By Reda for SedUb
+# Tel: @nunuu
 # شعندك داخل للملف تريد تخمطة ههههههههه اخمط ونسبة لنفسك ماوصيك :*
-from JoKeRUB import l313l
+from SedUb import l313l
 import asyncio
 import time
 from ..core.managers import edit_or_reply
