@@ -1,7 +1,7 @@
 # اذا تخمط اذكر الحقوق رجـاءا  - 
-# كتابة وتعديل وترتيب  ~ @lMl10l
-# For ~ @Jepthon
-#تعديل Reda / رضا
+# كتابة وتعديل وترتيب  ~ @nunuu
+# For ~ @veevvw
+#تعديل BiLaL / بلال
 #من تعرف تخمط اذكر حقوق لتسوي نفسك مطور
 from ..sql_helper.group import auto_g, del_auto_g, get_auto_g
 import webcolors
@@ -12,14 +12,14 @@ import shutil
 import time
 from datetime import datetime
 from telethon import events
-from ALJoker import get_string
+from BiLaL import get_string
 from telethon.errors import ChatAdminRequiredError
 from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
 from telethon.errors import FloodWaitError, ChannelInvalidError
 from telethon.tl import functions
 from telethon import types
-from JoKeRUB import BOTLOG_CHATID
+from SedUb import BOTLOG_CHATID
 from ..Config import Config
 from ..helpers.utils import _format
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
@@ -35,15 +35,15 @@ LOGS = logging.getLogger(__name__)
 
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 
-autopic_path = os.path.join(os.getcwd(), "JoKeRUB", "original_pic.png")
-digitalpic_path = os.path.join(os.getcwd(), "JoKeRUB", "digital_pic.png")
-digital_group_pic_path = os.path.join(os.getcwd(), "JoKeRUB", "digital_group_pic.png")
-autophoto_path = os.path.join(os.getcwd(), "JoKeRUB", "photo_pfp.png")
-auto_group_photo_path = os.path.join(os.getcwd(), "JoKeRUB", "photo_pfp.png")
+autopic_path = os.path.join(os.getcwd(), "SedUb", "original_pic.png")
+digitalpic_path = os.path.join(os.getcwd(), "SedUb", "digital_pic.png")
+digital_group_pic_path = os.path.join(os.getcwd(), "SedUb", "digital_group_pic.png")
+autophoto_path = os.path.join(os.getcwd(), "SedUb", "photo_pfp.png")
+auto_group_photo_path = os.path.join(os.getcwd(), "SedUb", "photo_pfp.png")
 
 digitalpfp = Config.DIGITAL_PIC or "https://telegra.ph/file/63a826d5e5f0003e006a0.jpg"
 digitalgrouppfp = Config.DIGITAL_GROUP_PIC or "https://telegra.ph/file/63a826d5e5f0003e006a0.jpg"
-jep = Config.DEFAULT_PIC or "JoKeRUB/helpers/styles/PaybAck.ttf"
+jep = Config.DEFAULT_PIC or "SedUb/helpers/styles/PaybAck.ttf"
 normzltext = "1234567890"
 namew8t = Config.NAME_ET or "اسم وقتي"
 biow8t = Config.BIO_ET or "بايو وقتي"
@@ -95,7 +95,7 @@ async def digitalpicloop():
             return
         DIGITALPICSTART = gvarstatus("digitalpic") == "true"
 
-#Reda
+#BiLaL
 #اننننسخخخخخ هههههههههههههههههههههههههههههههههههههههههههههههههههههههههههههههههههههههه
 async def digitalgrouppicloop():
     "2KjZiNin2LPYt9ipINiz2YjYsdizINis2YrYqNir2YjZhiAo2KfYsNinINin2LPYqtio2K/ZhNiq2Ycg2LHYp9itINiq2KvYqNiqINmB2LTZhNmDKSDZhdi5INiq2K3Zitin2KrZiiDYp9iu2YjZg9mFINix2LbYpyBAcmQwcjA="
