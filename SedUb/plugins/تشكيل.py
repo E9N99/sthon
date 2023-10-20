@@ -1,8 +1,8 @@
 import pyfiglet
-from JoKeRUB import l313l
-from JoKeRUB.helpers.utils import _format
-from JoKeRUB.core.managers import edit_delete, edit_or_reply
-from JoKeRUB.plugins import _format, l313l, deEmojify
+from SedUb import l313l
+from SedUb.helpers.utils import _format
+from SedUb.core.managers import edit_delete, edit_or_reply
+from SedUb.plugins import _format, l313l, deEmojify
 
 plugin_category = "utils"
 
