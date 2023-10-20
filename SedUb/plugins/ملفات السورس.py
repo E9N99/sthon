@@ -1,4 +1,4 @@
-from JoKeRUB import l313l
+from SedUb import l313l
 import pkg_resources
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import _catutils, parse_pre, yaml_format
@@ -32,7 +32,7 @@ async def reda(event):
 )
 async def _(event):
     "To list all plugins in SedUb"
-    cmd = "ls JoKeRUB/plugins"
+    cmd = "ls SedUb/plugins"
     o = (await _catutils.runcmd(cmd))[0]
     OUTPUT = f"**[الجوكر](tg://need_update_for_some_feature/) الـمـلفـات:**\n{o}"
     await edit_or_reply(event, OUTPUT)
