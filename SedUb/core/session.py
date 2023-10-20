@@ -1,5 +1,5 @@
 import sys
-from JoKeRUB.core.logger import logging
+from SedUb.core.logger import logging
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 from telethon.errors import AccessTokenExpiredError, AccessTokenInvalidError
