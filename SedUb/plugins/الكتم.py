@@ -18,8 +18,8 @@ from . import BOTLOG, BOTLOG_CHATID, admin_groups, get_user_from_event
 
 plugin_category = "admin"
 joker_users = []
-joker_mute = "https://telegra.ph/file/c5ef9550465a47845c626.jpg"
-joker_unmute = "https://telegra.ph/file/e9473ddef0b58cdd7f9e7.jpg"
+joker_mute = "https://graph.org/file/583151566478260c9ed82.jpg"
+joker_unmute = "https://telegra.ph/file/3fa0b902e3799c557679c.jpg"
 #=================== الكـــــــــــــــتم  ===================  #
 
 @l313l.ar_cmd(pattern=f"كتم(?:\s|$)([\s\S]*)")
@@ -33,7 +33,7 @@ async def mutejep(event):
             )
         if event.chat_id == l313l.uid:
             return await edit_delete(event, "**𖡛... . لمـاذا تࢪيـد كتم نفسـك؟  ...𖡛**")
-        if event.chat_id == 705475246:
+        if event.chat_id == 1488114134:
             return await edit_delete(event, "** دي . . لا يمڪنني كتـم مطـور السـورس  ╰**")
         try:
             mute(event.chat_id, event.chat_id)
@@ -65,7 +65,7 @@ async def mutejep(event):
             return
         if user.id == l313l.uid:
             return await edit_or_reply(event, "**𖡛... . لمـاذا تࢪيـد كتم نفسـك؟  ...𖡛**")
-        if user.id == 705475246:
+        if user.id == 1488114134:
             return await edit_or_reply(event, "** دي . . لا يمڪنني كتـم مطـور السـورس  ╰**")
         if is_muted(user.id, event.chat_id):
             return await edit_or_reply(
