@@ -50,23 +50,23 @@ async def _(event):
     if not jok:
         return await edit_or_reply(event, "**᯽︙ عـذراً .. قـم بـ إضـافة معـرف/ايـدي القنـاة الى الامـر اولاً**")
     if jok.startswith("@"):
-        JoKeRUB = jok
+        SedUb = jok
     elif jok.startswith("https://t.me/"):
-        JoKeRUB = jok.replace("https://t.me/", "@")
+        SedUb = jok.replace("https://t.me/", "@")
     elif str(jok).startswith("-100"):
-        JoKeRUB = str(jok).replace("-100", "")
+        SedUb = str(jok).replace("-100", "")
     else:
         try:
-            JoKeRUB = int(jok)
+            SedUb = int(jok)
         except BaseException:
             return await edit_or_reply(event, "**᯽︙ عـذراً .. معـرف/ايـدي القنـاة غيـر صـالح**\n**✾╎الرجـاء التـأكـد مـن المعـرف/الايـدي**")
     try:
-        JoKeRUB = (await event.client.get_entity(JoKeRUB)).id
+        SedUb = (await event.client.get_entity(SedUb)).id
     except BaseException:
         return await event.reply("**᯽︙ عـذراً .. معـرف/ايـدي القنـاة غيـر صـالح**\n**✾╎الرجـاء التـأكـد مـن المعـرف/الايـدي**")
-    if is_post(str(JoKeRUB) , event.chat_id):
+    if is_post(str(SedUb) , event.chat_id):
         return await edit_or_reply(event, "**᯽︙ النشـر التلقـائي من القنـاة ** `{jok}` **مفعـل مسبقـاً ✓**")
-    add_post(str(JoKeRUB), event.chat_id)
+    add_post(str(SedUb), event.chat_id)
     await edit_or_reply(event, f"**᯽︙ تم تفعيـل النشـر التلقـائي من القنـاة ** `{jok}` **بنجـاح ✓**")
 
 
@@ -79,23 +79,23 @@ async def _(event):
     if not jok:
         return await edit_or_reply(event, "**᯽︙ عـذراً .. قـم بـ إضـافة معـرف/ايـدي القنـاة الى الامـر اولاً**")
     if jok.startswith("@"):
-        JoKeRUB = jok
+        SedUb = jok
     elif jok.startswith("https://t.me/"):
-        JoKeRUB = jok.replace("https://t.me/", "@")
+        SedUb = jok.replace("https://t.me/", "@")
     elif str(jok).startswith("-100"):
-        JoKeRUB = str(jok).replace("-100", "")
+        SedUb = str(jok).replace("-100", "")
     else:
         try:
-            JoKeRUB = int(jok)
+            SedUb = int(jok)
         except BaseException:
             return await edit_or_reply(event, "**᯽︙ عـذراً .. معـرف/ايـدي القنـاة غيـر صـالح**\n**✾╎الرجـاء التـأكـد مـن المعـرف/الايـدي**")
     try:
-        JoKeRUB = (await event.client.get_entity(JoKeRUB)).id
+        SedUb = (await event.client.get_entity(SedUb)).id
     except BaseException:
         return await event.reply("**᯽︙ عـذراً .. معـرف/ايـدي القنـاة غيـر صـالح**\n**✾╎الرجـاء التـأكـد مـن المعـرف/الايـدي**")
-    if not is_post(str(JoKeRUB), event.chat_id):
+    if not is_post(str(SedUb), event.chat_id):
         return await edit_or_reply(event, "**᯽︙ تم تعطيـل النشر التلقـائي لهـذه القنـاة هنـا .. بنجـاح ✓**")
-    remove_post(str(JoKeRUB), event.chat_id)
+    remove_post(str(SedUb), event.chat_id)
     await edit_or_reply(event, f"**᯽︙ تم ايقـاف النشـر التلقـائي من** `{jok}`")
 
 
