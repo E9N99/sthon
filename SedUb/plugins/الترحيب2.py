@@ -1,12 +1,12 @@
 #========================#
-#       JoKeRUB  - lMl10l  #  
+#       SedUb  - nunuu  #  
 # =======================#
 
 from asyncio import sleep
 from telethon.utils import get_display_name
 from telethon import events
 
-from JoKeRUB import l313l
+from SedUb import l313l
 from ..Config import Config
 
 
