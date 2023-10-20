@@ -1,8 +1,8 @@
 from urlextract import URLExtract
 import re
 import requests
-from JoKeRUB import l313l
-from JoKeRUB.core.logger import logging
+from SedUb import l313l
+from SedUb.core.logger import logging
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
