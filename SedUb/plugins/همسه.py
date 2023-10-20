@@ -1,10 +1,10 @@
 from telethon import events
 import random, re
-from JoKeRUB.utils import admin_cmd
+from SedUb.utils import admin_cmd
 import asyncio 
 
-# Wespr File by  @lMl10l
-# Copyright (C) 2021 JoKeRUB TEAM
+# Wespr File by  @SedUb
+# Copyright (C) 2021 SedUb TEAM
 @borg.on(
     admin_cmd(pattern="همسة ?(.*)")
 )
@@ -34,7 +34,7 @@ async def _(event):
        pattern="اكس او$"
     )
 )
-# كتابة وتعديل فريق الجوكر  #@lMl10l
+# كتابة وتعديل فريق سيدثون  #@SedUb
 async def gamez(event):
     if event.fwd_from:
         return
