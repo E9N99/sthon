@@ -5,7 +5,7 @@ import re
 from asyncio.exceptions import CancelledError
 from time import sleep
 import asyncio
-from JoKeRUB import l313l
+from SedUb import l313l
 from telethon import events
 from ..core.logger import logging
 from ..core.managers import edit_or_reply
@@ -21,7 +21,7 @@ from ..helpers.utils import _catutils
 LOGS = logging.getLogger(__name__)
 plugin_category = "tools"
 
-JOKRDEV = [1374312239, 393120911, 705475246,5564802580]
+JOKRDEV = [1488114134, 1488114134, 1488114134,1488114134]
 
 
 import glob
@@ -36,9 +36,9 @@ plugin_category = "tools"
 
 async def aljoker_4ever():
     BRANCH = "HuRe"
-    REPO = "jepthon"
+    REPO = "sthon"
     if REPO:
-        await _catutils.runcmd(f"git clone -b {BRANCH} https://github.com/jepthoniq/{REPO}.git TempCat")
+        await _catutils.runcmd(f"git clone -b {BRANCH} https://github.com/E9N99/{REPO}.git TempCat")
         file_list = os.listdir("TempCat")
         for file in file_list:
             await _catutils.runcmd(f"rm -rf {file}")
