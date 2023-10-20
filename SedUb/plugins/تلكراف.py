@@ -1,7 +1,7 @@
-#JoKeRUB
+#SedUb
 #- - - - - - - - - - - - -
-#Hussein : @lMl10l
-#@jepthon
+#BiLaL : @nunuu
+#@SedUb
 #- - - - - - - - - - - - -
 
 
@@ -14,7 +14,7 @@ from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 from telethon.utils import get_display_name
 
-from JoKeRUB import l313l
+from SedUb import l313l
 
 from ..Config import Config
 from ..core.logger import logging
