@@ -4,7 +4,7 @@ import shutil
 
 from telethon.errors.rpcerrorlist import MediaEmptyError
 
-from JoKeRUB import l313l
+from SedUb import l313l
 
 from ..core.managers import edit_or_reply
 from ..helpers.google_image_download import googleimagesdownload
