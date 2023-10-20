@@ -27,7 +27,7 @@ from ..sql_helper.global_collection import (
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from .pluginmanager import load_module
 from .tools import create_supergroup
-LOGS = logging.getLogger("aljoker")
+LOGS = logging.getLogger("BiLaL")
 logging.getLogger('telethon').setLevel(logging.WARNING)
 ##Reda hands here
 cmdhr = Config.COMMAND_HAND_LER
@@ -100,7 +100,7 @@ async def startupmessage():
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/45a08298c226a89563e4d.mp4",
                 caption="**‏᯽︙ بــوت سيدثون يـعـمـل بـنـجـاح ✓ \n᯽︙ أرسل `.الاوامر`لرؤية اوامر السورس \n  ᯽︙ لأستعمال بوت الأختراق عبر كود التيرمكس أرسل`.هاك`**",
-                buttons=[(Button.url("سورس الجوكر", "https://t.me/veevvw"),)],
+                buttons=[(Button.url("سورس سيدثون", "https://t.me/veevvw"),)],
             )
     except Exception as e:
         LOGS.error(e)
