@@ -1,4 +1,4 @@
-#    جميع الحقوق لمطوري سورس جـيبثون حصريا لهم فقط
+#    جميع الحقوق لمطوري سورس سيدثون حصريا لهم فقط
 #    اذا تخمط الملف اذك الحقوق وكاتبيه ومطوريه لا تحذف الحقوق وتصير فاشل 👍
 #    كتابة الشسد 
 import asyncio
@@ -7,14 +7,14 @@ import re
 
 from telethon import Button, custom, events
 from telethon.tl.functions.users import GetFullUserRequest
-from JoKeRUB import bot
-from JoKeRUB.sql_helper.blacklist_assistant import (
+from SedUb import bot
+from SedUb.sql_helper.blacklist_assistant import (
     add_nibba_in_db,
     is_he_added,
     removenibba,
 )
-from JoKeRUB.sql_helper.botusers_sql import add_me_in_db, his_userid
-from JoKeRUB.sql_helper.idadder_sql import (
+from SedUb.sql_helper.botusers_sql import add_me_in_db, his_userid
+from SedUb.sql_helper.idadder_sql import (
     add_usersid_in_db,
     already_added,
     get_all_users,
@@ -37,7 +37,7 @@ async def start(event):
             buttons=[
                                      [Button.inline("عرض المستخدمين 📬", data="users"), Button.inline(
                                          "اوامر البـوت ⚒️", data="gibcmd")],
-                                     [Button.url("المطـور 🔗", "https://t.me/lMl10l"), Button.inline(
+                                     [Button.url("المطـور 🔗", "https://t.me/NUNUU"), Button.inline(
                                          "اوامر الزغـرفة", data="rozzag")],
 
                                  ])
@@ -51,7 +51,7 @@ async def start(event):
             message=starttext,
             link_preview=False,
             buttons=[
-                [custom.Button.inline("تنـصيب جيـبثون  🐍", data="deploy")],
+                [custom.Button.inline("تنـصيب سيدثون  🐍", data="deploy")],
                 [Button.url("تحتاج مسـاعدة ❓", "https://t.me/lMl10l")],
             ],
         )
@@ -67,7 +67,7 @@ async def help(event):
             message="**لتـنصيب البـوت الخاص بك اتبـع الخطـوات في الاسفـل وحاول واذا لم تستطيع تفضل الى مجموعة المساعدة ليساعدوك 🧸♥**.",
             buttons=[
                 [Button.url("شرح التنصيب 📺", "https://youtu.be/ATAgbLGzr7w")],
-                [Button.url("كروب المساعدة ❓", "https://t.me/jepthonSupport")],
+                [Button.url("كروب المساعدة ❓", "https://t.me/tipthon_help")],
             ],
         )
 
