@@ -1,4 +1,4 @@
-# By JoKeRUB 2021-2023
+# By SedUb 2021-2023
 import asyncio
 import base64
 import re
@@ -6,7 +6,7 @@ from telethon.tl import functions, types
 from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.utils import get_display_name
-from JoKeRUB import l313l
+from SedUb import l313l
 from telethon import events
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
@@ -69,7 +69,7 @@ async def spam_function(event, SedUb, l313l, sleeptimem, sleeptimet, DelaySpam=F
             SedUb = await event.client.send_file(BOTLOG_CHATID, SedUb)
             await _catutils.unsavegif(event, SedUb)
         return
-    elif event.reply_to_msg_id and JoKeRUB.text:
+    elif event.reply_to_msg_id and SedUb.text:
         spam_message = SedUb.text
         for _ in range(counter):
             if gvarstatus("spamwork") is None:
@@ -271,7 +271,7 @@ async def stopspamrz(event):
         delgvar("spamwork")
         return await edit_delete(event, "**⌔∮ تم بنجاح ايقاف التكرار **")
     return await edit_delete(event, "**⌔∮ عذرا لم يتم تفعيل التكرار بالاصل**")
-#جميع الاكواد ادناه تمت كتابتها من قبل مطورين الجوكر ممنوع السرقة !
+#جميع الاكواد ادناه تمت كتابتها من قبل مطورين سيدثون ممنوع السرقة !
 async def aljoker_nshr(l313l, sleeptimet, chat, message, seconds):
     global yaAli
     yaAli = True
