@@ -5,12 +5,12 @@ from telethon.events import CallbackQuery
 
 from l313l.razan.resources.assistant import *
 from l313l.razan.resources.mybot import *
-from JoKeRUB import l313l
+from SedUb import l313l
 from ..core import check_owner
 from ..Config import Config
 
-JEP_IC = "https://telegra.ph/file/762989c65df81fc2e96d7.jpg"
-ROE = "**♰ هـذه هي قائمة اوامـر سـورس الجوكر ♰**"
+JEP_IC = "https://telegra.ph/file/45a08298c226a89563e4d.mp4"
+ROE = "**♰ هـذه هي قائمة اوامـر سـورس سيدثون ♰**"
 
 if Config.TG_BOT_USERNAME is not None and tgbot is not None:
 
