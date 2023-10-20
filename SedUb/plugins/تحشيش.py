@@ -6,7 +6,7 @@ from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.utils import get_input_location
 
-from JoKeRUB import l313l
+from SedUb import l313l
 from random import choice
 from l313l.razan.resources.strings import *
 from telethon import events
