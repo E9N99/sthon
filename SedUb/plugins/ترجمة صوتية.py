@@ -1,16 +1,16 @@
 import os
 from telethon import functions 
 import subprocess
-from JoKeRUB.helpers.functions.functions import translate
+from SedUb.helpers.functions.functions import translate
 from datetime import datetime
-from ALJoker import get_string
+from BiLaL import get_string
 
 
 
 from gtts import gTTS
 
 
-from JoKeRUB import l313l
+from SedUb import l313l
 
 
 from ..core.managers import edit_delete, edit_or_reply
