@@ -1,5 +1,5 @@
 """
-JoKeRUB team ©
+SedUb team ©
 By Reda
 sub Hussein
 """
@@ -8,7 +8,7 @@ from datetime import datetime
 import speech_recognition as sr
 from pydub import AudioSegment
 
-from JoKeRUB import l313l
+from SedUb import l313l
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers import media_type
 from ..helpers.utils import reply_id
