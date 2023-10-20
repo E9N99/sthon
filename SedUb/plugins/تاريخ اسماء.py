@@ -4,7 +4,7 @@ import asyncio
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from JoKeRUB import l313l
+from SedUb import l313l
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers import get_user_from_event, sanga_seperator
@@ -33,7 +33,7 @@ async def _(event):  #   : @lMl10l
     input_str = "".join(event.text.split(maxsplit=1)[1:])
     reply_message = await event.get_reply_message()
     if not input_str and not reply_message:
-        await edit_delete( #ترجمه فريق الجوكر على التيلكرام
+        await edit_delete( #ترجمه فريق سيدثون على التيلكرام
             event,
             "᯽︙  يـجب الـرد على الشخـص او كتـابة معـرفه مع الأمـر لأظـهار تواريـخ اسمـه",
         )
