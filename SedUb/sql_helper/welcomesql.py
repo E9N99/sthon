@@ -4,7 +4,7 @@ except ImportError as e:
     raise AttributeError from e
 
 from sqlalchemy import BigInteger, Column, Numeric, String, UnicodeText
-
+#BiLaL
 
 class JoinWelcome(BASE):
     __tablename__ = "joinwelcome"
