@@ -19,19 +19,19 @@ async def reda(event):
     list = "**قائمة المكاتب المثبته**\n"
     for i in installed_packages_list:
         list += f"{i}\n"
-    list += "**سورس الجوكر**"
+    list += "**سورس سيدثون**"
     await edit_or_reply(event, list)
 
 @l313l.ar_cmd(
     pattern="الملفات$",
     command=("الملفات", plugin_category),
     info={
-        "header": "To list all plugins in JoKeRUB.",
+        "header": "To list all plugins in SedUb.",
         "usage": "{tr}plugins",
     },
 )
 async def _(event):
-    "To list all plugins in JoKeRUB"
+    "To list all plugins in SedUb"
     cmd = "ls JoKeRUB/plugins"
     o = (await _catutils.runcmd(cmd))[0]
     OUTPUT = f"**[الجوكر](tg://need_update_for_some_feature/) الـمـلفـات:**\n{o}"
@@ -42,17 +42,17 @@ async def _(event):
     pattern="فاراتي$",
     command=("فاراتي", plugin_category),
     info={
-        "header": "To list all environment values in JoKeRUB.",
-        "description": "to show all heroku vars/Config values in your JoKeRUB",
+        "header": "To list all environment values in SedUb.",
+        "description": "to show all heroku vars/Config values in your SedUb",
         "usage": "{tr}env",
     },
 )
 async def _(event):
-    "To show all config values in JoKeRUB"
+    "To show all config values in SedUb"
     cmd = "env"
     o = (await _catutils.runcmd(cmd))[0]
     OUTPUT = (
-        f"**[الجوكر](tg://need_update_for_some_feature/) قـائمـة الـفـارات:**\n\n\n{o}\n\n**انتبه هنالك معلومات حساسة لا تُعطِها لشخص غير موثوق**"
+        f"**[سيدثون](tg://need_update_for_some_feature/) قـائمـة الـفـارات:**\n\n\n{o}\n\n**انتبه هنالك معلومات حساسة لا تُعطِها لشخص غير موثوق**"
     )
     await edit_or_reply(event, "**تم ارسال المعلومات في الرسائل المحفوضة \nانتبه من الاشخاص الي يطلبون منك كتابة هذا الامر يريد ان يخترقك!**")
     await l313l.send_message("me", OUTPUT)
