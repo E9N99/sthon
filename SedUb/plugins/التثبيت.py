@@ -20,7 +20,7 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from JoKeRUB import l313l
+from SedUb import l313l
 
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
@@ -104,7 +104,7 @@ async def pin(event):
                 \nالـدردشـة: {event.chat.title}(`{event.chat_id}`)\
                 \nالـتثبيت: {is_silent}",
         )
-#admin plugin for  l313l
+#admin plugin for  SedUb
 @l313l.ar_cmd(
     pattern="الغاء التثبيت( للكل|$)",
     command=("الغاء التثبيت", plugin_category),
