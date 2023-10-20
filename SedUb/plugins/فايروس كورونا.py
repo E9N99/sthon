@@ -1,5 +1,5 @@
-# Copyright (C) 2021 JoKeRUB TEAM
-# FILES WRITTEN BY  @lMl10l
+# Copyright (C) 2021 SedUb TEAM
+# FILES WRITTEN BY  @SedUb
 from covid import Covid
 
 from . import l313l, covidindia, edit_delete, edit_or_reply
