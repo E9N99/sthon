@@ -5,7 +5,7 @@ import asyncio
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
-from JoKeRUB.utils import admin_cmd
+from SedUb.utils import admin_cmd
 
 @borg.on(admin_cmd(pattern="تحويل نص ?(.*)"))
 async def _(event):
@@ -38,5 +38,5 @@ async def _(event):
              await event.delete()
              await event.client.send_message(event.chat_id, response.message)
              
-# Copyright (C) 2021 JoKeRUB TEAM
-# FILES WRITTEN BY  @lMl10l
+# Copyright (C) 2021 SedUb TEAM
+# FILES WRITTEN BY  @SedUb
