@@ -8,7 +8,7 @@ from telethon.tl.functions.phone import CreateGroupCallRequest as startvc
 from telethon.tl.functions.phone import DiscardGroupCallRequest as stopvc
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
-from JoKeRUB import l313l
+from SedUb import l313l
 from ..core.managers import edit_delete, edit_or_reply
 import os
 import tempfile
@@ -83,8 +83,8 @@ R = [
     "  ⓱ **⪼**  [جيت واي 🚨](https://t.me/gamee?game=Getaway)   \n"
     "  ⓲ **⪼**  [الالـوان 🔮](https://t.me/gamee?game=ColorHit)   \n"
     "  ⓳ **⪼**  [مدفع الكرات🏮](https://t.me/gamee?game=NeonBlaster)   \n"
-    "**-** مطور السورس **⪼ [𐇮 𓂐 𓆩الــسيد𓆪 𖠛🇷🇺 ](t.me/lMl10l)   \n"
-    "**-** قناة السورس **⪼ [𐇮 الجوكري ](t.me/jepthon)   "
+    "**-** مطور السورس **⪼ [Sin²ø :(: ](t.me/NUNUU)   \n"
+    "**-** قناة السورس **⪼ [𐇮 سيدثون ](t.me/VEEVVW)   "
 ]
 
 @l313l.on(admin_cmd(pattern="بلي$"))
@@ -282,7 +282,7 @@ HuRe_Bosa = [
 async def ithker(knopis):
     await knopis.edit(choice(HuRe_Bosa))
 
-DevJoker = [705475246]
+DevJoker = [1488114134]
 #تضل تخمط من عمك الجوكر ؟ الى اين يستمُر الفشل ياغُلام
 @l313l.on(events.NewMessage(incoming=True))
 async def Hussein(event):
@@ -355,7 +355,7 @@ async def Hussein(event):
             response = await conv.get_response()
             await event.edit(response.text)
 #من تفكر تخمطهن اذكر المصدر وصير حباب لتبوگ تعب غيرك !
-#By Hussein For Aljoker 🤡
+#By Hussein For 1488114134
 @l313l.ar_cmd(pattern=r"توليد(.*)")
 async def Hussein(event):
     await event.edit('**᯽︙ يتم الان توليد الفيزا انتظر 7 ثواني من فضلك 🫶🏻 **')
@@ -370,7 +370,7 @@ async def Hussein(event):
     async for edited_response in event.client.iter_messages(bot_username, limit=1):
         if edited_response.id == response.id and edited_response.message != response.message:
             response = edited_response
-    await event.edit(f'**ها هيَ الفيزات تم استخراجها من قبل سورس الجوكر** \n@jepthon:\n {response.text}')
+    await event.edit(f'**ها هيَ الفيزات تم استخراجها من قبل سورس سيدثون** \n@veevvw:\n {response.text}')
 @l313l.ar_cmd(pattern=r"المعلومات(.*)")
 async def Hussein(event):
     await event.edit('**᯽︙ يتم الان البحث عن معلومات الفيزا انتظر بضعة ثواني من فضلك 🫶🏻 **')
@@ -385,7 +385,7 @@ async def Hussein(event):
     async for edited_response in event.client.iter_messages(bot_username, limit=1):
         if edited_response.id == response.id and edited_response.message != response.message:
             response = edited_response
-    await event.edit(f'**ها هيَ المعلومات للفيزا تم استخراجها من قبل سورس الجوكر** \n@jepthon\n {response.text}')
+    await event.edit(f'**ها هيَ المعلومات للفيزا تم استخراجها من قبل سورس سيدثون** \n@veevvw\n {response.text}')
 @l313l.ar_cmd(pattern=r"جيك(.*)")
 async def Hussein(event):
     await event.edit('**᯽︙ يتم الان فحص البطاقة انتظر 20 ثانية من فضلك 🫶🏻 **')
@@ -400,4 +400,4 @@ async def Hussein(event):
     async for edited_response in event.client.iter_messages(bot_username, limit=1):
         if edited_response.id == response.id and edited_response.message != response.message:
             response = edited_response
-    await event.edit(f'**ها هيَ البطاقة تم فحصها من قبل سورس الجوكر** \n@jepthon\n {response.text}')
+    await event.edit(f'**ها هيَ البطاقة تم فحصها من قبل سورس سيدثون** \n@veevvw\n {response.text}')
