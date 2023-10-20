@@ -20,11 +20,11 @@ if Config.PLUGIN_CHANNEL:
         for module in range(total):
             plugin_to_install = documentss[module].id
             plugin_name = documentss[module].file.name
-            if os.path.exists(f"JoKeRUB/plugins/{plugin_name}"):
+            if os.path.exists(f"SedUb/plugins/{plugin_name}"):
                 return
             downloaded_file_name = await l313l.download_media(
                 await l313l.get_messages(Config.PLUGIN_CHANNEL, ids=plugin_to_install),
-                "JoKeRUB/plugins/",
+                "SedUb/plugins/",
             )
             path1 = Path(downloaded_file_name)
             shortname = path1.stem
