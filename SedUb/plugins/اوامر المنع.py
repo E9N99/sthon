@@ -2,7 +2,7 @@ import re
 
 from telethon.utils import get_display_name
 
-from JoKeRUB import l313l
+from SedUb import l313l
 
 from ..core.managers import edit_or_reply
 from ..sql_helper import blacklist_sql as sql
@@ -10,7 +10,7 @@ from ..utils import is_admin
 
 plugin_category = "admin"
 
-#copyright for JoKeRUB © 2021
+#copyright for SedUb © 2021
 @l313l.ar_cmd(incoming=True, groups_only=True)
 async def on_new_message(event):
     name = event.raw_text
