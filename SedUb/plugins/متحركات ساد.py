@@ -2,7 +2,7 @@
 
 from SedUb import events
 from SedUb.utils import admin_cmd
-from JoKeRUB import l313l
+from SedUb import l313l
 from . import *
  
 #جميع الحقوق محفوظة لسـورس سيدثوو تخـمط تبيـن فشلـك
