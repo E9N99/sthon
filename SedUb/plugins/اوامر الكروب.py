@@ -34,7 +34,7 @@ from telethon.tl.types import (
     InputPeerChat,
     MessageEntityCustomEmoji,
 )
-from JoKeRUB import l313l
+from SedUb import l313l
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from datetime import datetime
 from telethon.tl.functions.channels import GetParticipantRequest
@@ -673,7 +673,7 @@ async def Hussein(event):
             print(f"حدث خطأ أثناء حذف محادثات البوت: {e}")
     await event.edit("**᯽︙ تم حذف جميع محادثات البوتات بنجاح ✓ **")
 
-# الكود من كتابة فريق الجوكر بس تسرقة تنشر بقناة الفضايح انتَ وقناتك 🖤
+# الكود من كتابة فريق سيدثون بس تسرقة تنشر بقناة الفضايح انتَ وقناتك 🖤
 @l313l.ar_cmd(pattern=r"ذكاء(.*)")
 async def hussein(event):
     await event.edit("**᯽︙ جارِ الجواب على سؤالك انتظر قليلاً ...**")
@@ -684,7 +684,7 @@ async def hussein(event):
     else:
         await event.edit("يُرجى كتابة رسالة مع الأمر للحصول على إجابة.")
 is_Reham = False
-No_group_Joker = "@jepthonsupport"
+No_group_Joker = "@tipthon_help"
 # يا يلفاشل هم الك نيه تاخذه وتنشره بسورسك 🤣
 active_aljoker = []
 
@@ -722,7 +722,7 @@ async def reply_to_hussein(event):
             response = requests.get(f'https://gptzaid.zaidbot.repl.co/1/text={text}').text
             await asyncio.sleep(4)
             await event.reply(response)
-#ها هم تريد تخمط بمحرم ؟ روح شوفلك موكب واضرب زنجيل احسن من ماتخمط
+#ط
 Ya_Hussein = False
 active_joker = []
 @l313l.on(events.NewMessage(incoming=True))
@@ -752,7 +752,7 @@ async def disable_emoji_blocker(event):
     active_joker.remove(event.chat_id)
     await event.edit("**᯽︙ تم تعطيل امر منع الايموجي المُميز بنجاح ✓ **")
 remove_admins_aljoker = {}
-#الكود تمت كتابته من قبل مطورين الجوكر اذا الك نية تخمطه اذكر حقوق السورس @jepthon
+#الكود تمت كتابته من قبل مطورين سيدثون اذا الك نية تخمطه اذكر حقوق السورس @veevvw
 @l313l.on(events.ChatAction)
 async def Hussein(event):
     if gvarstatus("Mn3_Kick"):
