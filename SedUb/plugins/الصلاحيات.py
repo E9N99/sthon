@@ -7,7 +7,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.tl.types import ChatBannedRights
 
 
-from JoKeRUB import l313l
+from SedUb import l313l
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import _format
@@ -412,7 +412,7 @@ async def _(event):  # sourcery no-metrics
     if not current_db_locks:
         res = "لا توجد معلومات كافيه في هذه الدردشه"
     else:
-        res = "᯽︙ ملـف الاوامر مقدم من سورس الجوكر: \n"
+        res = "᯽︙ ملـف الاوامر مقدم من سورس سيدثون: \n"
         ubots = "✗" if current_db_locks.bots else "✔"
         ucommands = "✗" if current_db_locks.commands else "✔"
         uemail = "✗" if current_db_locks.email else "✔"
