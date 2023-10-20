@@ -5,7 +5,7 @@ import os
 from telethon import events
 from telethon.tl.functions.channels import EditAdminRequest
 from telethon.tl.types import ChatAdminRights
-from JoKeRUB import l313l
+from SedUb import l313l
 
 #Joker
 from ..core.managers import edit_or_reply
