@@ -1,10 +1,10 @@
 #ياقائم آل محمد
 #ربي اشرح لي صدري
-#تمت كتابة الكود من قبل السيد حسين @lMl10l
-#فريق الجوكر @jepthon
+#تمت كتابة الكود من قبل السيد بلال @nunuu
+#فريق سيدثون @veevvw
 import asyncio
 from telethon import events
-from JoKeRUB import l313l
+from SedUb import l313l
 
 
 hussein_enabled = False
