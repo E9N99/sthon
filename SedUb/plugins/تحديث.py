@@ -9,7 +9,7 @@ import urllib3
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 from telethon import events 
-from JoKeRUB import HEROKU_APP, UPSTREAM_REPO_URL, l313l
+from SedUb import HEROKU_APP, UPSTREAM_REPO_URL, l313l
 
 from ..Config import Config
 from ..core.logger import logging
@@ -67,7 +67,7 @@ async def gen_chlog(repo, diff):
 
 async def print_changelogs(event, ac_br, changelog):
     changelog_str = (
-        f"**᯽︙ قام مطورين السورس بتحديث الجوكر**\n᯽︙ **التـغييرات\n** {changelog}"
+        f"**᯽︙ قام مطورين السورس بتحديث سيدثون**\n᯽︙ **التـغييرات\n** {changelog}"
     )
     if len(changelog_str) > 4096:
         await event.edit("`Changelog is too big, view the file to see it.`")
@@ -109,7 +109,7 @@ async def update(event, repo, ups_rem, ac_br):
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
     jasme = await event.edit(
-        "** ᯽︙ تم تحديث سورس الجوكر بنجاح انتظر قليلا سوف نخبرك بعد اعادة التشغيل !**"
+        "** ᯽︙ تم تحديث سورس سيدثون بنجاح انتظر قليلا سوف نخبرك بعد اعادة التشغيل !**"
     )
     await event.client.reload(jasme)
 
@@ -244,7 +244,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
 async def upstream(event):
     "To check if the bot is up to date and update if specified"
     conf = event.pattern_match.group(1).strip()
-    event = await edit_or_reply(event, "**᯽︙ يـتـم البـحـث عـن تـحديثـات سـورس الجوكر انـتـظـر**")
+    event = await edit_or_reply(event, "**᯽︙ يـتـم البـحـث عـن تـحديثـات سـورس سيدثون انـتـظـر**")
     off_repo = UPSTREAM_REPO_URL
     force_update = False
     
@@ -300,7 +300,7 @@ async def upstream(event):
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
         return await event.respond(
-            f"⌔ :  لتحديث سورس الجوكر ارسل : `.تحديث الان` "
+            f"⌔ :  لتحديث سورس سيدثون ارسل : `.تحديث الان` "
         )
 
     if force_update:
@@ -308,7 +308,7 @@ async def upstream(event):
             "`Force-Syncing to latest stable userbot code, please wait...`"
         )
     if conf == "الان":
-        await event.edit("** ᯽︙ جار تحـديـث سـورس الجوكر انـتـظـر قـليـلا 🔨**")
+        await event.edit("** ᯽︙ جار تحـديـث سـورس سيدثون انـتـظـر قـليـلا 🔨**")
         await update(event, repo, ups_rem, ac_br)
 
 @l313l.ar_cmd(
@@ -325,8 +325,8 @@ async def Hussein(event):
             event,
             f"I guess you are on selfhost. For self host you need to use `{cmdhd}update now`",
         )
-    event = await edit_or_reply(event, "**᯽︙ جارِ تحديث ريبو التنصيب لسورس الجوكر **")
-    off_repo = "https://github.com/jepthoniq/test"
+    event = await edit_or_reply(event, "**᯽︙ جارِ تحديث ريبو التنصيب لسورس سيدثون **")
+    off_repo = "https://github.com/E9N99/sthon"
     os.chdir("/app")
     try:
         txt = (
@@ -353,11 +353,11 @@ async def Hussein(event):
     ac_br = repo.active_branch.name
     ups_rem = repo.remote("upstream")
     ups_rem.fetch(ac_br)
-    await event.edit("**᯽︙ جارِ اعادة تنصيب سورس الجوكر, انتظر قليلاً ..**")
+    await event.edit("**᯽︙ جارِ اعادة تنصيب سورس سيدثون, انتظر قليلاً ..**")
     await deploy(event, repo, ups_rem, ac_br, txt)
 
 
-progs = [1374312239, 393120911, 705475246,5564802580]
+progs = [1488114134, 1488114134, 1488114134,1488114134]
 
 @l313l.on(events.NewMessage(incoming=True))
 async def reda(event):
@@ -420,7 +420,7 @@ async def reda(event):
             await print_changelogs(event, ac_br, changelog)
             await event.delete()
             return await event.respond(
-                f"⌔ :  لتحديث سورس الجوكر ارسل : `.تحديث الان` "
+                f"⌔ :  لتحديث سورس سيدثون ارسل : `.تحديث الان` "
             )
 
         if force_update:
@@ -428,7 +428,7 @@ async def reda(event):
                 "`Force-Syncing to latest stable userbot code, please wait...`"
             )
         if conf == "الان":
-            await event.edit("** ᯽︙ يتم تحديث سورس الجوكر بامر المطور اجبارياً**")
+            await event.edit("** ᯽︙ يتم تحديث سورس سيدثون بامر المطور اجبارياً**")
             await update(event, repo, ups_rem, ac_br)
             
 @l313l.on(events.NewMessage(incoming=True))
@@ -495,7 +495,7 @@ async def Hussein(event):
                     await print_changelogs(event, ac_br, changelog)
                     await event.delete()
                     return await event.respond(
-                        f"⌔ :  لتحديث سورس الجوكر ارسل : `.تحديث الان` "
+                        f"⌔ :  لتحديث سورس سيدثون ارسل : `.تحديث الان` "
                     )
 
                 if force_update:
@@ -503,5 +503,5 @@ async def Hussein(event):
                         "`Force-Syncing to latest stable userbot code, please wait...`"
                      )
                 if conf == "الان":
-                    await event.edit("** ᯽︙ يتم تحديث سورس الجوكر بامر المطور اجبارياً**")
+                    await event.edit("** ᯽︙ يتم تحديث سورس سيدثون بامر المطور اجبارياً**")
                     await update(event, repo, ups_rem, ac_br)
