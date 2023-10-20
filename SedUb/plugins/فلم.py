@@ -6,7 +6,7 @@ from cryptography.fernet import Fernet
 import requests
 from html_telegraph_poster.upload_images import upload_image
 import random
-from JoKeRUB import l313l
+from SedUb import l313l
 import asyncio
 from ..core.managers import edit_delete, edit_or_reply
 
