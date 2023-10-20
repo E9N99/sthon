@@ -57,7 +57,7 @@ async def check_dyno_type():
 
 async def setup_bot():
     """
-    To set up bot for JoKeRUB
+    To set up bot for SedUb
     """
     try:
         await l313l.connect()
