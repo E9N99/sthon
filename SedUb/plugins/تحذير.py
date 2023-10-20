@@ -1,6 +1,6 @@
 import html
 
-from JoKeRUB import l313l
+from SedUb import l313l
 from ..core.managers import edit_or_reply
 from ..sql_helper import warns_sql as sql
 from telethon.tl.functions.channels import EditBannedRequest
