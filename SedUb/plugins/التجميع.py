@@ -5,7 +5,7 @@
 
 import asyncio
 import time
-from JoKeRUB import l313l
+from SedUb import l313l
 from telethon.tl.functions.messages import GetHistoryRequest
 from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
@@ -23,7 +23,7 @@ bot_username3 = '@MARKTEBOT'
 bot_username4 = '@qweqwe1919bot'
 bot_username5 = '@xnsex21bot'
 bot_username6 = '@DamKombot'
-JoKeRUB = ['yes']
+SedUb = ['yes']
 ConsoleJoker = Config.T7KM
 its_Reham = False
 its_hussein = False
