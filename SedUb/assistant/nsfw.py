@@ -4,7 +4,7 @@ from telethon import Button
 from telethon.errors import MessageNotModifiedError
 from telethon.events import CallbackQuery
 
-from JoKeRUB import l313l
+from SedUb import l313l
 
 from ..Config import Config
 from ..core.logger import logging
