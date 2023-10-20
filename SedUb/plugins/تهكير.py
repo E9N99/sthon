@@ -1,9 +1,9 @@
-# Copyright (C) 2021 JoKeRUB TEAM
-# FILES WRITTEN BY  @lMl10l
+# Copyright (C) 2021 SedUb TEAM
+# FILES WRITTEN BY  @nunuu
 
 import asyncio
 from telethon import events
-from JoKeRUB import l313l
+from SedUb import l313l
 import random
 from ..core.managers import edit_or_reply
 from ..helpers.utils import _format
