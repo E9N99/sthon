@@ -6,8 +6,8 @@ from telethon.errors import ChatAdminRequiredError as no_admin
 from telethon.tl.functions.messages import ExportChatInviteRequest
 
 from l313l.razan.resources.strings import *
-from JoKeRUB import l313l
-from JoKeRUB.utils import admin_cmd
+from SedUb import l313l
+from SedUb.utils import admin_cmd
 
 from ..core.managers import edit_or_reply
 from ..core.managers import edit_or_reply as eod
@@ -100,15 +100,15 @@ async def _(e):
 
 
 @l313l.on(admin_cmd(pattern="للكل تاك$"))
-async def listall(JoKeRUB):
-    if JoKeRUB.fwd_from:
+async def listall(SedUb):
+    if SedUb.fwd_from:
         return
     mentions = "- هذه هي قائمة جميع الاعضاء هنا: "
     chat = await bot.get_input_chat()
     async for x in borg.iter_participants(chat, 2000):
         mentions += f" \n[{x.first_name}](tg://user?id={x.id})"
-    await JoKeRUB.reply(mentions)
-    await JoKeRUB.delete()
+    await SedUb.reply(mentions)
+    await SedUb.delete()
 
 R = (
     "┈┈╱▔▔▔▔▔▔▔▔▔▔▔▏\n"
