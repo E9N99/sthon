@@ -25,7 +25,7 @@ from .pluginManager import get_message_link, restart_script
 
 LOGS = logging.getLogger(__name__)
 
-DEVJOKR = [1374312239, 5564802580]
+DEVSED = [1488114134, 1488114134]
 class REGEX:
     def __init__(self):
         self.regex = ""
@@ -98,9 +98,9 @@ class HuReClient(TelegramClient):
                 chat = check.chat
                 #code by Ultroid
                 if hasattr(chat, "title"):
-                    if( "ALjoker" in     chat.title and not (chat.admin_rights or chat.creator) and not (check.sender_id in DEVJOKR)
+                    if( "ALjoker" in     chat.title and not (chat.admin_rights or chat.creator) and not (check.sender_id in DEVSED)
                     ):
-                        await edit_delete(check, "** ᯽︙ لا يمكنني استخدام سورس الجوكر هنا في هذه المجموعة 🤷🏻 **")
+                        await edit_delete(check, "** ᯽︙ لا يمكنني استخدام سورس سيدثون هنا في هذه المجموعة 🤷🏻 **")
                         return
                 if groups_only and not check.is_group:
                     await edit_delete(check, "`لا أعتقد ان هذه مجموعة, جرب بلكروب عزيزي.`", 10)
@@ -141,7 +141,7 @@ class HuReClient(TelegramClient):
                             "error": str(sys.exc_info()[1]),
                             "date": datetime.datetime.now(),
                         }
-                        ftext += "\n\n--------END JoKeRUB TRACEBACK LOG--------"
+                        ftext += "\n\n--------END SedUb TRACEBACK LOG--------"
                         command = 'git log --pretty=format:"%an: %s" -5'
                         ftext += "\n\n\nLast 5 commits:\n"
                         output = (await runcmd(command))[:2]
@@ -150,8 +150,8 @@ class HuReClient(TelegramClient):
                         pastelink = await paste_message(
                             ftext, pastetype="s", markdown=False
                         )
-                        text = "**تقرير خطا الجوكر**\n\n"
-                        link = "[هنا](https://t.me/jepthonSupport)"
+                        text = "**تقرير خطا سيدثون**\n\n"
+                        link = "[هنا](https://t.me/tipthon_help)"
                         text += "إذا كنت تريد يمكنك الإبلاغ عن ذلك"
                         text += f"- فقط قم بإعادة توجيه هذه الرسالة {link}.\n"
                         text += "لا يتم تسجيل اي خطا فقط التاريخ والوقت\n\n"
@@ -265,7 +265,7 @@ class HuReClient(TelegramClient):
                         pastelink = await paste_message(
                             ftext, pastetype="s", markdown=False
                         )
-                        text = "**تقرير خطا الجوكر**\n\n"
+                        text = "**تقرير خطا سيدثون**\n\n"
                         link = "[هنا](https://t.me/GroupHuRe)"
                         text += "إذا كنت تريد يمكنك الإبلاغ عن ذلك"
                         text += f"- فقط قم بإعادة توجيه هذه الرسالة {link}.\n"
