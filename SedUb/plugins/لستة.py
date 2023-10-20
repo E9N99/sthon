@@ -1,5 +1,5 @@
-# Copyright (C) 2021 JoKeRUB TEAM
-# FILES WRITTEN BY  @lMl10l
+# Copyright (C) 2021 SedUb TEAM
+# FILES WRITTEN BY  @nunuu
 import os
 import re
 
@@ -21,7 +21,7 @@ BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>
         "usage": [
             "{tr}ibutton <text> [Name on button]<buttonurl:link you want to open>",
         ],
-        "examples": "{tr}لستة قنواتي الرسمية [𝗧ُِٔ𝗢ٍَِ𝗢َِّ𝗟َٖ𝗦َ]<buttonurl:t.me/jepthon> [𝗝ََِ𝗠ٓ𝗧َُِْٓ𝗛ُ𝗢َ𝗡ٍَ]<buttonurl:t.me/jepthon> ",
+        "examples": "{tr}لستة قنواتي الرسمية [𝗧ُِٔ𝗢ٍَِ𝗢َِّ𝗟َٖ𝗦َ]<buttonurl:t.me/jepthon> [𝗦𝞝𝗗𝙏𝙃𝙊𝙉]<buttonurl:t.me/veevvw> ",
     },
 )
 async def _(event):
