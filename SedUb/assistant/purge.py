@@ -1,13 +1,13 @@
 #(c) Copyright JoKeRUB 2020-21
-#جميع الحقوق محفودظة لسورس جـيبثون 
-#By ~  @RR9R7
+#جميع الحقوق محفودظة لسورس سيدثون
+#By ~  
 import asyncio
 
 from telethon import events
 from telethon.errors.rpcerrorlist import MessageDeleteForbiddenError
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from JoKeRUB import bot
+from SedUb import bot
 from .. import *
 
 OWNER_ID = bot.uid
