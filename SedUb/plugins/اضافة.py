@@ -1,6 +1,6 @@
-from JoKeRUB import *
-from JoKeRUB import l313l
-from JoKeRUB.utils import admin_cmd
+from SedUb import *
+from SedUb import l313l
+from SedUb.utils import admin_cmd
 from telethon.tl.types import Channel, Chat, User
 from telethon.tl import functions, types
 from telethon.tl.functions.messages import  CheckChatInviteRequest, GetFullChatRequest
@@ -74,13 +74,13 @@ async def get_users(event):
         roz = await event.reply("**▾∮ تتـم العـملية انتظـࢪ قليلا 🧸♥ ...**")
     else:
         roz = await event.edit("**▾∮ تتـم العـملية انتظـࢪ قليلا 🧸♥ ...**.")
-    JoKeRUB = await get_chatinfo(event) ; chat = await event.get_chat()
+    SedUb = await get_chatinfo(event) ; chat = await event.get_chat()
     if event.is_private:
               return await roz.edit("**▾∮ لا يمكننـي اضافـة المـستخدمين هـنا**")    
     s = 0 ; f = 0 ; error = 'None'   
   
     await roz.edit("**▾∮ حـالة الأضافة:**\n\n**▾∮ تتـم جـمع معـلومات الـمستخدمين 🔄 ...⏣**")
-    async for user in event.client.iter_participants(JoKeRUB.full_chat.id):
+    async for user in event.client.iter_participants(SedUb.full_chat.id):
                 try:
                     if error.startswith("Too"):
                         return await roz.edit(f"**حـالة الأضـافة انتـهت مـع الأخـطاء**\n- (**ربـما هـنالك ضغـط عـلى الأمࢪ حاول مججـدا لاحقـا 🧸**) \n**الـخطأ** : \n`{error}`\n\n• اضالـة `{s}` \n• خـطأ بأضافـة `{f}`"),
