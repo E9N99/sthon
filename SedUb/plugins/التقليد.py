@@ -1,6 +1,6 @@
 """
-created by @lMl10l
-Idea by @jepthon
+created by @nunuu
+Idea by @SedUb
 """
 
 
