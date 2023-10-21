@@ -5,7 +5,7 @@ from telethon.utils import get_display_name
 
 from SedUb import l313l
 from SedUb.core.logger import logging
-
+JoKeRUB
 from ..Config import Config
 from ..core import CMD_INFO, PLG_INFO
 from ..core.data import _sudousers_list, sudo_enabled_cmds
