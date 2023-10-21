@@ -1,5 +1,5 @@
-#all write Codes By Team Aljoker @jepthon
-#By Hussein @lMl10l
+#all write Codes By Team Aljoker @veevvw
+#By Hussein @NUNUU
 import asyncio
 import random
 import base64
@@ -8,11 +8,9 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from asyncio.exceptions import TimeoutError
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-#ياقائم آل محمد
 from SedUb import l313l
 from ..helpers.utils import reply_id
 
-# الي يخمط ويكول من كتابتي الا امه انيجه وقد اعذر من انذر
 aljoker_links = {}
 @l313l.on(admin_cmd(pattern="حالتي ?(.*)"))
 async def _(event):
