@@ -95,7 +95,7 @@ async def digitalpicloop():
             return
         DIGITALPICSTART = gvarstatus("digitalpic") == "true"
 
-#Reda
+#BiLaL
 #اننننسخخخخخ هههههههههههههههههههههههههههههههههههههههههههههههههههههههههههههههههههههههه
 async def digitalgrouppicloop():
     "2KjZiNin2LPYt9ipINiz2YjYsdizINis2YrYqNir2YjZhiAo2KfYsNinINin2LPYqtio2K/ZhNiq2Ycg2LHYp9itINiq2KvYqNiqINmB2LTZhNmDKSDZhdi5INiq2K3Zitin2KrZiiDYp9iu2YjZg9mFINix2LbYpyBAcmQwcjA="
