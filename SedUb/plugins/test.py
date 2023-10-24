@@ -1,4 +1,3 @@
-@l313l.ar_cmd(
 from telethon import events
 from SedUb import l313l
 @l313l.ar_cmd(events.NewMessage(pattern=r"\.notify", outgoing=True))
