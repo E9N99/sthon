@@ -130,7 +130,7 @@ async def startupmessage():
         LOGS.error(e)
         return None
 
-def ipchange():
+async def ipchange():
     """
     Just to check if ip change or not
     """
@@ -173,7 +173,6 @@ async def mybot():
     except Exception as e:
         print(e)
 
-async 
 
 
 async def add_bot_to_logger_group(chat_id):
