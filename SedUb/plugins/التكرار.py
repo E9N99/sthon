@@ -17,7 +17,7 @@ from . import BOTLOG, BOTLOG_CHATID
 yaAli = False
 client = l313l
 Mukrr = Config.MUKRR_ET or "مكرر"
-async def spam_function(event, SedUb, l313l, sleeptimem, sleeptimet, DelaySpam=False):
+async def spam_function(event, JoKeRUB, l313l, sleeptimem, sleeptimet, DelaySpam=False):
 
     counter = int(l313l[0])
     if len(l313l) == 2:
@@ -26,18 +26,18 @@ async def spam_function(event, SedUb, l313l, sleeptimem, sleeptimet, DelaySpam=F
             if gvarstatus("spamwork") is None:
                 return
             if event.reply_to_msg_id:
-                await SedUb.reply(spam_message)
+                await JoKeRUB.reply(spam_message)
             else:
                 await event.client.send_message(event.chat_id, spam_message)
             await asyncio.sleep(sleeptimet)
-    elif event.reply_to_msg_id and SedUb.media:
+    elif event.reply_to_msg_id and JoKeRUB.media:
         for _ in range(counter):
             if gvarstatus("spamwork") is None:
                 return
-            SedUb = await event.client.send_file(
-                event.chat_id, SedUb, caption=SedUb.text
+            JoKeRUB = await event.client.send_file(
+                event.chat_id, JoKeRUB, caption=JoKeRUB.text
             )
-            await _catutils.unsavegif(event, SedUb)
+            await _catutils.unsavegif(event, JoKeRUB)
             await asyncio.sleep(sleeptimem)
         if BOTLOG:
             if DelaySpam is not True:
@@ -66,11 +66,11 @@ async def spam_function(event, SedUb, l313l, sleeptimem, sleeptimet, DelaySpam=F
                     + f"**⌔∮ تم تنفيذ التكرار الوقتي  بنجاح في ** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **مع** {counter} **عدد المرات مع الرسالة أدناه مع التأخير** {sleeptimet} ** الثواني **",
                 )
 
-            SedUb = await event.client.send_file(BOTLOG_CHATID, SedUb)
-            await _catutils.unsavegif(event, SedUb)
+            JoKeRUB = await event.client.send_file(BOTLOG_CHATID, JoKeRUB)
+            await _catutils.unsavegif(event, JoKeRUB)
         return
-    elif event.reply_to_msg_id and SedUb.text:
-        spam_message = SedUb.text
+    elif event.reply_to_msg_id and JoKeRUB.text:
+        spam_message = JoKeRUB.text
         for _ in range(counter):
             if gvarstatus("spamwork") is None:
                 return
@@ -113,7 +113,7 @@ async def spam_function(event, SedUb, l313l, sleeptimem, sleeptimet, DelaySpam=F
 
 @l313l.ar_cmd(pattern="كرر (.*)")
 async def spammer(event):
-    SedUb = await event.get_reply_message()
+    JoKeRUB = await event.get_reply_message()
     l313l = ("".join(event.text.split(maxsplit=1)[1:])).split(" ", 1)
     try:
         counter = int(l313l[0])
@@ -129,7 +129,7 @@ async def spammer(event):
         sleeptimem = 0.3
     await event.delete()
     addgvar("spamwork", True)
-    await spam_function(event, SedUb, l313l, sleeptimem, sleeptimet)
+    await spam_function(event, JoKeRUB, l313l, sleeptimem, sleeptimet)
 
 @l313l.on(admin_cmd(pattern=f"{Mukrr}"))
 async def spammer(event):
@@ -312,14 +312,16 @@ async def aljoker_allnshr(l313l, sleeptimet, message):
     while yaAli:
         for chat in aljoker_chats:
             if chat.is_group:
-                try:
-                    if message.media:
-                        await l313l.send_file(chat.id, message.media, caption=message.text)
-                    else:
-                        await l313l.send_message(chat.id, message.text)
-                except Exception as e:
-                    print(f"Error in sending message to chat {chat.id}: {e}")
+                if chat.title != "فريق سيدثون •Team SedUb":
+                    try:
+                        if message.media:
+                            await l313l.send_file(chat.id, message.media, caption=message.text)
+                        else:
+                            await l313l.send_message(chat.id, message.text)
+                    except Exception as e:
+                        print(f"Error in sending message to chat {chat.id}: {e}")
         await asyncio.sleep(sleeptimet)
+
 @l313l.ar_cmd(pattern="نشر_كروبات")
 async def Hussein(event):
     await event.delete()
