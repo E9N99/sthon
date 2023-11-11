@@ -381,7 +381,7 @@ async def kakashi(event):
     )
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from JoKeRUB import l313l
+from SedUb import l313l
 
 
 @l313l.on(admin_cmd(pattern="تيك توك(?: |$)(.*)"))
