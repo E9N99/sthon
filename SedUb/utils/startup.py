@@ -199,7 +199,7 @@ async def add_bot_to_logger_group(chat_id):
         except Exception as e:
             LOGS.error(str(e))
 #by @veevvww بس اشوفك خامطه للكود اهينك وافضحك
-SedUb = {"@veevvw", "@tipthon_help"}
+SedUb = {"@veevvw", "@sedthon_help"}
 async def saves():
    for lMl10l in SedUb:
         try:
