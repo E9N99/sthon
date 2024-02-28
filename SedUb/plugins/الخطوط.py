@@ -81,7 +81,7 @@ async def reda(event):
                 await event.edit(f"~~{event.message.text}~~")
             except MessageIdInvalidError:
                 pass
-        if Aljoker:
+        if sedthon:
             try:
                 await event.edit(f"```{event.message.text}```")
             except MessageIdInvalidError:
