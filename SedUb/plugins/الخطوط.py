@@ -1,5 +1,5 @@
-# Reda - Hussein
-# © 1488114134 Team 2023
+# BiLaL 
+# © SedUb Team 2023
 # ها شعدك داخل ع الملف تريد تخمط ؟ ابو زربة لهل درجة فاشل  
 from telethon import events
 from SedUb import l313l
@@ -46,12 +46,26 @@ async def btext(event):
         await edit_delete(event, "**᯽︙ تم اطفاء خط الرمز بنجاح ✓ **")
         return
 
+@l313l.on(admin_cmd(pattern="(خط السيدثون|خط سيدثون)"))
+async def sedthon(event):
+    sedthon = gvarstatus("sedubb")
+    if not sedthon:
+        addgvar ("sedubb", "on")
+        await edit_delete(event, "**᯽︙ تم تفعيل خط سيدثون بنجاح ✓**")
+        return
+
+    if sedthon:
+        delgvar("sedubb")
+        await edit_delete(event, "**᯽︙ تم اطفاء خط سيدثون بنجاح ✓ **")
+        return
+
 @l313l.on(events.NewMessage(outgoing=True))
 async def reda(event):
-    if event.message.text and not event.message.media and "." not in event.message.text:
+    if event.message.text and not event.message.media and event.message.text.count(".") != 1 and event.message.text.count("@") != 1 and event.message.text.count("/") != 1:
         isbold = gvarstatus("bold")
         isramz = gvarstatus("ramz")
         istshwesh = gvarstatus("tshwesh")
+        sedthon = gvarstatus("sedub")
         if isbold:
             try:
                 await event.edit(f"**{event.message.text}**")
@@ -65,5 +79,10 @@ async def reda(event):
         if istshwesh:
             try:
                 await event.edit(f"~~{event.message.text}~~")
+            except MessageIdInvalidError:
+                pass
+        if Aljoker:
+            try:
+                await event.edit(f"```{event.message.text}```")
             except MessageIdInvalidError:
                 pass
