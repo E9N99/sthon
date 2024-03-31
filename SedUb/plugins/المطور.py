@@ -54,7 +54,7 @@ async def amireallyalive(event):
         CAT = [x for x in CAT_IMG.split()]
         A_IMG = list(CAT)
         PIC = random.choice(A_IMG)
-        cat_caption = f"مطورين الجوكر\n"
+        cat_caption = f"مطورين سيدثون\n"
         cat_caption += f"✛━━━━━━━━━━━━━✛\n"
         cat_caption += f"- المطور  : @NUNUU\n"
         cat_caption += f"- المطور  : @NUNU1U\n"
