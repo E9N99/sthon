@@ -9,6 +9,7 @@ from asyncio.exceptions import TimeoutError
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from SedUb import l313l
+from ..sql_helper.memes_sql import get_link, add_link, delete_link, BASE, SESSION, AljokerLink
 from ..helpers.utils import reply_id
 
 aljoker_links = {}
@@ -550,14 +551,6 @@ async def jepmeme(memejep):
   url = f"https://t.me/MemeSoundJep/102"
   await memejep.client.send_file(memejep.chat_id,url,caption="",parse_mode="html",reply_to=Jep)
   await memejep.delete()
-
-
-
-try:
-    with open('aljoker_links.json', 'r') as file:
-        aljoker_links = json.load(file)
-except FileNotFoundError:
-    pass
 
 @l313l.on(admin_cmd(outgoing=True, pattern=r"ميمز (\S+) (.+)"))
 async def Hussein(event):
