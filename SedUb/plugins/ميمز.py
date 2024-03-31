@@ -2,17 +2,20 @@
 #By Hussein @NUNUU
 import asyncio
 import random
-import base64
+import re
 import json
+import base64
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from asyncio.exceptions import TimeoutError
 from telethon import events
+from ..sql_helper.memes_sql import get_link, add_link, delete_link, BASE, SESSION, AljokerLink
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from SedUb import l313l
-from ..sql_helper.memes_sql import get_link, add_link, delete_link, BASE, SESSION, AljokerLink
-from ..helpers.utils import reply_id
 
-aljoker_links = {}
+from ..helpers.utils import reply_id
+plugin_category = "tools"
+
+
 @l313l.on(admin_cmd(pattern="حالتي ?(.*)"))
 async def _(event):
     await event.edit("**- يتم التاكد من حالتك اذا كنت محظور او لا**")
