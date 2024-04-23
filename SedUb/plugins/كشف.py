@@ -1,35 +1,25 @@
-import contextlib
 import html
 import os
-import base64
-
-from telethon.tl.functions.messages import ImportChatInviteRequest as Get
-from telethon.tl.types import MessageEntityMentionName
 
 from requests import get
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
+from telethon.utils import get_input_location
+from ..sql_helper.globals import gvarstatus
 
 from SedUb import l313l
 from SedUb.core.logger import logging
 
 from ..Config import Config
-from ..core.managers import edit_or_reply, edit_delete
-from ..helpers import reply_id
-from ..sql_helper.globals import gvarstatus
+from ..core.managers import edit_or_reply
+from ..helpers import get_user_from_event, reply_id
 from . import spamwatch
 
-plugin_category = "العروض"
+SED_EM = Config.ID_EM or " •❃ "
+ID_EDIT = gvarstatus("ID_ET") or "ايدي"
+
+plugin_category = "utils"
 LOGS = logging.getLogger(__name__)
-# code by t.me/NUNUU
-SED_TEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "•⎚• مـعلومـات المسـتخـدم مـن بـوت سيدثون"
-SEDM = gvarstatus("CUSTOM_ALIVE_EMOJI") or "✦ "
-SEDF = gvarstatus("CUSTOM_ALIVE_FONT") or "⋆─┄─┄─┄─ 𝗦𝞝𝗗𝙏𝙃𝙊𝙉 ─┄─┄─┄─⋆"
-sed_dev = (1488114134, 5710344220)
-sed_dev = (1488114134, 5710344220)
-bilal = (1488114134, 5710344220)
-
-
 async def get_user_from_event(event):
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
@@ -62,13 +52,14 @@ async def fetch_info(replied_user, event):
     """Get details from the User object."""
     FullUser = (await event.client(GetFullUserRequest(replied_user.id))).full_user
     replied_user_profile_photos = await event.client(
-        GetUserPhotosRequest(user_id=replied_user.id, offset=42, max_id=0, limit=80)
-    )
-    replied_user_profile_photos_count = "لا يـوجـد بروفـايـل"
+        GetUserPhotosRequest(user_id=replied_user.id, offset=42, max_id=0, limit=80)    )
+    replied_user_profile_photos_count = "لايـوجـد بروفـايـل"
     dc_id = "Can't get dc id"
-    with contextlib.suppress(AttributeError):
+    try:
         replied_user_profile_photos_count = replied_user_profile_photos.count
         dc_id = replied_user.photo.dc_id
+    except AttributeError:
+        pass
     user_id = replied_user.id
     first_name = replied_user.first_name
     full_name = FullUser.private_forward_name
@@ -78,122 +69,26 @@ async def fetch_info(replied_user, event):
     is_bot = replied_user.bot
     restricted = replied_user.restricted
     verified = replied_user.verified
-    blal = (await event.client.get_entity(user_id)).premium
-    photo = await event.client.download_profile_photo(
-        user_id,
-        Config.TMP_DOWNLOAD_DIRECTORY + str(user_id) + ".jpg",
-        download_big=True,
-    )
-    first_name = (
-        first_name.replace("\u2060", "")
+    photo = await event.client.download_profile_photo(     user_id,     Config.TMP_DOWNLOAD_DIRECTORY + str(user_id) + ".jpg",    download_big=True  )
+    first_name = (      first_name.replace("\u2060", "")
         if first_name
-        else ("هذا المستخدم ليس له اسم أول")
-    )
+        else ("هذا المستخدم ليس له اسم أول")  )
     full_name = full_name or first_name
-    username = "@{}".format(username) if username else ("لا يـوجـد")
-    user_bio = "لا يـوجـد" if not user_bio else user_bio
-# Copyright (C) 2021 SEDTHON . All Rights Reserved
-# الـرتب الوهميـه & البريميـوم كتـابـة الكـود -  بلال @NUNUU
-    if user_id in bilal: # code by t.me/NUNUU
-        rotbat = "⌁ مطـور السـورس 𓄂𓆃 ⌁" 
-    elif user_id in sed_dev:
-        rotbat = "⌁ مطـور مسـاعـد 𐏕⌁" 
-    elif user_id == (await event.client.get_me()).id and user_id not in sed_dev:
-        rotbat = "⌁ مـالك الحساب 𓀫 ⌁" 
-    else:
-        rotbat = "⌁ العضـو 𓅫 ⌁"
-    caption = f"<b> {SED_TEXT} </b>\n"
-    caption += f"ٴ<b>{SEDF}</b>\n"
-    caption += f"<b>{SEDM}الاسـم    ⇠ </b> "
-    caption += f'<a href="tg://user?id={user_id}">{full_name}</a>'
-    caption += f"\n<b>{SEDM}المعـرف  ⇠  {username}</b>"
-    caption += f"\n<b>{SEDM}الايـدي   ⇠ </b> <code>{user_id}</code>\n"
-    caption += f"<b>{SEDM}الرتبـــه   ⇠ {rotbat} </b>\n"
-    if blal == True or user_id in bilal: # code by t.me/NUNUU
-        caption += f"<b>{SEDM}الحسـاب ⇠  بـريميـوم 🌟</b>\n"
-    caption += f"<b>{SEDM}الصـور    ⇠ </b> {replied_user_profile_photos_count}\n"
-    if user_id != (await event.client.get_me()).id: # code by t.me/NUNUU
-        caption += f"<b>{SEDM}الـمجموعات المشتـركة ⇠ </b> {common_chat} \n"
-    caption += f"<b>{SEDM}البايـو     ⇠  {user_bio}</b> \n"
-    caption += f"ٴ<b>{SEDF}</b>"
+    username = "@{}".format(username) if username else ("لايـوجـد معـرف")
+    user_bio = "لاتـوجـد نبـذة" if not user_bio else user_bio
+    rotbat = "⌁ من مطورين السورس 𓄂𓆃 ⌁" if user_id == 1488114134 else ("⌁ العضـو 𓅫 ⌁")
+    rotbat = "⌁ مـالك الحساب 𓀫 ⌁" if user_id == (await event.client.get_me()).id and user_id != 1488114134  else rotbat
+    caption = "✛━━━━━━━━━━━━━✛\n"
+    caption += f"<b> {SED_EM}╎الاسـم    ⇠ </b> {full_name}\n"
+    caption += f"<b> {SED_EM}╎المعـرف  ⇠ </b> {username}\n"
+    caption += f"<b> {SED_EM}╎الايـدي   ⇠ </b> <code>{user_id}</code>\n"
+    caption += f"<b> {SED_EM}╎الرتبـــه  ⇠ {rotbat} </b>\n"
+    caption += f"<b> {SED_EM}╎الصـور   ⇠ </b> {replied_user_profile_photos_count}\n"
+    caption += f"<b> {SED_EM}╎الحساب ⇠ </b> "
+    caption += f'<a href="tg://user?id={user_id}">{first_name}</a>'
+    caption += f"\n<b> {SED_EM}╎البايـو    ⇠ </b> {user_bio} \n"
+    caption += f"✛━━━━━━━━━━━━━✛"
     return photo, caption
-
-
-@l313l.ar_cmd(
-    pattern="ايدي(?: |$)(.*)",
-    command=("ايدي", plugin_category),
-    info={
-        "header": "لـ عـرض معلومـات الشخـص",
-        "الاستـخـدام": " {tr}ايدي بالـرد او {tr}ايدي + معـرف/ايـدي الشخص",
-    },
-)
-async def who(event):
-    "Gets info of an user"
-    sed = await edit_or_reply(event, "⇆")
-    if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
-        os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
-    replied_user = await get_user_from_event(event)
-    try:
-        photo, caption = await fetch_info(replied_user, event)
-    except (AttributeError, TypeError):
-        return await edit_or_reply(zed, "**- لـم استطـع العثــور ع الشخــص ؟!**")
-    message_id_to_reply = event.message.reply_to_msg_id
-    if not message_id_to_reply:
-        message_id_to_reply = None
-    try:
-        await event.client.send_file(
-            event.chat_id,
-            photo,
-            caption=caption,
-            link_preview=False,
-            force_document=False,
-            reply_to=message_id_to_reply,
-            parse_mode="html",
-        )
-        if not photo.startswith("http"):
-            os.remove(photo)
-        await sed.delete()
-    except TypeError:
-        await sed.edit(caption, parse_mode="html")
-
-
-@l313l.ar_cmd(
-    pattern="ا(?: |$)(.*)",
-    command=("ا", plugin_category),
-    info={
-        "header": "امـر مختصـر لـ عـرض معلومـات الشخـص",
-        "الاستـخـدام": " {tr}ا بالـرد او {tr}ا + معـرف/ايـدي الشخص",
-    },
-)
-async def who(event):
-    "Gets info of an user"
-    sed = await edit_or_reply(event, "⇆")
-    if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
-        os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
-    replied_user = await get_user_from_event(event)
-    try:
-        photo, caption = await fetch_info(replied_user, event)
-    except (AttributeError, TypeError):
-        return await edit_or_reply(zed, "**- لـم استطـع العثــور ع الشخــص ؟!**")
-    message_id_to_reply = event.message.reply_to_msg_id
-    if not message_id_to_reply:
-        message_id_to_reply = None
-    try:
-        await event.client.send_file(
-            event.chat_id,
-            photo,
-            caption=caption,
-            link_preview=False,
-            force_document=False,
-            reply_to=message_id_to_reply,
-            parse_mode="html",
-        )
-        if not photo.startswith("http"):
-            os.remove(photo)
-        await sed.delete()
-    except TypeError:
-        await sed.edit(caption, parse_mode="html")
-
 
 @l313l.ar_cmd(
     pattern="كشف(?:\s|$)([\s\S]*)",
@@ -289,8 +184,8 @@ async def who(event):
         await cat.delete()
     except TypeError:
         await cat.edit(caption, parse_mode="html")
-#كـتابة  @lMl10l
-#تعديل وترتيب  @lMl10l
+#كـتابة  @NUNUU
+#تعديل وترتيب  @NUNUU
 @l313l.ar_cmd(
     pattern="رابط الحساب(?:\s|$)([\s\S]*)",
     command=("رابط الحساب", plugin_category),
@@ -357,7 +252,7 @@ async def _(event):
             )
     else:
         await edit_or_reply(event, f"᯽︙ الـدردشـة الـحالية : `{str(event.chat_id)}`")
-
+#by Reda For Sedthon
 @l313l.ar_cmd(
     pattern=r"كشف_ايدي(?: (\d+))?$",
     command=("كشف_ايدي", "utils"),
