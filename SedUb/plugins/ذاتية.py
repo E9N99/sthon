@@ -3,8 +3,8 @@ from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 import os
 import datetime
 from telethon import events
+from telethon import types
 from SedUb import *
-#ها يالفاشل شعدك داخل هنا 🫣 اعتمد ع نفسك لتخلي سورس سيدثون مصدر طشت سورسك
 Aljoker_Asbo3 = {
     'Monday': 'الاثنين',
     'Tuesday': 'الثلاثاء',
@@ -15,24 +15,33 @@ Aljoker_Asbo3 = {
     'Sunday': 'الأحد'
 }
 
-@l313l.on(admin_cmd(pattern="(جلب الصورة|جلب الصوره|ذاتيه|ذاتية)"))
+@l313l.on(admin_cmd(pattern="(جلب الصورة|جلب الصوره|جلب الصوت|ذاتيه|ذاتية)"))
 async def dato(event):
     if not event.is_reply:
         return await event.edit("..")
+    
     lMl10l = await event.get_reply_message()
-    pic = await lMl10l.download_media()
+    
+    if not lMl10l.media:
+        return await event.edit("لا يمكن العثور على ملف قابل للتنزيل.")
+    
+    if not isinstance(lMl10l.media, (types.MessageMediaPhoto, types.MessageMediaDocument, types.MessageMediaVoice)):
+        return await event.edit("يجب أن تكون الرسالة التي ترد عليها صورة أو صوت.")
+    
+    file = await lMl10l.download_media()
+    
     await bot.send_file(
         "me",
-        pic,
+        file=file,
         caption=f"""
-- تـم حفظ الصـورة بنجـاح ✓ 
+- تـم حفظ الملف بنجـاح ✓ 
 - غير مبري الذمه اذا استخدمت الامر للابتزاز
 - CH: @veevvw
-- Dev: @NUNUU
+- Dev: @Yll9ll
   """,
     )
     await event.delete()
-#By @jepthon For You 🌹
+#By @veevvw For You 🌹
 @l313l.on(admin_cmd(pattern="(الذاتية تشغيل|ذاتية تشغيل)"))
 async def reda(event):
     if gvarstatus ("savepicforme"):
@@ -45,12 +54,13 @@ async def reda(event):
 async def Reda_Is_Here(event):
     if gvarstatus ("savepicforme"):
         delgvar("savepicforme")
-        return await edit_delete(event, "**᯽︙تم تعطيل حفظت الذاتيات بنجاح ✓**")
+        return await edit_delete(event, "**᯽︙تم تعطيل حفظ الذاتيات بنجاح ✓**")
     else:
         await edit_delete(event, "**᯽︙انت لم تفعل حفظ الذاتيات لتعطيلها!**")
 
 def joker_unread_media(message):
-    return message.media_unread and (message.photo or message.video)
+    return message.media_unread and (message.photo or message.video or 
+        (message.voice and getattr(message.media, 'ttl_seconds', 0) == 2147483647))
 
 async def Hussein(event, caption):
     media = await event.download_media()
@@ -76,6 +86,6 @@ async def Reda(event):
 ♡ أسم المرسل : [{0}](tg://user?id={1})
 ♡  تاريخ الذاتية : `{2}`
 ♡  أرسلت في يوم `{3}`
-       ♡𝗦𝞝𝗗𝙏𝙃𝙊𝙉 𝗨ꜱᴇʀʙᴏᴛ♡
+       ♡    ᥉᥆ᥙᖇᥴᥱ ᥉ᥱძƚɦ᥆ꪀ    ♡
         **"""
         await Hussein(event, caption)
