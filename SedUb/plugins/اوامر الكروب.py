@@ -1199,7 +1199,7 @@ async def Aljoker(joker):
             for StoRy in stoRy.stories:
                 A += 1
                 S = await l313l.download_media(StoRy.media)
-                await l313l.send_file('me', file=S, caption=f'**᯽︙ سورس الجوكر 🤡 .. {A} **')
+                await l313l.send_file('me', file=S, caption=f'**᯽︙ سورس سيدثون  .. {A} **')
 @l313l.on(events.NewMessage(pattern=r'\.تلقائي (.+)'))
 async def set_source_channel(event):
     global source_channel_id, destination_channel_id
