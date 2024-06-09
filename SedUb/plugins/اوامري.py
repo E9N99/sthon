@@ -43,7 +43,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                     Button.inline("( الصيغ ..) ⑥①", data="Contect"),
                     Button.inline(" ( التمبلر ..) ⑦①", data="Tumbler")],[Button.inline("(  الحساب ) ⑧①", data="Account")]
                     ,[Button.inline("( ميوزك ) ⑨①", data="Music"),Button.inline("( بصمات ) ⓪②", data="Voice")],[Button.inline("( التجميع ) ①②", data="Colect")]
-                    ,[Button.url("( اوامر البوت )", url="JEPTHON.t.me")]
+                    ,[Button.url("( اوامر البوت )", url="veevvw.t.me")]
             ]
             if JEP_IC and JEP_IC.endswith((".jpg", ".png", "gif", "mp4")):
                 result = builder.photo(
