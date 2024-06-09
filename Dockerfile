@@ -1,7 +1,7 @@
 FROM E9N99/sthon:slim-buster
 
 #clonning repo 
-RUN git clone https://github.com/E9N99/sthon.git /root/JoKeRUB
+RUN git clone https://github.com/E9N99/sthon.git /root/SedUb
 #working directory 
 WORKDIR /root/SedUb
 
