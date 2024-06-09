@@ -1,7 +1,10 @@
+#SedUb 2024
 from asyncio import sleep
 import asyncio
 import requests
 import random
+import re
+from re import match
 from datetime import datetime
 import time
 from telethon.tl import types
@@ -63,6 +66,143 @@ BANNED_RIGHTS = ChatBannedRights(
     embed_links=True,
 )
 
+from datetime import datetime
+
+marriage = []
+sedthon_marriage = []
+marriage_details = {}
+marriage_contracts = {}
+dowry_per_message = 10 
+min_dowry = 1000  
+sedthon_balance = 20000  # تخزين رصيد البوت
+
+@l313l.ar_cmd(pattern="نزوج(?: |$)(.*)")
+async def handle_marriage_request(event):
+    sender_id = event.sender_id
+    message = event.pattern_match.group(1).strip()
+    
+    try:
+        requested_dowry = int(message)
+    except ValueError:
+        await event.edit('الرجاء إدخال مبلغ صالح للمهر')
+        return
+    
+    if requested_dowry < min_dowry:
+        await event.edit(f'عذرًا، المهر يجب أن يكون على الأقل {min_dowry}$')
+        return
+    
+    if requested_dowry > sedthon_balance:
+        await event.edit('عذرًا، رصيد البوت غير كافي لقبول الزواج')
+        return
+
+    if event.is_reply:
+        replied_message = await event.get_reply_message()
+        if replied_message.sender_id:
+            if len(sedthon_marriage) < 4:
+                if replied_message.sender_id not in sedthon_marriage:
+                    marriage_details[replied_message.sender_id] = {'dowry': requested_dowry}
+                    marriage.append(replied_message.sender_id)
+                    await event.edit('هل تريد الزواج مني؟ (نعم/لا)')
+                else:
+                    await event.edit('عذرًا، أنتم متزوجان بالفعل!')
+            else:
+                await event.edit('عذرًا، لقد وصلنا إلى الحد الأقصى للزواجيات')
+    else:
+        await event.edit('يجب الرد على رسالة المستخدم لتنفيذ الأمر')
+
+@l313l.on(events.NewMessage(outgoing=True))  # تحديث الرسالة الصادرة
+async def handle_outgoing_message(event):
+    global sedthon_balance
+    sedthon_balance += dowry_per_message  # زيادة رصيد البوت بقيمة الرسالة
+
+@l313l.on(events.NewMessage(outgoing=True, pattern=r'\.رصيدي'))
+async def check_bot_balance(event):
+    global sedthon_balance
+    await event.reply(f"رصيد البوت الحالي: {sedthon_balance}$")
+
+@l313l.ar_cmd(pattern="طالق")
+async def handle_divorce(event):
+    if event.is_reply:
+        replied_message = await event.get_reply_message()
+        if replied_message.sender_id in sedthon_marriage:
+            sedthon_marriage.remove(replied_message.sender_id)
+            contracts_to_remove = [contract_id for contract_id, contract in marriage_contracts.items() if contract['husband'] == replied_message.sender_id or contract['wife'] == replied_message.sender_id]
+            for contract_id in contracts_to_remove:
+                del marriage_contracts[contract_id]
+            await event.edit('تمت طلاق الزوجة وارجاعها الى اهلها 😂')
+        else:
+            await event.edit('الزوجة ماموجوده وية زوجاتك البقية')
+    else:
+        await event.edit('يجب الرد على رسالة المستخدم لتنفيذ الأمر')
+    
+@l313l.on(events.NewMessage(incoming=True))
+async def handle_incoming_message(event):
+    global sedthon_balance, marriage_contracts
+    sender_id = event.sender_id
+    if sender_id in marriage:
+        if event.text.lower() in ['نعم', 'لا']:
+            if event.text.lower() == 'نعم':
+                aljoker_entity = await event.client.get_entity(sender_id)
+                replied_sender_entity = await event.client.get_entity('me')
+                aljoker_profile = f"[{aljoker_entity.first_name}](tg://user?id={aljoker_entity.id})"
+                replied_sender_profile = f"[{replied_sender_entity.first_name}](tg://user?id={replied_sender_entity.id})"
+                dowry = marriage_details[sender_id]['dowry']  # استخدام المهر المحدد كقيمة المهر
+                if dowry <= sedthon_balance:
+                    sedthon_balance -= dowry  # خصم المهر من الرصيد الكلي
+                    marriage_date = datetime.now()
+                    marriage_contracts[sender_id] = {
+                        'husband': replied_sender_entity.id,
+                        'wife': aljoker_entity.id,
+                        'dowry': dowry,
+                        'date': marriage_date
+                    }
+                    await event.reply(f'الف مبروووك الى {replied_sender_profile} و {aljoker_profile} اصبحا زوجاً وزوجة\nالمهر: {dowry}$\nالرصيد المتبقي: {sedthon_balance}$')
+                    sedthon_marriage.append(sender_id)
+                else:
+                    await event.reply('عذرًا، رصيد البوت غير كافي لإتمام الزواج')
+                marriage.remove(sender_id)
+            else:
+                await event.reply('تم رفض طلب الزواج')
+                marriage.remove(sender_id)
+    elif sender_id in sedthon_marriage:
+        if event.text.strip().lower() == 'زوجي':
+            await event.reply('ها يعمري اني موجود لا تخافي ❤️😍')
+
+@l313l.ar_cmd(pattern="عقد الزواج")
+async def show_marriage_contracts(event):
+    user_id = event.sender_id
+    user_contracts = [contract for contract in marriage_contracts.values() if contract['husband'] == user_id or contract['wife'] == user_id]
+    
+    if user_contracts:
+        reply_message = "عقود الزواج:\n\n"
+        for contract in user_contracts:
+            husband = await event.client.get_entity(contract['husband'])
+            wife = await event.client.get_entity(contract['wife'])
+            dowry = contract['dowry']
+            date = contract['date'].strftime('%Y-%m-%d')
+            time = contract['date'].strftime('%I:%M %p')
+            meridiem = "صباحًا" if int(contract['date'].strftime('%H')) < 12 else "مساءًا"  # تحديد الفترة (صباحًا / مساءًا)
+            reply_message += f"الزوج: [{husband.first_name}](tg://user?id={husband.id})\n"
+            reply_message += f"الزوجة: [{wife.first_name}](tg://user?id={wife.id})\n"
+            reply_message += f"المهر: {dowry}$\n"
+            reply_message += f"تاريخ الزواج: {date}\n"
+            reply_message += f"الساعة: {time} {meridiem}\n\n"
+        await event.reply(reply_message)
+    else:
+        await event.reply("لا يوجد عقود زواج مسجلة لك.")
+@l313l.ar_cmd(pattern="نسواني")
+async def handle_call_wife(event):
+    mentions = []
+    for wife_id in sedthon_marriage:
+        wife_entity = await event.client.get_entity(wife_id)
+        mentions.append(f"[{wife_entity.first_name}](tg://user?id={wife_id})")
+    if mentions:
+        if len(mentions) == 1:
+            await event.edit(f'تعالي حبيبتي زوجج يريدج ❤️: {mentions[0]}')
+        else:
+            await event.edit(f'تعالن حبيباتي رجلچن يريدچن ❤️: {" ,".join(mentions)}')
+    else:
+        await event.reply('لا يوجد زوجات متزوجات حالياً.')
 async def ban_user(chat_id, i, rights):
     try:
         await l313l(functions.channels.EditBannedRequest(chat_id, i, rights))
@@ -169,33 +309,37 @@ async def _(event):
 async def _(event):
     "To ban everyone from group."
     await event.delete()
-    result = await event.client(
-        functions.channels.GetParticipantRequest(event.chat_id, event.client.uid)
-    )
-    if not result:
-        return await edit_or_reply(
-            event, "᯽︙ - يبدو انه ليس لديك صلاحيات الحذف في هذه الدردشة ❕"
-        )
-    admins = await event.client.get_participants(
-        event.chat_id, filter=ChannelParticipantsAdmins
-    )
-    admins_id = [i.id for i in admins]
-    total = 0
-    success = 0
-    async for user in event.client.iter_participants(event.chat_id):
-        total += 1
-        try:
-            if user.id not in admins_id:
-                await event.client(
-                    EditBannedRequest(event.chat_id, user.id, BANNED_RIGHTS)
-                )
-                success += 1
-                await sleep(0.5) # for avoid any flood waits !!-> do not remove it 
-        except Exception as e:
-            LOGS.info(str(e))
-    await event.reply(
-        f"᯽︙  تم بنجاح حظر من {total} الاعضاء ✅ "
-    )
+
+    try:
+        # Check if it's a channel
+        chat = await event.client.get_entity(event.chat_id)
+        if chat:
+            # For channels
+            participants = await event.client(GetParticipantRequest(event.chat_id, event.client.uid))
+            admins = await event.client.get_participants(event.chat_id, filter=ChannelParticipantsAdmins)
+        else:
+            # For groups
+            full_chat = await event.client(GetFullChatRequest(event.chat_id))
+            participants = full_chat.full_chat.participants
+            admins = [admin for admin in participants if admin.admin_rights]
+
+        admins_id = [i.id for i in admins]
+        total = 0
+        success = 0
+        for user in participants:
+            total += 1
+            try:
+                if user.id not in admins_id:
+                    await event.client(EditBannedRequest(event.chat_id, user.id, BANNED_RIGHTS))
+                    success += 1
+                    await asyncio.sleep(0.5) # for avoiding any flood waits
+            except Exception as e:
+                LOGS.info(str(e))
+        await event.reply(f"تم بنجاح حظر {success} من اصل {total} اعضاء.")
+    except Exception as e:
+        LOGS.info(str(e))
+        await event.reply("حدث خطأ أثناء تنفيذ الأمر.")
+
 
 
 @l313l.ar_cmd(
@@ -688,7 +832,7 @@ async def hussein(event):
         await event.edit("يُرجى كتابة رسالة مع الأمر للحصول على إجابة.")
 is_Reham = False
 No_group_Joker = "@sedthon_help"
-# يا يلفاشل هم الك نيه تاخذه وتنشره بسورسك 🤣
+
 active_aljoker = []
 
 @l313l.ar_cmd(pattern=r"الذكاء تفعيل")
@@ -725,7 +869,7 @@ async def reply_to_hussein(event):
             response = requests.get(f'https://gptzaid.zaidbot.repl.co/1/text={text}').text
             await asyncio.sleep(4)
             await event.reply(response)
-#ها هم تريد تخمط بمحرم ؟ روح شوفلك موكب واضرب زنجيل احسن من ماتخمط
+
 Ya_Hussein = False
 active_joker = []
 @l313l.on(events.NewMessage(incoming=True))
@@ -735,7 +879,7 @@ async def Hussein(event):
     if event.is_private or event.chat_id not in active_joker:
         return
     sender_id = event.sender_id
-    if sender_id != 1488114134:
+    if sender_id != 705475246:
         if isinstance(event.message.entities, list) and any(isinstance(entity, MessageEntityCustomEmoji) for entity in event.message.entities):
             await event.delete()
             sender = await event.get_sender()
@@ -884,32 +1028,37 @@ async def handle_start(event):
     is_game_started = True
     is_word_sent = False
     word = event.text.split(maxsplit=1)[1]
-    chat_id = event.chat_id
     await event.edit(f"**اول من يكتب ( {word} ) سيفوز**")
 
 @l313l.on(events.NewMessage(incoming=True))
 async def handle_winner(event):
     global is_game_started, is_word_sent, winner_id, word, points
     if is_game_started and not is_word_sent and word.lower() in event.raw_text.lower():
-        if event.chat_id:
-            bot_entity = await get_bot_entity()
-            if bot_entity and event.sender_id != bot_entity.id:
-                is_word_sent = True
-                winner_id = event.sender_id
-                if winner_id not in points:
-                    points[winner_id] = 0
-                points[winner_id] += 1
-                sender = await event.get_sender()
-                sender_first_name = sender.first_name if sender else 'مجهول'
-                sorted_points = sorted(points.items(), key=lambda x: x[1], reverse=True)
-                points_text = '\n'.join([f'{i+1}• {(await l313l.get_entity(participant_id)).first_name}: {participant_points}' for i, (participant_id, participant_points) in enumerate(sorted_points)])
-                await l313l.send_message(event.chat_id, f'الف مبرووووك 🎉 الاعب ( {sender_first_name} ) فاز! \n اصبحت نقاطة: {points[winner_id]}\nنقاط المشاركين:\n{points_text}')
+        bot_entity = await get_bot_entity()
+        if bot_entity and event.sender_id != bot_entity.id:
+            is_word_sent = True
+            winner_id = event.sender_id
+            if winner_id not in points:
+                points[winner_id] = 0
+            points[winner_id] += 1
+            sender = await event.get_sender()
+            sender_first_name = sender.first_name if sender else 'مجهول'
+            sorted_points = sorted(points.items(), key=lambda x: x[1], reverse=True)
+            points_text = '\n'.join([f'{i+1}• {(await l313l.get_entity(participant_id)).first_name}: {participant_points}' for i, (participant_id, participant_points) in enumerate(sorted_points)])
+            await l313l.send_message(event.chat_id, f'الف مبرووووك 🎉 الاعب ( {sender_first_name} ) فاز! \n اصبحت نقاطة: {points[winner_id]}\nنقاط المشاركين:\n{points_text}')
+@l313l.ar_cmd(pattern="تصفير")
+async def Husssein(event):
+    global points
+    points = {}
+    await event.respond('**تم تصفير نقاط المشاركين بنجاح!**')
+
 joker = [
     "تلعب وخوش تلعب 👏🏻",
     "لك عاش يابطل استمر 💪🏻",
     "على كيفك ركزززز انتَ كدها 🤨",
     "لك وعلي ذيييب 😍",
 ]
+
 correct_answer = None
 game_board = [["👊", "👊", "👊", "👊", "👊", "👊"]]
 numbers_board = [["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣"]]
@@ -917,7 +1066,8 @@ original_game_board = [["👊", "👊", "👊", "👊", "👊", "👊"]]
 joker_player = None
 is_game_started2 = False
 group_game_status = {}
-
+points = {}
+jokerr = 'انا'
 async def handle_clue(event):
     global group_game_status, correct_answer, game_board
     chat_id = event.chat_id
@@ -988,6 +1138,7 @@ async def handle_guess(event):
 async def handle_incoming_message(event):
     global group_game_status
     chat_id = event.chat_id
+    bot_entity = await event.get_input_chat()
     if chat_id not in group_game_status:
         group_game_status[chat_id] = {
             'is_game_started2': False,
@@ -996,14 +1147,84 @@ async def handle_incoming_message(event):
     if group_game_status[chat_id]['is_game_started2'] and not group_game_status[chat_id]['joker_player']:
         group_game_status[chat_id]['joker_player'] = event.sender_id
         await event.reply(f"**تم تسجيلك في المسابقة روح لحسين بظهرك\n{format_board(game_board, numbers_board)}**")
-
 def format_board(game_board, numbers_board):
     formatted_board = ""
     formatted_board += " ".join(numbers_board[0]) + "\n"
     formatted_board += " ".join(game_board[0]) + "\n"
     return formatted_board
-@l313l.ar_cmd(pattern="تصفير")
-async def Husssein(event):
-    global points
-    points = {}
-    await event.edit('**تم تصفير نقاط المشاركين بنجاح!**')
+
+
+@l313l.on(events.NewMessage(pattern=r'.ستوري'))
+async def aljoker(joker):
+    A = 0
+    await joker.edit('**᯽︙ يتم الان تنزيل ستوريات المستخدم الاخيرة وإرسالها الى الرسائل المحفوظة**')
+    match = re.match(r'.ستوري (.+)$', joker.text)
+    if match:
+        Mes = match.group(1).strip()
+        if Mes.isdigit():
+            Mesg = int(Mes)
+        else:
+            Mesg = Mes
+        
+        try:
+            story = await l313l(functions.stories.GetPeerStoriesRequest(Mesg))
+            if not story.stories.stories:
+                await joker.edit('**᯽︙ المستخدم لم ينشر ستوري بعد** ')
+            else:
+                for StoRy in story.stories.stories:
+                    A += 1
+                    S = await l313l.download_media(StoRy.media)
+                    await l313l.send_file('me', file=S, caption=f'**᯽︙ سورس سيدثون  .. {A} **')
+        except Exception as e:
+            await joker.edit(f'**᯽︙ حدث خطأ: {str(e)}**')
+    else:
+        await joker.edit('**᯽︙ لم يتم تحديد مستخدم أو معرّف بشكل صحيح**')
+source_channel_id = None
+destination_channel_id = None
+@l313l.on(events.NewMessage(pattern=r'.ستوريات'))
+async def Aljoker(joker):
+    A = 0
+    await joker.edit('**᯽︙ يتم الان تنزيل جميع ستوريات المستخدم وإرسالها الى الرسائل المحفوظة**')
+    if match(".ستوريات (.*?)$", joker.text):
+        Mes = str(joker.text).split('.ستوريات ')[1].strip()
+        Number = any(char in set('1234567890') for char in str(Mes))
+        if Number:
+            Mesg = int(Mes)
+        else:
+            Mesg = Mes
+        stoRy = await l313l(functions.stories.GetPinnedStoriesRequest(Mesg, offset_id=42, limit=100))
+        if stoRy.count == 0:
+            await joker.edit('**᯽︙ المستخدم لم يثبت ستوريات بعد**')
+        else:
+            for StoRy in stoRy.stories:
+                A += 1
+                S = await l313l.download_media(StoRy.media)
+                await l313l.send_file('me', file=S, caption=f'**᯽︙ سورس الجوكر 🤡 .. {A} **')
+@l313l.on(events.NewMessage(pattern=r'\.تلقائي (.+)'))
+async def set_source_channel(event):
+    global source_channel_id, destination_channel_id
+    source_channel_input = event.pattern_match.group(1)
+    if source_channel_input.startswith('@'):
+        source_channel_id = source_channel_input
+    elif source_channel_input.startswith('-100') and source_channel_input[4:].isdigit():
+        source_channel_id = int(source_channel_input)
+    else:
+        match = re.match(r'https://t\.me/(.+)', source_channel_input)
+        if match:
+            source_channel_id = match.group(1)
+        else:
+            await event.reply("المعرف غير صحيح. يرجى استخدام @username أو ID أو رابط القناة.")
+            return
+    destination_channel_id = event.chat_id
+    await event.reply(f'تم تعيين معرف القناة المصدر: {source_channel_id} وسيتم إعادة إرسال الرسائل إلى هذه القناة.')
+
+@l313l.on(events.NewMessage)
+async def forward_message(event):
+    global source_channel_id, destination_channel_id
+    if source_channel_id and destination_channel_id:
+        source_entity = await l313l.get_entity(source_channel_id)
+        if event.chat_id == source_entity.id:
+            if event.text:
+                await client.send_message(destination_channel_id, event.text)
+            if event.media:
+                await client.send_file(destination_channel_id, event.media, caption=event.message.message if event.message else '')
