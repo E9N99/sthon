@@ -33,3 +33,4 @@ services:
           name: BiLaL
           property: connectionString   
     autoDeploy: false
+#BiLaL
