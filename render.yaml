@@ -6,7 +6,7 @@ databases:
 services:
   - type: web
     plan: free
-    name: joker
+    name: sedthon
     env: python
     buildCommand: pip install -U -r requirements.txt
     startCommand: python3 ser.py & python3 -m JoKeRUB
