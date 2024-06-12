@@ -9,7 +9,7 @@ services:
     name: sedthon
     env: python
     buildCommand: pip install -U -r requirements.txt
-    startCommand: python3 ser.py & python3 -m JoKeRUB
+    startCommand: python3 ser.py & python3 -m SedUb
     region: frankfurt
     envVars:
       - key: ALIVE_NAME
