@@ -1,5 +1,5 @@
 databases:
-  - name: hussein
+  - name: BiLaL
     ipAllowList: []
     region: frankfurt
     plan: free
