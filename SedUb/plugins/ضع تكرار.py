@@ -82,4 +82,4 @@ async def _(event):
     except Exception as e:
         await event.edit(str(e))
 # For Catuserbot
-# Arabic Translate By  :  @lMl10l
+# Arabic Translate By  :  @BDB0B
