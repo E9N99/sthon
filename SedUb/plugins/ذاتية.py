@@ -5,7 +5,7 @@ import datetime
 from telethon import events
 from telethon import types
 from SedUb import *
-Aljoker_Asbo3 = {
+SedUb_Asbo3 = {
     'Monday': 'الاثنين',
     'Tuesday': 'الثلاثاء',
     'Wednesday': 'الأربعاء',
@@ -37,7 +37,7 @@ async def dato(event):
 - تـم حفظ الملف بنجـاح ✓ 
 - غير مبري الذمه اذا استخدمت الامر للابتزاز
 - CH: @veevvw
-- Dev: @Yll9ll
+- Dev: @BDB0B
   """,
     )
     await event.delete()
@@ -67,7 +67,7 @@ async def Hussein(event, caption):
     sender = await event.get_sender()
     sender_id = event.sender_id
     lMl10l_date = event.date.strftime("%Y-%m-%d")
-    lMl10l_day = Aljoker_Asbo3[event.date.strftime("%A")]
+    lMl10l_day = SedUb_Asbo3[event.date.strftime("%A")]
     await bot.send_file(
         "me",
         media,
