@@ -159,7 +159,7 @@ async def mybot():
         if bot_name.endswith("Assistant"):
             print("تم تشغيل البوت")
         if starkbot.bot_inline_placeholder:
-            print("Aljoker ForEver")
+            print("SEDTHON ForEver")
         else:
             try:
                 await l313l.send_message("@BotFather", "/setinline")
@@ -199,7 +199,7 @@ async def add_bot_to_logger_group(chat_id):
         except Exception as e:
             LOGS.error(str(e))
 #by @veevvww بس اشوفك خامطه للكود اهينك وافضحك
-SedUb = {"@veevvw", "@sedthon_help"}
+SedUb = {"@veevvw", "@sedthon_help", "@BDB1B"}
 async def saves():
    for lMl10l in SedUb:
         try:
