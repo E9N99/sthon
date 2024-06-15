@@ -7,6 +7,11 @@ from .core.logger import logging
 from .core.session import l313l
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
+from .helpers.functions.converter import Convert
+from .helpers.functions.musictool import *
+from .helpers.utils.utils import runasync
+
+
 __version__ = "3.1.3"
 __license__ = "كـتابة وتـعديل فريـق سيدثون"
 __author__ = "سيدثون <https://T.ME/VEEVVW>"
