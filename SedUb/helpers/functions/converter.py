@@ -4,7 +4,7 @@ from PIL import Image
 
 from SedUb.core.logger import logging
 from SedUb.core.managers import edit_or_reply
-from SedUb.helpers.functions.vidtools import take_screen_shot
+
 from SedUb.helpers.tools import fileinfo, media_type, meme_type
 from SedUb.helpers.utils.utils import runcmd
 
