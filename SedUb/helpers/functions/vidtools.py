@@ -3,7 +3,7 @@ import random
 
 from moviepy.editor import VideoFileClip
 from PIL import Image, ImageOps
-from SedUb.helpers.functions.vidtools import take_screen_shot
+from SedUb.helpers.functions.vidtools import *
 from ...core.logger import logging
 
 LOGS = logging.getLogger(__name__)
